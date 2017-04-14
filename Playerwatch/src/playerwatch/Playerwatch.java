@@ -1,6 +1,7 @@
 package playerwatch;
 
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -20,21 +21,25 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
 /**
  *
  * @author Michael Lyn, Garrett Holland
  */
 public class Playerwatch extends Application {
 
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //launch the JavaFX application
+        
         launch(args);
-    }
+        
+        Login login = new Login();
+        
+        login.login("Whatshisface-1562");
 
+    }
     TextField txtBattleTag;
     Label loginError;
     Stage primaryStage;
