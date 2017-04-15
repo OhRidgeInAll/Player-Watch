@@ -2,6 +2,7 @@ package playerwatch;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,6 +14,9 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 /**
  *
@@ -20,10 +24,11 @@ import java.util.logging.Logger;
  */
 public class Login {
 
-    public void login(String battletag) {
+    public void login(String battletag) throws IOException, ParseException {
         InputStream response;
         
-        File file = new File(battletag + ".txt");
+        File file = new File(battletag + "-heroes.txt");
+        File genFile = new File(battletag + ".txt");
 
         try {
             URLConnection urlConnectionInstance = new URL("https://owapi.net/api/v3/u/" + battletag + "/heroes").openConnection();
@@ -55,7 +60,21 @@ public class Login {
         } catch (IOException ex) {
             Logger.getLogger(Playerwatch.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
+            try{ 
+                JSONParser parser = new JSONParser();
+                FileReader reader = new FileReader(battletag + ".txt");
+                JSONObject root = (JSONObject) parser.parse(reader);
+                
+            }
+            catch(FileNotFoundException ex){
+                
+            }
+            catch(ParseException ex){
+                
+            }
         }
     }
+    
+    //public String
 
 }
