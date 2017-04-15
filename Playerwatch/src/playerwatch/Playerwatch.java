@@ -1,7 +1,9 @@
 package playerwatch;
 
+import java.util.ArrayList;
 import javafx.application.Application;
-import static javafx.application.Application.launch;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -21,25 +23,25 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 /**
  *
  * @author Michael Lyn, Garrett Holland
  */
 public class Playerwatch extends Application {
 
-    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        launch(args);
-        
-        Login login = new Login();
-        
-        login.login("Whatshisface-1562");
 
+//        Login login = new Login();
+//        
+//        login.login("Original-1425");
+        //launch the JavaFX application
+        launch(args);
     }
+
     TextField txtBattleTag;
     Label loginError;
     Stage primaryStage;
@@ -49,8 +51,6 @@ public class Playerwatch extends Application {
 
         this.primaryStage = primaryStage;
 
-        //  generalScene.getStylesheets().addAll(this.getClass()
-        //        .getResource("PlayerwatchCSS.css").toExternalForm());
         Scene scene = loginScene();
 
         //set the Scene, Tite, and Icon of the primary stage, do not allow resize
@@ -101,7 +101,9 @@ public class Playerwatch extends Application {
         BorderPane heroStatsPane = new BorderPane();
         heroStatsPane.setId("mostPlayPane");
 
-        Scene mostPlayScene = new Scene(heroStatsPane, 400, 400);
+        setHeroStatsCenter(heroStatsPane);
+
+        Scene mostPlayScene = new Scene(heroStatsPane, 800, 500);
 
         return mostPlayScene;
     }
@@ -238,15 +240,54 @@ public class Playerwatch extends Application {
 
         //Vbox to store label and listview to choose hero
         VBox heroBox = new VBox(10);
+        heroBox.setPadding(new Insets(10));
 
         //Vbox to store label and scrollpane of chosen hero stats
         VBox statBox = new VBox(10);
+        statBox.setPadding(new Insets(10));
 
+        Hero soldier76 = new Soldier76();
+        Hero roadHog = new Roadhog();
+        ArrayList<Hero> allHeroesArray = new ArrayList<>();
+        allHeroesArray.add(soldier76);
+        allHeroesArray.add(roadHog);
+
+        Label chooseHero = new Label("Choose your hero!");
         //Listview to display sorted list of heros, based upon most played
-        ListView heroList = new ListView();
+        ListView<Hero> heroList = new ListView<>();
+        
 
+        heroList.getItems().addAll(allHeroesArray);
+        heroBox.getChildren().addAll(chooseHero, heroList);
+
+        Label statPage = new Label("Hero Stats");
         //Scroll pane to go through hero stats of hero chosen
         ScrollPane scrollStats = new ScrollPane();
-    }
+        VBox statLabels = new VBox(10);
+        
+        heroList.getSelectionModel().selectedItemProperty().addListener(
+                new ChangeListener<Hero>() {
+            
+            Label endOfStats = new Label("You've reached the end of the Stats page");
+            @Override
+            public void changed(ObservableValue<? extends Hero> ov, Hero oldValue, Hero newValue) {
+                if(statLabels.getChildren().contains(endOfStats)){
+                statLabels.getChildren().clear();
+                }
+                statLabels.getChildren().addAll(newValue.getUniqueLabels());
+                statLabels.getChildren().addAll(newValue.getHeroLabels());
+                statLabels.getChildren().add(endOfStats);
+                scrollStats.setContent(statLabels);
+            }
 
+        }
+        );
+
+        statBox.getChildren().addAll(statPage, scrollStats);
+
+        hBox.getChildren().addAll(heroBox, statBox);
+
+        main.setCenter(hBox);
+
+    }
 }
