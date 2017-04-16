@@ -35,9 +35,9 @@ public class Playerwatch extends Application {
      */
     public static void main(String[] args) {
 
-//        Login login = new Login();
+        Login login = new Login();
 //        
-//        login.login("Original-1425");
+        JSONObject root = login.login("Original-1425");
         //launch the JavaFX application
         launch(args);
     }
