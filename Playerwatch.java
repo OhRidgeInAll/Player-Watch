@@ -1,15 +1,22 @@
 package playerwatch;
 
+import playerwatch.heroes.DVa;
+import playerwatch.heroes.Soldier76;
+import playerwatch.heroes.Ana;
+import playerwatch.heroes.Bastion;
+import playerwatch.heroes.Genji;
+import playerwatch.heroes.Roadhog;
+import playerwatch.heroes.Hero;
 import java.util.ArrayList;
 import javafx.application.Application;
-import javafx.collections.ObservableList;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -23,6 +30,22 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import playerwatch.heroes.Hanzo;
+import playerwatch.heroes.JunkRat;
+import playerwatch.heroes.Lucio;
+import playerwatch.heroes.McCree;
+import playerwatch.heroes.Mei;
+import playerwatch.heroes.Pharah;
+import playerwatch.heroes.Reaper;
+import playerwatch.heroes.Reinhardt;
+import playerwatch.heroes.Sombra;
+import playerwatch.heroes.Symmetra;
+import playerwatch.heroes.Torbjorn;
+import playerwatch.heroes.Tracer;
+import playerwatch.heroes.Widowmaker;
+import playerwatch.heroes.Winston;
+import playerwatch.heroes.Zarya;
+import playerwatch.heroes.Zenyatta;
 
 /**
  *
@@ -34,7 +57,7 @@ public class Playerwatch extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
 //        Login login = new Login();
 //        
 //        login.login("Original-1425");
@@ -51,8 +74,6 @@ public class Playerwatch extends Application {
 
         this.primaryStage = primaryStage;
 
-        //  generalScene.getStylesheets().addAll(this.getClass()
-        //        .getResource("PlayerwatchCSS.css").toExternalForm());
         Scene scene = loginScene();
 
         //set the Scene, Tite, and Icon of the primary stage, do not allow resize
@@ -104,8 +125,8 @@ public class Playerwatch extends Application {
         heroStatsPane.setId("mostPlayPane");
 
         setHeroStatsCenter(heroStatsPane);
-        
-        Scene mostPlayScene = new Scene(heroStatsPane, 650, 400);
+
+        Scene mostPlayScene = new Scene(heroStatsPane, 800, 500);
 
         return mostPlayScene;
     }
@@ -243,47 +264,97 @@ public class Playerwatch extends Application {
         //Vbox to store label and listview to choose hero
         VBox heroBox = new VBox(10);
         heroBox.setPadding(new Insets(10));
-        
+
         //Vbox to store label and scrollpane of chosen hero stats
         VBox statBox = new VBox(10);
         statBox.setPadding(new Insets(10));
 
-        Hero soldier76 = new Soldier76();
+        //Create instances of every hero
+        Hero ana = new Ana();
+        Hero bastion = new Bastion();
+        Hero dva = new DVa();
+        Hero genji = new Genji();
+        Hero hanzo = new Hanzo();
+        Hero junkRat = new JunkRat();
+        Hero lucio = new Lucio();
+        Hero mcCree = new McCree();
+        Hero mei = new Mei();
+        Hero pharah = new Pharah();
+        Hero reaper = new Reaper();
+        Hero reinhardt = new Reinhardt();
         Hero roadHog = new Roadhog();
+        Hero soldier76 = new Soldier76();
+        Hero sombra = new Sombra();
+        Hero symmetra = new Symmetra();
+        Hero torbjorn = new Torbjorn();
+        Hero tracer = new Tracer();
+        Hero widowmaker = new Widowmaker();
+        Hero winston = new Winston();
+        Hero zarya = new Zarya();
+        Hero zenyatta = new Zenyatta();
+
+        //create arraylist to store all of the heroes, add to arraylist
         ArrayList<Hero> allHeroesArray = new ArrayList<>();
-        allHeroesArray.add(soldier76);
+        allHeroesArray.add(ana);
+        allHeroesArray.add(bastion);
+        allHeroesArray.add(dva);
+        allHeroesArray.add(genji);
+        allHeroesArray.add(hanzo);
+        allHeroesArray.add(junkRat);
+        allHeroesArray.add(lucio);
+        allHeroesArray.add(mcCree);
+        allHeroesArray.add(mei);
+        allHeroesArray.add(pharah);
+        allHeroesArray.add(reaper);
+        allHeroesArray.add(reinhardt);
         allHeroesArray.add(roadHog);
-        
+        allHeroesArray.add(soldier76);
+        allHeroesArray.add(sombra);
+        allHeroesArray.add(symmetra);
+        allHeroesArray.add(torbjorn);
+        allHeroesArray.add(tracer);
+        allHeroesArray.add(widowmaker);
+        allHeroesArray.add(winston);
+        allHeroesArray.add(zarya);
+        allHeroesArray.add(zenyatta);
 
         Label chooseHero = new Label("Choose your hero!");
         //Listview to display sorted list of heros, based upon most played
         ListView<Hero> heroList = new ListView<>();
-        
+
         heroList.getItems().addAll(allHeroesArray);
         heroBox.getChildren().addAll(chooseHero, heroList);
 
         Label statPage = new Label("Hero Stats");
         //Scroll pane to go through hero stats of hero chosen
         ScrollPane scrollStats = new ScrollPane();
+        VBox statLabels = new VBox(10);
+        statLabels.setPadding(new Insets(5));
+
+        heroList.getSelectionModel().selectedItemProperty().addListener(
+                new ChangeListener<Hero>() {
+
+            Label endOfStats = new Label("You've reached the end of the Stats page");
+
+            @Override
+            public void changed(ObservableValue<? extends Hero> ov, Hero oldValue, Hero newValue) {
+                if (statLabels.getChildren().contains(endOfStats)) {
+                    statLabels.getChildren().clear();
+                }
+                statLabels.getChildren().addAll(newValue.getUniqueLabels());
+                statLabels.getChildren().addAll(newValue.getHeroLabels());
+                statLabels.getChildren().add(endOfStats);
+                scrollStats.setContent(statLabels);
+            }
+
+        }
+        );
+
         statBox.getChildren().addAll(statPage, scrollStats);
-        
+
         hBox.getChildren().addAll(heroBox, statBox);
-        
+
         main.setCenter(hBox);
-        
-        
+
     }
 }
-    
-//    private class HeroCell extends ListCell<Hero>{
-//
-//       @Override
-//       protected void updateItem(Hero hero, boolean empty) {
-//            super.updateItem(hero, empty);
-//
-//                setText(hero.getName());
-//                setText("Time Played: " + Integer.toString(hero.getTimePlayed()));
-//            }
-//        }
-//    }
-
