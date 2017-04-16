@@ -14,6 +14,7 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -22,9 +23,16 @@ import org.json.simple.parser.ParseException;
  *
  * @author Garrett
  */
+/*
+This is the major logic behind pulling the stats for the application. It pulls
+from the API (by posing as a browser) and indexes the results in both a file for backup
+and then passes the JSONObject to the main class.
+
+This class was handled by Garrett
+*/
 public class Login {
 
-    public void login(String battletag) throws IOException, ParseException {
+    public JSONObject login(String battletag) throws IOException, ParseException {
         InputStream response;
         
         File file = new File(battletag + "-heroes.txt");
@@ -64,7 +72,7 @@ public class Login {
                 JSONParser parser = new JSONParser();
                 FileReader reader = new FileReader(battletag + ".txt");
                 JSONObject root = (JSONObject) parser.parse(reader);
-                
+                return root;
             }
             catch(FileNotFoundException ex){
                 
@@ -73,6 +81,7 @@ public class Login {
                 
             }
         }
+        return null;
     }
     
     //public String
