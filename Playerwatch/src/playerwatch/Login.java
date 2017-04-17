@@ -171,6 +171,23 @@ public class Login {
             roadhog.setEliminations((double) usRoadhogGenStats.get("eliminations"));
             roadhog.setEliminationsAverage((double) usRoadhogAvgStats.get("eliminations_average"));
             roadhog.setDeaths((double) usRoadhogGenStats.get("deaths"));
+            roadhog.setDeathsAverage((double) usRoadhogAvgStats.get("deaths_average"));
+            roadhog.setSoloKills((double) usRoadhogGenStats.get("solo_kills"));
+            roadhog.setSoloKillsAverage((double) usRoadhogAvgStats.get("solo_kills_average"));
+            roadhog.setObjectiveKills((double) usRoadhogGenStats.get("objective_kills"));
+            roadhog.setObjectiveKillsAverage((double) usRoadhogAvgStats.get("objective_kills_average"));
+            roadhog.setMultikills((double) usRoadhogGenStats.get("objective_kills_average"));
+            roadhog.setMultikillBest((double) usRoadhogAvgStats.get("objective_kills_average"));
+            roadhog.setTimeSpentonFire((double) usRoadhogGenStats.get("time_spent_on_fire"));
+            roadhog.setTimeSpentonFireAverage((double) usRoadhogAvgStats.get("time_spent_on_fire_average"));
+            roadhog.setWeaponAccuracy((double) usRoadhogGenStats.get("weapon_accuracy"));
+            roadhog.setGamesTied((double) usRoadhogGenStats.get("games_tied"));
+            roadhog.setGamesLost((double) usRoadhogGenStats.get("games_lost"));
+            roadhog.setGamesWon((double) usRoadhogGenStats.get("games_won"));
+            roadhog.setTimePlayed((double) usRoadhogGenStats.get("time_played"));
+            roadhog.setCriticalHits((double) usRoadhogGenStats.get("critical_hits"));
+            roadhog.setCriticalHitAccuracy((double) usRoadhogGenStats.get("critical_hit_accuracy"));
+            
             //Setting Winston Values
             winston.setDamageBlocked((double) usWinstonStats.get("damage_blocked"));
             winston.setDamageBlockedAverage((double) usWinstonAvgStats.get("damage_blocked_average"));
@@ -187,6 +204,26 @@ public class Login {
             winston.setPrimalRageKills((double) usWinstonGenStats.get("primal_rage_kills"));
             winston.setPrimalRageKillsAverage((double) usWinstonAvgStats.get("primal_rage_kills_average"));
             winston.setPrimalRageKillsMostGame((double) usWinstonGenStats.get("primal_rage_kills_most_in_game"));
+            //Winston General Stats
+            winston.setEliminations((double) usWinstonGenStats.get("eliminations"));
+            winston.setEliminationsAverage((double) usWinstonAvgStats.get("eliminations_average"));
+            winston.setDeaths((double) usWinstonGenStats.get("deaths"));
+            winston.setDeathsAverage((double) usWinstonAvgStats.get("deaths_average"));
+            winston.setSoloKills((double) usWinstonGenStats.get("solo_kills"));
+            winston.setSoloKillsAverage((double) usWinstonAvgStats.get("solo_kills_average"));
+            winston.setObjectiveKills((double) usWinstonGenStats.get("objective_kills"));
+            winston.setObjectiveKillsAverage((double) usWinstonAvgStats.get("objective_kills_average"));
+            winston.setMultikills((double) usWinstonGenStats.get("objective_kills_average"));
+            winston.setMultikillBest((double) usWinstonAvgStats.get("objective_kills_average"));
+            winston.setTimeSpentonFire((double) usWinstonGenStats.get("time_spent_on_fire"));
+            winston.setTimeSpentonFireAverage((double) usWinstonAvgStats.get("time_spent_on_fire_average"));
+            winston.setWeaponAccuracy((double) usWinstonGenStats.get("weapon_accuracy"));
+            winston.setGamesTied((double) usWinstonGenStats.get("games_tied"));
+            winston.setGamesLost((double) usWinstonGenStats.get("games_lost"));
+            winston.setGamesWon((double) usWinstonGenStats.get("games_won"));
+            winston.setTimePlayed((double) usWinstonGenStats.get("time_played"));
+            winston.setCriticalHits((double) usWinstonGenStats.get("critical_hits"));
+            winston.setCriticalHitAccuracy((double) usWinstonGenStats.get("critical_hit_accuracy"));
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
