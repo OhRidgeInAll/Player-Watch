@@ -1,5 +1,6 @@
 package playerwatch;
 
+import java.io.IOException;
 import playerwatch.heroes.DVa;
 import playerwatch.heroes.Soldier76;
 import playerwatch.heroes.Ana;
@@ -8,6 +9,8 @@ import playerwatch.heroes.Genji;
 import playerwatch.heroes.Roadhog;
 import playerwatch.heroes.Hero;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -30,11 +33,13 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.json.simple.parser.ParseException;
 import playerwatch.heroes.Hanzo;
 import playerwatch.heroes.JunkRat;
 import playerwatch.heroes.Lucio;
 import playerwatch.heroes.McCree;
 import playerwatch.heroes.Mei;
+import playerwatch.heroes.Mercy;
 import playerwatch.heroes.Pharah;
 import playerwatch.heroes.Reaper;
 import playerwatch.heroes.Reinhardt;
@@ -72,6 +77,12 @@ public class Playerwatch extends Application {
     //The primary stage of the application
     Stage primaryStage;
 
+    Login battle;
+
+    BorderPane loginPane;
+
+    ArrayList<Hero> allHeroesArray;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 
@@ -93,12 +104,11 @@ public class Playerwatch extends Application {
     private Scene loginScene() {
 
         //pane for login screen
-        BorderPane loginPane = new BorderPane();
+        loginPane = new BorderPane();
         loginPane.setId("loginPane");
 
         //set the center and bottom of the loginPane
         setLoginCenter(loginPane);
-        setLoginBottom(loginPane);
 
         //scene of the login pane
         Scene loginScene = new Scene(loginPane, 380, 380);
@@ -161,6 +171,8 @@ public class Playerwatch extends Application {
         txtBattleTag.setId("BattleTag");
         txtBattleTag.setMaxWidth(200);
 
+        battle = new Login();
+
         //constrain txtBattleTag for layout alignment
         GridPane.setConstraints(txtBattleTag, 2, 2);
 
@@ -170,7 +182,116 @@ public class Playerwatch extends Application {
         GridPane.setConstraints(btnGeneralScene, 4, 2);
         //ActionEvent, change the scene of the primary stage to the generalPane
         btnGeneralScene.setOnAction((ActionEvent e) -> {
-            primaryStage.setScene(generalScene());
+
+            if ("Original-1425".equals(txtBattleTag.getText())) {
+                try {
+                    battle.login(txtBattleTag.getText());
+                } catch (IOException | ParseException ex) {
+                    Logger.getLogger(Playerwatch.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                //Create instances of every hero, set the stats of every hero
+                Ana ana = new Ana();
+                Bastion bastion = new Bastion();
+                DVa dva = new DVa();
+                Genji genji = new Genji();
+                Hanzo hanzo = new Hanzo();
+                JunkRat junkRat = new JunkRat();
+                Lucio lucio = new Lucio();
+                McCree mcCree = new McCree();
+                Mei mei = new Mei();
+                Mercy mercy = new Mercy();
+                Pharah pharah = new Pharah();
+                Reaper reaper = new Reaper();
+                Reinhardt reinhardt = new Reinhardt();
+                Roadhog roadHog = new Roadhog();
+                Soldier76 soldier76 = new Soldier76();
+                Sombra sombra = new Sombra();
+                Symmetra symmetra = new Symmetra();
+                Torbjorn torbjorn = new Torbjorn();
+                Tracer tracer = new Tracer();
+                Widowmaker widowmaker = new Widowmaker();
+                Winston winston = new Winston();
+                Zarya zarya = new Zarya();
+                Zenyatta zenyatta = new Zenyatta();
+
+                battle.initializeStats(ana, bastion, dva, genji, hanzo, mei, junkRat, lucio, mcCree, mei, mercy, pharah, reaper, reinhardt, roadHog, soldier76, sombra, symmetra, torbjorn, tracer, widowmaker, winston, zarya, zenyatta);
+                //set the labels for each instance of every hero, unique and general
+                ana.labels();
+                ana.generalLabels();
+                bastion.labels();
+                bastion.generalLabels();
+                dva.labels();
+                dva.generalLabels();
+                genji.labels();
+                genji.generalLabels();
+                hanzo.labels();
+                hanzo.generalLabels();
+                junkRat.labels();
+                junkRat.generalLabels();
+                lucio.labels();
+                lucio.generalLabels();
+                mcCree.labels();
+                mcCree.generalLabels();
+                mei.labels();
+                mei.generalLabels();
+                pharah.labels();
+                pharah.generalLabels();
+                reaper.labels();
+                reaper.generalLabels();
+                reinhardt.labels();
+                reinhardt.generalLabels();
+                roadHog.labels();
+                roadHog.generalLabels();
+                soldier76.labels();
+                soldier76.generalLabels();
+                sombra.labels();
+                sombra.generalLabels();
+                symmetra.labels();
+                symmetra.generalLabels();
+                torbjorn.labels();
+                torbjorn.generalLabels();
+                tracer.labels();
+                tracer.generalLabels();
+                widowmaker.labels();
+                widowmaker.generalLabels();
+                winston.labels();
+                winston.generalLabels();
+                zarya.labels();
+                zarya.generalLabels();
+                zenyatta.labels();
+                zenyatta.generalLabels();
+
+                //create arraylist to store all of the heroes, add to arraylist
+                allHeroesArray = new ArrayList<>();
+                allHeroesArray.add(ana);
+                allHeroesArray.add(bastion);
+                allHeroesArray.add(dva);
+                allHeroesArray.add(genji);
+                allHeroesArray.add(hanzo);
+                allHeroesArray.add(junkRat);
+                allHeroesArray.add(lucio);
+                allHeroesArray.add(mcCree);
+                allHeroesArray.add(mei);
+                allHeroesArray.add(pharah);
+                allHeroesArray.add(reaper);
+                allHeroesArray.add(reinhardt);
+                allHeroesArray.add(roadHog);
+                allHeroesArray.add(soldier76);
+                allHeroesArray.add(sombra);
+                allHeroesArray.add(symmetra);
+                allHeroesArray.add(torbjorn);
+                allHeroesArray.add(tracer);
+                allHeroesArray.add(widowmaker);
+                allHeroesArray.add(winston);
+                allHeroesArray.add(zarya);
+                allHeroesArray.add(zenyatta);
+
+                primaryStage.setScene(generalScene());
+            } else {
+
+                setLoginBottom(loginPane);
+            }
         });
 
         //add txtBattleTag and btnGeneralScene to the centerPane
@@ -184,13 +305,11 @@ public class Playerwatch extends Application {
     //bottom for login pane
     private void setLoginBottom(BorderPane main) {
         //label for invalid Battle.net ID input from user
-        //if(txtBattleTag.getText() != ){
         loginError = new Label("Entered an invalid Battle.net ID");
         loginError.setStyle("-fx-font:20 Arial; -fx-text-fill:RED;");
         BorderPane.setAlignment(loginError, Pos.CENTER);
         main.setBottom(loginError);
-        //}
-        
+
     }
 
     private void setGeneralCenter(BorderPane main) {
@@ -282,11 +401,8 @@ public class Playerwatch extends Application {
             primaryStage.setScene(heroStatsScene());
         });
 
-        //button to go to tips and tricks scene
-        Button btnTips = new Button("Tips and Tricks");
-
-        //add buttons to hBox
-        hBox.getChildren().addAll(btnStats, btnTips);
+        //add button to hBox
+        hBox.getChildren().addAll(btnStats);
 
         //set bottom of BorderPane to hBox
         main.setBottom(hBox);
@@ -304,120 +420,6 @@ public class Playerwatch extends Application {
         //Vbox to store label and scrollpane of chosen hero stats
         VBox statBox = new VBox(10);
         statBox.setPadding(new Insets(10));
-
-        //Create instances of every hero, create labels for unique stats and general stats
-        Ana ana = new Ana();
-        ana.labels();
-        ana.generalLabels();
-        
-        Bastion bastion = new Bastion();
-        bastion.labels();
-        bastion.generalLabels();
-        
-        DVa dva = new DVa();
-        dva.labels();
-        dva.generalLabels();
-        
-        Genji genji = new Genji();
-        genji.labels();
-        genji.generalLabels();
-        
-        Hanzo hanzo = new Hanzo();
-        hanzo.labels();
-        hanzo.generalLabels();
-        
-        JunkRat junkRat = new JunkRat();
-        junkRat.labels();
-        junkRat.generalLabels();
-        
-        Lucio lucio = new Lucio();
-        lucio.labels();
-        lucio.generalLabels();
-        
-        McCree mcCree = new McCree();
-        mcCree.labels();
-        mcCree.generalLabels();
-        
-        Mei mei = new Mei();
-        mei.labels();
-        mei.generalLabels();
-        
-        Pharah pharah = new Pharah();
-        pharah.labels();
-        pharah.generalLabels();
-        
-        Reaper reaper = new Reaper();
-        reaper.labels();
-        reaper.generalLabels();
-        
-        Reinhardt reinhardt = new Reinhardt();
-        reinhardt.labels();
-        reinhardt.generalLabels();
-        
-        Roadhog roadHog = new Roadhog();
-        roadHog.labels();
-        roadHog.generalLabels();
-        
-        Soldier76 soldier76 = new Soldier76();
-        soldier76.labels();
-        soldier76.generalLabels();
-        
-        Sombra sombra = new Sombra();
-        sombra.labels();
-        sombra.generalLabels();
-        
-        Symmetra symmetra = new Symmetra();
-        symmetra.labels();
-        symmetra.generalLabels();
-        
-        Torbjorn torbjorn = new Torbjorn();
-        torbjorn.labels();
-        torbjorn.generalLabels();
-        
-        Tracer tracer = new Tracer();
-        tracer.labels();
-        tracer.generalLabels();
-        
-        Widowmaker widowmaker = new Widowmaker();
-        widowmaker.labels();
-        widowmaker.generalLabels();
-        
-        Winston winston = new Winston();
-        winston.labels();
-        winston.generalLabels();
-        
-        Zarya zarya = new Zarya();
-        zarya.labels();
-        zarya.generalLabels();
-        
-        Zenyatta zenyatta = new Zenyatta();
-        zenyatta.labels();
-        zenyatta.generalLabels();
-
-        //create arraylist to store all of the heroes, add to arraylist
-        ArrayList<Hero> allHeroesArray = new ArrayList<>();
-        allHeroesArray.add(ana);
-        allHeroesArray.add(bastion);
-        allHeroesArray.add(dva);
-        allHeroesArray.add(genji);
-        allHeroesArray.add(hanzo);
-        allHeroesArray.add(junkRat);
-        allHeroesArray.add(lucio);
-        allHeroesArray.add(mcCree);
-        allHeroesArray.add(mei);
-        allHeroesArray.add(pharah);
-        allHeroesArray.add(reaper);
-        allHeroesArray.add(reinhardt);
-        allHeroesArray.add(roadHog);
-        allHeroesArray.add(soldier76);
-        allHeroesArray.add(sombra);
-        allHeroesArray.add(symmetra);
-        allHeroesArray.add(torbjorn);
-        allHeroesArray.add(tracer);
-        allHeroesArray.add(widowmaker);
-        allHeroesArray.add(winston);
-        allHeroesArray.add(zarya);
-        allHeroesArray.add(zenyatta);
 
         //Label describing ListView below
         Label chooseHero = new Label("Choose your hero!");
@@ -463,6 +465,11 @@ public class Playerwatch extends Application {
 
         }
         );
+
+        Button btnReturn = new Button("Back");
+        btnReturn.setOnAction((ActionEvent e) -> {
+            primaryStage.setScene(generalScene());
+        });
 
         //add the statPage label and the scrollStats scroll pane to the VBox statBox
         statBox.getChildren().addAll(statPage, scrollStats);
