@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import javafx.scene.control.Label;
 
 /**
- *
+ * Class to create JunkRat hero
+ * 
  * @author Michael Lyn
  */
 public class JunkRat extends Hero {
@@ -60,11 +61,6 @@ public class JunkRat extends Hero {
     public double getRiptireKillsMostGame() {
         return riptireKillsMostGame;
     }
-
-    public ArrayList<Label> getJunkRatLabels() {
-        return junkRatLabels;
-    }
-    
     
     @Override
     public String toString() {

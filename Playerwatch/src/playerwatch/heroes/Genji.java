@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javafx.scene.control.Label;
 
 /**
+ * Class to create Genji hero
  *
  * @author Michael Lyn
  */
@@ -27,14 +28,20 @@ public class Genji extends Hero {
     Label lblDragonblades;
     ArrayList<Label> genjiLabels;
 
+    /**
+     * Genji constructor, pass hero's name
+     */
     public Genji() {
 
         //hero's name
         super.name = "Genji";
- 
+
     }
-    
-    public void labels(){
+
+    /**
+     * Method to generate labels of Genji unique stats
+     */
+    public void labels() {
         //array list of labels for variables of Genji
         genjiLabels = new ArrayList<>();
         genjiLabels.add(lblDamageReflected = new Label("Damage Reflected: " + damageReflected));
@@ -47,35 +54,74 @@ public class Genji extends Hero {
         super.uniqueLabels = genjiLabels;
     }
 
+    /**
+     * set Genji damageReflected
+     *
+     * @param damageReflected
+     */
     public void setDamageReflected(double damageReflected) {
         this.damageReflected = damageReflected;
     }
 
+    /**
+     * set Genji damageReflectedAverage
+     *
+     * @param damageReflectedAverage
+     */
     public void setDamageReflectedAverage(double damageReflectedAverage) {
         this.damageReflectedAverage = damageReflectedAverage;
     }
 
+    /**
+     * set Genji damageReflectedMostGame
+     *
+     * @param damageReflectedMostGame
+     */
     public void setDamageReflectedMostGame(double damageReflectedMostGame) {
         this.damageReflectedMostGame = damageReflectedMostGame;
     }
 
+    /**
+     * set Genji dragonbladeKills
+     *
+     * @param dragonbladeKills
+     */
     public void setDragonbladeKills(double dragonbladeKills) {
         this.dragonbladeKills = dragonbladeKills;
     }
 
+    /**
+     * set Genji dragonbladeKillsAverage
+     *
+     * @param dragonbladeKillsAverage
+     */
     public void setDragonbladeKillsAverage(double dragonbladeKillsAverage) {
         this.dragonbladeKillsAverage = dragonbladeKillsAverage;
     }
 
+    /**
+     * set Genji dragonbladeKillsMostGame
+     *
+     * @param dragonbladeKillsMostGame
+     */
     public void setDragonbladeKillsMostGame(double dragonbladeKillsMostGame) {
         this.dragonbladeKillsMostGame = dragonbladeKillsMostGame;
     }
 
+    /**
+     * set Genji dragonblades
+     *
+     * @param dragonblades
+     */
     public void setDragonblades(double dragonblades) {
         this.dragonblades = dragonblades;
     }
 
-    
+    /**
+     * Override toString() method
+     *
+     * @return name - hero's name
+     */
     @Override
     public String toString() {
         return name;

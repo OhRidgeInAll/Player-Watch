@@ -5,7 +5,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 /**
- *
+ * Class that extends all unique Heroes
+ * Holds all variables shared between each different Hero
+ * 
  * @author Michael Lyn
  */
 public class Hero {
@@ -22,8 +24,6 @@ public class Hero {
     double healingDone;
     double healingDoneAverage;
     double multikillBest;
-    double timeSpentonFire;
-    double timeSpentonFireAverage;
     double damageDoneAverage;
     double eliminationsAverage;
     double deaths;
@@ -46,7 +46,6 @@ public class Hero {
     Label lblMultikills;
     Label lblHealingDone;
     Label lblMultikillBest;
-    Label lblTimeSpentonFireAverage;
     Label lblSoloKillsAverage;
     Label lblObjectiveKillsAverage;
     Label lblHealingDoneAverage;
@@ -57,7 +56,6 @@ public class Hero {
     Label lblEnvironmentalDeaths;
     Label lblGamesPlayed;
     Label lblGamesWon;
-    Label lblTimeSpentonFire;
     Label lblTimePlayed;
     Label lblGamesTied;
     Label lblGamesLost;
@@ -70,18 +68,32 @@ public class Hero {
     ArrayList<Label> heroLabels;
     ArrayList<Label> uniqueLabels;
 
+    /**
+     * get the uniqueLabels of each hero, variables unique to the hero
+     * @return 
+     */
     public ArrayList<Label> getUniqueLabels() {
         return uniqueLabels;
     }
 
+    /**
+     * get the heroLabels of each hero, variables shared between heroes
+     * @return 
+     */
     public ArrayList<Label> getHeroLabels() {
         return heroLabels;
     }
 
+    /**
+     * Hero constructor, set's name of instance as HERO
+     */
     public Hero() {
         this.name = "HERO";
     }
 
+    /**
+     * Method to generate labels of variables shared between heroes
+     */
     public void generalLabels(){
 
         heroLabels = new ArrayList<>();
@@ -91,7 +103,6 @@ public class Hero {
         heroLabels.add(lblMultikills = new Label("Multi-Kills: " + multikills));
         heroLabels.add(lblHealingDone = new Label("Headling Done: " + healingDone));
         heroLabels.add(lblMultikillBest = new Label("Multi-Kills Best: " + multikillBest));
-        heroLabels.add(lblTimeSpentonFireAverage = new Label("Time Spent on Fire Average: " + timeSpentonFireAverage));
         heroLabels.add(lblSoloKillsAverage = new Label("Solo Kills Average: " + soloKillsAverage));
         heroLabels.add(lblObjectiveKillsAverage = new Label("Objective Kills Average: " + objectiveKillsAverage));
         heroLabels.add(lblHealingDoneAverage = new Label("Healing Done Average: " + healingDoneAverage));
@@ -102,7 +113,6 @@ public class Hero {
         heroLabels.add(lblEnvironmentalDeaths = new Label("Environmental Deaths: " + environmentalDeaths));
         heroLabels.add(lblGamesPlayed = new Label("Games Played: " + gamesPlayed));
         heroLabels.add(lblGamesWon = new Label("Games Won: " + gamesWon));
-        heroLabels.add(lblTimeSpentonFire = new Label("Time Spent on Fire: " + timeSpentonFire));
         heroLabels.add(lblTimePlayed = new Label("Time Played: " + timePlayed));
         heroLabels.add(lblGamesTied = new Label("Games Tied: " + gamesTied));
         heroLabels.add(lblGamesLost = new Label("Games Lost: " + gamesLost));
@@ -114,110 +124,194 @@ public class Hero {
         this.heroLabels = heroLabels;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    /**
+     * set Hero soloKills
+     * @param soloKills 
+     */
     public void setSoloKills(double soloKills) {
         this.soloKills = soloKills;
     }
 
+    /**
+     * set Hero soloKillsAverage
+     * @param soloKillsAverage 
+     */
     public void setSoloKillsAverage(double soloKillsAverage) {
         this.soloKillsAverage = soloKillsAverage;
     }
 
+    /**
+     * set Hero objectiveKills
+     * @param objectiveKills 
+     */
     public void setObjectiveKills(double objectiveKills) {
         this.objectiveKills = objectiveKills;
     }
 
+    /**
+     * set Hero objectiveKillsAverage
+     * @param objectiveKillsAverage 
+     */
     public void setObjectiveKillsAverage(double objectiveKillsAverage) {
         this.objectiveKillsAverage = objectiveKillsAverage;
     }
 
+    /**
+     * set Hero eliminations
+     * @param eliminations 
+     */
     public void setEliminations(double eliminations) {
         this.eliminations = eliminations;
     }
 
+    /**
+     * set Hero multikills
+     * @param multikills 
+     */
     public void setMultikills(double multikills) {
         this.multikills = multikills;
     }
 
+    /**
+     * set Hero healingDone
+     * @param healingDone 
+     */
     public void setHealingDone(double healingDone) {
         this.healingDone = healingDone;
     }
 
+    /**
+     * set Hero healingDoneAverage
+     * @param healingDoneAverage 
+     */
     public void setHealingDoneAverage(double healingDoneAverage) {
         this.healingDoneAverage = healingDoneAverage;
     }
 
+    /**
+     * set Hero multikillBest
+     * @param multikillBest 
+     */
     public void setMultikillBest(double multikillBest) {
         this.multikillBest = multikillBest;
     }
 
-    public void setTimeSpentonFire(double timeSpentonFire) {
-        this.timeSpentonFire = timeSpentonFire;
-    }
-
-    public void setTimeSpentonFireAverage(double timeSpentonFireAverage) {
-        this.timeSpentonFireAverage = timeSpentonFireAverage;
-    }
-
+    /**
+     * set Hero damageDoneAverage
+     * @param damageDoneAverage 
+     */
     public void setDamageDoneAverage(double damageDoneAverage) {
         this.damageDoneAverage = damageDoneAverage;
     }
 
+    /**
+     * set Hero eliminationsAverage
+     * @param eliminationsAverage 
+     */
     public void setEliminationsAverage(double eliminationsAverage) {
         this.eliminationsAverage = eliminationsAverage;
     }
 
+    /**
+     * set Hero deaths
+     * @param deaths 
+     */
     public void setDeaths(double deaths) {
         this.deaths = deaths;
     }
 
+    /**
+     * set Hero deathsAverage
+     * @param deathsAverage 
+     */
     public void setDeathsAverage(double deathsAverage) {
         this.deathsAverage = deathsAverage;
     }
 
+    /**
+     * set Hero environmentalDeaths
+     * @param environmentalDeaths 
+     */
     public void setEnvironmentalDeaths(double environmentalDeaths) {
         this.environmentalDeaths = environmentalDeaths;
     }
 
+    /**
+     * set Hero gamesPlayed
+     * @param gamesPlayed 
+     */
     public void setGamesPlayed(double gamesPlayed) {
         this.gamesPlayed = gamesPlayed;
     }
 
+    /**
+     * set Hero gamesWon
+     * @param gamesWon 
+     */
     public void setGamesWon(double gamesWon) {
         this.gamesWon = gamesWon;
     }
 
+    /**
+     * set Hero timePlayed
+     * @param timePlayed 
+     */
     public void setTimePlayed(double timePlayed) {
         this.timePlayed = timePlayed;
     }
 
+    /**
+     * set Hero gamesTied
+     * @param gamesTied 
+     */
     public void setGamesTied(double gamesTied) {
         this.gamesTied = gamesTied;
     }
 
+    /**
+     * set Hero gamesLost
+     * @param gamesLost 
+     */
     public void setGamesLost(double gamesLost) {
         this.gamesLost = gamesLost;
     }
 
+    /**
+     * set Hero weaponAccuracy
+     * @param weaponAccuracy 
+     */
     public void setWeaponAccuracy(double weaponAccuracy) {
         this.weaponAccuracy = weaponAccuracy;
     }
 
+    /**
+     * set Hero winPercetage
+     * @param winPercentage 
+     */
     public void setWinPercentage(double winPercentage) {
         this.winPercentage = winPercentage;
     }
 
+    /**
+     * set Hero killStreakBest
+     * @param killStreakBest 
+     */
     public void setKillStreakBest(double killStreakBest) {
         this.killStreakBest = killStreakBest;
     }
 
+    /**
+     * set Hero criticalHits
+     * @param criticalHits 
+     */
     public void setCriticalHits(double criticalHits) {
         this.criticalHits = criticalHits;
     }
 
+    /**
+     * set Hero criticalHitAccuracy
+     * @param criticalHitAccuracy 
+     */
     public void setCriticalHitAccuracy(double criticalHitAccuracy) {
         this.criticalHitAccuracy = criticalHitAccuracy;
     }

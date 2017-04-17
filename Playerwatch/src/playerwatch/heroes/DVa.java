@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import javafx.scene.control.Label;
 
 /**
- *
+ * Class to create D.Va hero
+ * 
  * @author Michael Lyn
  */
 public class DVa extends Hero {
@@ -33,6 +34,9 @@ public class DVa extends Hero {
     Label lblselfDestructKillsMostGame;
     ArrayList<Label> dvaLabels;
 
+    /**
+     * DVa constructor, pass name to hero class
+     */
     public DVa() {
 
         //hero's name
@@ -40,6 +44,9 @@ public class DVa extends Hero {
 
     }
 
+    /**
+     * Method to generate labels of DVa unique stats
+     */
     public void labels() {
         //array list of labels for variables of DVa
         dvaLabels = new ArrayList<>();
@@ -56,48 +63,82 @@ public class DVa extends Hero {
         super.uniqueLabels = dvaLabels;
     }
 
+    /**
+     * set DVa damageBlocked
+     * @param damageBlocked 
+     */
     public void setDamageBlocked(double damageBlocked) {
         this.damageBlocked = damageBlocked;
     }
 
+    /**
+     * set DVa damageBlockedAverage
+     * @param damageBlockedAverage 
+     */
     public void setDamageBlockedAverage(double damageBlockedAverage) {
         this.damageBlockedAverage = damageBlockedAverage;
     }
 
+    /**
+     * set DVa damageBlockedMostGame
+     * @param damageBlockedMostGame 
+     */
     public void setDamageBlockedMostGame(double damageBlockedMostGame) {
         this.damageBlockedMostGame = damageBlockedMostGame;
     }
 
+    /**
+     * set DVa mechDeaths
+     * @param mechDeaths 
+     */
     public void setMechDeaths(double mechDeaths) {
         this.mechDeaths = mechDeaths;
     }
 
+    /**
+     * set DVa mechCalled
+     * @param mechCalled 
+     */
     public void setMechCalled(double mechCalled) {
         this.mechCalled = mechCalled;
     }
 
+    /**
+     * set DVa mechCalledAverage
+     * @param mechCalledAverage 
+     */
     public void setMechCalledAverage(double mechCalledAverage) {
         this.mechCalledAverage = mechCalledAverage;
     }
 
+    /**
+     * set DVa mechCalledMostGame
+     * @param mechCalledMostGame 
+     */
     public void setMechCalledMostGame(double mechCalledMostGame) {
         this.mechCalledMostGame = mechCalledMostGame;
     }
 
+    /**
+     * set DVa selfDestructKills
+     * @param selfDestructKills 
+     */
     public void setSelfDestructKills(double selfDestructKills) {
         this.selfDestructKills = selfDestructKills;
     }
 
+    /**
+     * set DVA selfDestructKillsMostGame
+     * @param selfDestructKillsMostGame 
+     */
     public void setSelfDestructKillsMostGame(double selfDestructKillsMostGame) {
         this.selfDestructKillsMostGame = selfDestructKillsMostGame;
     }
 
-    public void setDvaLabels(ArrayList<Label> dvaLabels) {
-        this.dvaLabels = dvaLabels;
-    }
-    
-    
-
+    /**
+     * Override toString() method
+     * @return name - hero's name
+     */
     @Override
     public String toString() {
         return name;

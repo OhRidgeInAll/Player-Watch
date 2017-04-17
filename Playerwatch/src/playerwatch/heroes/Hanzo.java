@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javafx.scene.control.Label;
 
 /**
+ * Class to create Hanzo hero
  *
  * @author Michael Lyn
  */
@@ -25,6 +26,9 @@ public class Hanzo extends Hero {
     Label lblScatterArrowKillsMostGame;
     ArrayList<Label> hanzoLabels;
 
+    /**
+     * Hanzo constructor, pass name to hero class
+     */
     public Hanzo() {
 
         //hero's name
@@ -32,6 +36,9 @@ public class Hanzo extends Hero {
 
     }
 
+    /**
+     * Method to generate labels of Hanzo unique stats
+     */
     public void labels() {
         //array list of labels for variables of Hanzo
         hanzoLabels = new ArrayList<>();
@@ -44,31 +51,65 @@ public class Hanzo extends Hero {
         super.uniqueLabels = hanzoLabels;
     }
 
+    /**
+     * set Hanzo dragonstrikeKills
+     *
+     * @param dragonstrikeKills
+     */
     public void setDragonstrikeKills(double dragonstrikeKills) {
         this.dragonstrikeKills = dragonstrikeKills;
     }
 
+    /**
+     * set Hanzo dragonstrikeKillsAverage
+     *
+     * @param dragonstrikeKillsAverage
+     */
     public void setDragonstrikeKillsAverage(double dragonstrikeKillsAverage) {
         this.dragonstrikeKillsAverage = dragonstrikeKillsAverage;
     }
 
+    /**
+     * set Hanzo dragonstrikeKillsMostGame
+     *
+     * @param dragonstrikeKillsMostGame
+     */
     public void setDragonstrikeKillsMostGame(double dragonstrikeKillsMostGame) {
         this.dragonstrikeKillsMostGame = dragonstrikeKillsMostGame;
     }
 
+    /**
+     * set Hanzo scatterArrowKills
+     *
+     * @param scatterArrowKills
+     */
     public void setScatterArrowKills(double scatterArrowKills) {
         this.scatterArrowKills = scatterArrowKills;
     }
 
+    /**
+     * set Hanzo scatterArrowKillsAverage
+     *
+     * @param scatterArrowKillsAverage
+     */
     public void setScatterArrowKillsAverage(double scatterArrowKillsAverage) {
         this.scatterArrowKillsAverage = scatterArrowKillsAverage;
     }
 
+    /**
+     * set Hanzo scatterArrowKillsMostGame
+     *
+     * @param scatterArrowKillsMostGame
+     */
     public void setScatterArrowKillsMostGame(double scatterArrowKillsMostGame) {
         this.scatterArrowKillsMostGame = scatterArrowKillsMostGame;
     }
 
-    
+    /**
+     * Override toString() method
+     *
+     * @return name - hero's name
+     */
     @Override
     public String toString() {
         return name;
