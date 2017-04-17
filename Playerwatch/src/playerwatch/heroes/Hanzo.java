@@ -10,12 +10,12 @@ import javafx.scene.control.Label;
 public class Hanzo extends Hero {
 
     //variables unqiue to Hanzo
-    String dragonstrikeKills;
-    String dragonstrikeKillsAverage;
-    String dragonstrikeKillsMostGame;
-    String scatterArrowKills;
-    String scatterArrowKillsAverage;
-    String scatterArrowKillsMostGame;
+    double dragonstrikeKills;
+    double dragonstrikeKillsAverage;
+    double dragonstrikeKillsMostGame;
+    double scatterArrowKills;
+    double scatterArrowKillsAverage;
+    double scatterArrowKillsMostGame;
     //labels to display variables of Hanzo
     Label lblDragonstrikeKills;
     Label lblDragonstrikeKillsAverage;
@@ -29,13 +29,10 @@ public class Hanzo extends Hero {
 
         //hero's name
         super.name = "Hanzo";
-        //set variables unqiue to Hanzo
-        this.dragonstrikeKills = "11";
-        this.dragonstrikeKillsAverage = "11";
-        this.dragonstrikeKillsMostGame = "11";
-        this.scatterArrowKills = "11";
-        this.scatterArrowKillsAverage = "11";
-        this.scatterArrowKillsMostGame = "11";
+
+    }
+
+    public void labels() {
         //array list of labels for variables of Hanzo
         hanzoLabels = new ArrayList<>();
         hanzoLabels.add(lblDragonstrikeKills = new Label("Dragonstrike Kills: " + dragonstrikeKills));
@@ -47,6 +44,31 @@ public class Hanzo extends Hero {
         super.uniqueLabels = hanzoLabels;
     }
 
+    public void setDragonstrikeKills(double dragonstrikeKills) {
+        this.dragonstrikeKills = dragonstrikeKills;
+    }
+
+    public void setDragonstrikeKillsAverage(double dragonstrikeKillsAverage) {
+        this.dragonstrikeKillsAverage = dragonstrikeKillsAverage;
+    }
+
+    public void setDragonstrikeKillsMostGame(double dragonstrikeKillsMostGame) {
+        this.dragonstrikeKillsMostGame = dragonstrikeKillsMostGame;
+    }
+
+    public void setScatterArrowKills(double scatterArrowKills) {
+        this.scatterArrowKills = scatterArrowKills;
+    }
+
+    public void setScatterArrowKillsAverage(double scatterArrowKillsAverage) {
+        this.scatterArrowKillsAverage = scatterArrowKillsAverage;
+    }
+
+    public void setScatterArrowKillsMostGame(double scatterArrowKillsMostGame) {
+        this.scatterArrowKillsMostGame = scatterArrowKillsMostGame;
+    }
+
+    
     @Override
     public String toString() {
         return name;

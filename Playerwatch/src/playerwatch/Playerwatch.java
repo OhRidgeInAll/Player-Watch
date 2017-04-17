@@ -172,7 +172,7 @@ public class Playerwatch extends Application {
         btnGeneralScene.setOnAction((ActionEvent e) -> {
             primaryStage.setScene(generalScene());
         });
-        
+
         //add txtBattleTag and btnGeneralScene to the centerPane
         centerPane.getChildren().addAll(txtBattleTag, btnGeneralScene);
 
@@ -184,11 +184,13 @@ public class Playerwatch extends Application {
     //bottom for login pane
     private void setLoginBottom(BorderPane main) {
         //label for invalid Battle.net ID input from user
+        //if(txtBattleTag.getText() != ){
         loginError = new Label("Entered an invalid Battle.net ID");
         loginError.setStyle("-fx-font:20 Arial; -fx-text-fill:RED;");
         BorderPane.setAlignment(loginError, Pos.CENTER);
-
         main.setBottom(loginError);
+        //}
+        
     }
 
     private void setGeneralCenter(BorderPane main) {
@@ -303,29 +305,94 @@ public class Playerwatch extends Application {
         VBox statBox = new VBox(10);
         statBox.setPadding(new Insets(10));
 
-        //Create instances of every hero
-        Hero ana = new Ana();
-        Hero bastion = new Bastion();
-        Hero dva = new DVa();
-        Hero genji = new Genji();
-        Hero hanzo = new Hanzo();
-        Hero junkRat = new JunkRat();
-        Hero lucio = new Lucio();
-        Hero mcCree = new McCree();
-        Hero mei = new Mei();
-        Hero pharah = new Pharah();
-        Hero reaper = new Reaper();
-        Hero reinhardt = new Reinhardt();
-        Hero roadHog = new Roadhog();
-        Hero soldier76 = new Soldier76();
-        Hero sombra = new Sombra();
-        Hero symmetra = new Symmetra();
-        Hero torbjorn = new Torbjorn();
-        Hero tracer = new Tracer();
-        Hero widowmaker = new Widowmaker();
-        Hero winston = new Winston();
-        Hero zarya = new Zarya();
-        Hero zenyatta = new Zenyatta();
+        //Create instances of every hero, create labels for unique stats and general stats
+        Ana ana = new Ana();
+        ana.labels();
+        ana.generalLabels();
+        
+        Bastion bastion = new Bastion();
+        bastion.labels();
+        bastion.generalLabels();
+        
+        DVa dva = new DVa();
+        dva.labels();
+        dva.generalLabels();
+        
+        Genji genji = new Genji();
+        genji.labels();
+        genji.generalLabels();
+        
+        Hanzo hanzo = new Hanzo();
+        hanzo.labels();
+        hanzo.generalLabels();
+        
+        JunkRat junkRat = new JunkRat();
+        junkRat.labels();
+        junkRat.generalLabels();
+        
+        Lucio lucio = new Lucio();
+        lucio.labels();
+        lucio.generalLabels();
+        
+        McCree mcCree = new McCree();
+        mcCree.labels();
+        mcCree.generalLabels();
+        
+        Mei mei = new Mei();
+        mei.labels();
+        mei.generalLabels();
+        
+        Pharah pharah = new Pharah();
+        pharah.labels();
+        pharah.generalLabels();
+        
+        Reaper reaper = new Reaper();
+        reaper.labels();
+        reaper.generalLabels();
+        
+        Reinhardt reinhardt = new Reinhardt();
+        reinhardt.labels();
+        reinhardt.generalLabels();
+        
+        Roadhog roadHog = new Roadhog();
+        roadHog.labels();
+        roadHog.generalLabels();
+        
+        Soldier76 soldier76 = new Soldier76();
+        soldier76.labels();
+        soldier76.generalLabels();
+        
+        Sombra sombra = new Sombra();
+        sombra.labels();
+        sombra.generalLabels();
+        
+        Symmetra symmetra = new Symmetra();
+        symmetra.labels();
+        symmetra.generalLabels();
+        
+        Torbjorn torbjorn = new Torbjorn();
+        torbjorn.labels();
+        torbjorn.generalLabels();
+        
+        Tracer tracer = new Tracer();
+        tracer.labels();
+        tracer.generalLabels();
+        
+        Widowmaker widowmaker = new Widowmaker();
+        widowmaker.labels();
+        widowmaker.generalLabels();
+        
+        Winston winston = new Winston();
+        winston.labels();
+        winston.generalLabels();
+        
+        Zarya zarya = new Zarya();
+        zarya.labels();
+        zarya.generalLabels();
+        
+        Zenyatta zenyatta = new Zenyatta();
+        zenyatta.labels();
+        zenyatta.generalLabels();
 
         //create arraylist to store all of the heroes, add to arraylist
         ArrayList<Hero> allHeroesArray = new ArrayList<>();
@@ -360,39 +427,50 @@ public class Playerwatch extends Application {
 
         //add the array of heroes to the heroList
         heroList.getItems().addAll(allHeroesArray);
-        //add chooseHero and heroList to heroBox
+        //add chooseHero and heroList to the heroBox
         heroBox.getChildren().addAll(chooseHero, heroList);
 
+        //Label describing the ScrollPane below
         Label statPage = new Label("Hero Stats");
         statPage.setStyle("-fx-font:20 Impact; -fx-text-fill:WHITE;");
         //Scroll pane to go through hero stats of hero chosen
         ScrollPane scrollStats = new ScrollPane();
+        //VBox to contain the labels with stat names and variables
         VBox statLabels = new VBox(10);
         statLabels.setPadding(new Insets(5));
 
+        //add a listener to change values of the statLabels based upon heroList value chosen
         heroList.getSelectionModel().selectedItemProperty().addListener(
                 new ChangeListener<Hero>() {
-
+            //Label to state end of stats page, also used as variable to clear statLabels on change
             Label endOfStats = new Label("You've reached the end of the Stats page!");
 
             @Override
             public void changed(ObservableValue<? extends Hero> ov, Hero oldValue, Hero newValue) {
+                //if there the endOfStats label, clear the statLabels VBox
                 if (statLabels.getChildren().contains(endOfStats)) {
                     statLabels.getChildren().clear();
                 }
+                //add the ArrayList of labels unique to the hero first
                 statLabels.getChildren().addAll(newValue.getUniqueLabels());
+                //add the ArrayList of labels that are shared between heroes
                 statLabels.getChildren().addAll(newValue.getHeroLabels());
+                //add the endOfStats label
                 statLabels.getChildren().add(endOfStats);
+                //set the content of the scrollStats as the VBox statLabels
                 scrollStats.setContent(statLabels);
             }
 
         }
         );
 
+        //add the statPage label and the scrollStats scroll pane to the VBox statBox
         statBox.getChildren().addAll(statPage, scrollStats);
 
+        //add heroBox and statBox to hBox for alignment
         hBox.getChildren().addAll(heroBox, statBox);
 
+        //set the center of BorderPane main to hBox
         main.setCenter(hBox);
 
     }

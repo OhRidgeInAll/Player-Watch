@@ -10,16 +10,16 @@ import javafx.scene.control.Label;
 public class DVa extends Hero {
 
     //variables unqiue to DVa
-    String damageBlocked;
-    String damageBlockedAverage;
-    String damageBlockedMostGame;
-    String mechDeaths;
-    String mechCalled;
-    String mechCalledAverage;
-    String mechCalledMostGame;
-    String selfDestructKills;
-    String selfDestructKillsAverage;
-    String selfDestructKillsMostGame;
+    double damageBlocked;
+    double damageBlockedAverage;
+    double damageBlockedMostGame;
+    double mechDeaths;
+    double mechCalled;
+    double mechCalledAverage;
+    double mechCalledMostGame;
+    double selfDestructKills;
+    double selfDestructKillsAverage;
+    double selfDestructKillsMostGame;
     //labels to display variables of DVa
     Label lblDamageBlocked;
     Label lblDamageBlockedAverage;
@@ -37,17 +37,10 @@ public class DVa extends Hero {
 
         //hero's name
         super.name = "D.Va";
-        //set variables unqiue to DVa
-        this.damageBlocked = "1";
-        this.damageBlockedAverage = "1";
-        this.damageBlockedMostGame = "1";
-        this.mechDeaths = "1";
-        this.mechCalled = "1";
-        this.mechCalledAverage = "1";
-        this.mechCalledMostGame = "1";
-        this.selfDestructKills = "1";
-        this.selfDestructKillsAverage = "1";
-        this.selfDestructKillsMostGame = "1";
+
+    }
+
+    public void labels() {
         //array list of labels for variables of DVa
         dvaLabels = new ArrayList<>();
         dvaLabels.add(lblDamageBlocked = new Label("Damage Blocked: " + damageBlocked));
@@ -62,6 +55,48 @@ public class DVa extends Hero {
         dvaLabels.add(lblselfDestructKillsMostGame = new Label("Self Destruct Kills Most Game: " + selfDestructKillsMostGame));
         super.uniqueLabels = dvaLabels;
     }
+
+    public void setDamageBlocked(double damageBlocked) {
+        this.damageBlocked = damageBlocked;
+    }
+
+    public void setDamageBlockedAverage(double damageBlockedAverage) {
+        this.damageBlockedAverage = damageBlockedAverage;
+    }
+
+    public void setDamageBlockedMostGame(double damageBlockedMostGame) {
+        this.damageBlockedMostGame = damageBlockedMostGame;
+    }
+
+    public void setMechDeaths(double mechDeaths) {
+        this.mechDeaths = mechDeaths;
+    }
+
+    public void setMechCalled(double mechCalled) {
+        this.mechCalled = mechCalled;
+    }
+
+    public void setMechCalledAverage(double mechCalledAverage) {
+        this.mechCalledAverage = mechCalledAverage;
+    }
+
+    public void setMechCalledMostGame(double mechCalledMostGame) {
+        this.mechCalledMostGame = mechCalledMostGame;
+    }
+
+    public void setSelfDestructKills(double selfDestructKills) {
+        this.selfDestructKills = selfDestructKills;
+    }
+
+    public void setSelfDestructKillsMostGame(double selfDestructKillsMostGame) {
+        this.selfDestructKillsMostGame = selfDestructKillsMostGame;
+    }
+
+    public void setDvaLabels(ArrayList<Label> dvaLabels) {
+        this.dvaLabels = dvaLabels;
+    }
+    
+    
 
     @Override
     public String toString() {

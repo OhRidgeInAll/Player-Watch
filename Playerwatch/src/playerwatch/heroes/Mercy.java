@@ -10,15 +10,15 @@ import javafx.scene.control.Label;
 public class Mercy extends Hero {
 
     //variables unqiue to Mercy
-    String blasterKills;
-    String blasterKillsAverage;
-    String blasterKillsMostGame;
-    String playersResurrected;
-    String playersResurrectedAverage;
-    String playersResurrectedMostGame;
-    String selfHealing;
-    String selfHealingAverage;
-    String selfHealingMostGame;
+    double blasterKills;
+    double blasterKillsAverage;
+    double blasterKillsMostGame;
+    double playersResurrected;
+    double playersResurrectedAverage;
+    double playersResurrectedMostGame;
+    double selfHealing;
+    double selfHealingAverage;
+    double selfHealingMostGame;
     //labels to display variables of Mercy
     Label lblBlasterKills;
     Label lblBlasterKillsAverage;
@@ -35,17 +35,10 @@ public class Mercy extends Hero {
 
         //hero's name
         super.name = "Mercy";
-        //set variables unqiue to Mercy
-        this.blasterKills = "mermer";
-        this.blasterKillsAverage = "mermer";
-        this.blasterKillsMostGame = "mermer";
-        this.playersResurrected = "mermer";
-        this.playersResurrectedAverage = "mermer";
-        this.playersResurrectedMostGame = "mermer";
-        this.selfHealing = "mermer";
-        this.selfHealingAverage = "mermer";
-        this.selfHealingMostGame = "mermer";
 
+    }
+
+    public void labels() {
         //array list of labels for variables of Mercy
         mercyLabels = new ArrayList<>();
         mercyLabels.add(lblBlasterKills = new Label("Blaster Kills: " + blasterKills));
@@ -59,6 +52,44 @@ public class Mercy extends Hero {
         mercyLabels.add(lblSelfHealingMostGame = new Label("Self Healing Most Game: " + selfHealingMostGame));
         super.uniqueLabels = mercyLabels;
     }
+
+    public void setBlasterKills(double blasterKills) {
+        this.blasterKills = blasterKills;
+    }
+
+    public void setBlasterKillsAverage(double blasterKillsAverage) {
+        this.blasterKillsAverage = blasterKillsAverage;
+    }
+
+    public void setBlasterKillsMostGame(double blasterKillsMostGame) {
+        this.blasterKillsMostGame = blasterKillsMostGame;
+    }
+
+    public void setPlayersResurrected(double playersResurrected) {
+        this.playersResurrected = playersResurrected;
+    }
+
+    public void setPlayersResurrectedAverage(double playersResurrectedAverage) {
+        this.playersResurrectedAverage = playersResurrectedAverage;
+    }
+
+    public void setPlayersResurrectedMostGame(double playersResurrectedMostGame) {
+        this.playersResurrectedMostGame = playersResurrectedMostGame;
+    }
+
+    public void setSelfHealing(double selfHealing) {
+        this.selfHealing = selfHealing;
+    }
+
+    public void setSelfHealingAverage(double selfHealingAverage) {
+        this.selfHealingAverage = selfHealingAverage;
+    }
+
+    public void setSelfHealingMostGame(double selfHealingMostGame) {
+        this.selfHealingMostGame = selfHealingMostGame;
+    }
+    
+    
 
     @Override
     public String toString() {

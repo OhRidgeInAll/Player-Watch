@@ -10,21 +10,21 @@ import javafx.scene.control.Label;
 public class Winston extends Hero {
 
     //variables unqiue to Winston
-    String damageBlocked;
-    String damageBlockedAverage;
-    String damageBlockedMostGame;
-    String jumpPackKills;
-    String jumpPackKillsAverage;
-    String jumpPackKillsMostGame;
-    String meleeKills;
-    String meleeKillsAverage;
-    String meleeKillsMostGame;
-    String playersKnocked;
-    String playersKnockedAverage;
-    String playersKnockedMostGame;
-    String primalRageKills;
-    String primalRageKillsAverage;
-    String primalRageKillsMostGame;
+    double damageBlocked;
+    double damageBlockedAverage;
+    double damageBlockedMostGame;
+    double jumpPackKills;
+    double jumpPackKillsAverage;
+    double jumpPackKillsMostGame;
+    double meleeKills;
+    double meleeKillsAverage;
+    double meleeKillsMostGame;
+    double playersKnocked;
+    double playersKnockedAverage;
+    double playersKnockedMostGame;
+    double primalRageKills;
+    double primalRageKillsAverage;
+    double primalRageKillsMostGame;
     //labels to display variables of Winston
     Label lblDamageBlocked;
     Label lblDamageBlockedAverage;
@@ -47,23 +47,10 @@ public class Winston extends Hero {
 
         //hero's name
         super.name = "Winston";
-        //set variables unqiue to Winston
-        this.damageBlocked = "ape";
-        this.damageBlockedAverage = "ape";
-        this.damageBlockedMostGame = "ape";
-        this.jumpPackKills = "ape";
-        this.jumpPackKillsAverage = "ape";
-        this.jumpPackKillsMostGame = "ape";
-        this.meleeKills = "ape";
-        this.meleeKillsAverage = "ape";
-        this.meleeKillsMostGame = "ape";
-        this.playersKnocked = "ape";
-        this.playersKnockedAverage = "ape";
-        this.playersKnockedMostGame = "ape";
-        this.primalRageKills = "ape";
-        this.primalRageKillsAverage = "ape";
-        this.primalRageKillsMostGame = "ape";
 
+    }
+
+    public void labels(){
         //array list of labels for variables of Winston
         winstonLabels = new ArrayList<>();
         winstonLabels.add(lblDamageBlocked = new Label("Damage Blocked: " + damageBlocked));
@@ -84,6 +71,67 @@ public class Winston extends Hero {
         super.uniqueLabels = winstonLabels;
     }
 
+    public void setDamageBlocked(double damageBlocked) {
+        this.damageBlocked = damageBlocked;
+    }
+
+    public void setDamageBlockedAverage(double damageBlockedAverage) {
+        this.damageBlockedAverage = damageBlockedAverage;
+    }
+
+    public void setDamageBlockedMostGame(double damageBlockedMostGame) {
+        this.damageBlockedMostGame = damageBlockedMostGame;
+    }
+
+    public void setJumpPackKills(double jumpPackKills) {
+        this.jumpPackKills = jumpPackKills;
+    }
+
+    public void setJumpPackKillsAverage(double jumpPackKillsAverage) {
+        this.jumpPackKillsAverage = jumpPackKillsAverage;
+    }
+
+    public void setJumpPackKillsMostGame(double jumpPackKillsMostGame) {
+        this.jumpPackKillsMostGame = jumpPackKillsMostGame;
+    }
+
+    public void setMeleeKills(double meleeKills) {
+        this.meleeKills = meleeKills;
+    }
+
+    public void setMeleeKillsAverage(double meleeKillsAverage) {
+        this.meleeKillsAverage = meleeKillsAverage;
+    }
+
+    public void setMeleeKillsMostGame(double meleeKillsMostGame) {
+        this.meleeKillsMostGame = meleeKillsMostGame;
+    }
+
+    public void setPlayersKnocked(double playersKnocked) {
+        this.playersKnocked = playersKnocked;
+    }
+
+    public void setPlayersKnockedAverage(double playersKnockedAverage) {
+        this.playersKnockedAverage = playersKnockedAverage;
+    }
+
+    public void setPlayersKnockedMostGame(double playersKnockedMostGame) {
+        this.playersKnockedMostGame = playersKnockedMostGame;
+    }
+
+    public void setPrimalRageKills(double primalRageKills) {
+        this.primalRageKills = primalRageKills;
+    }
+
+    public void setPrimalRageKillsAverage(double primalRageKillsAverage) {
+        this.primalRageKillsAverage = primalRageKillsAverage;
+    }
+
+    public void setPrimalRageKillsMostGame(double primalRageKillsMostGame) {
+        this.primalRageKillsMostGame = primalRageKillsMostGame;
+    }
+    
+    
     @Override
     public String toString() {
         return name;

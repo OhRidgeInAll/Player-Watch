@@ -10,16 +10,16 @@ import javafx.scene.control.Label;
 public class Widowmaker extends Hero {
 
     //variables unqiue to Widowmaker
-    String venomMineKills;
-    String venomMineKillsAverage;
-    String venomMineKillsMostGame;
-    String reconAssistsAverage;
-    String reconAssistsMostGame;
-    String scopedAccuracy;
-    String scopedAccuracyBestGame;
-    String scopedCriticalHits;
-    String scopedCriticalHitsAverage;
-    String scopedCriticalHitsMostGame;
+    double venomMineKills;
+    double venomMineKillsAverage;
+    double venomMineKillsMostGame;
+    double reconAssistsAverage;
+    double reconAssistsMostGame;
+    double scopedAccuracy;
+    double scopedAccuracyBestGame;
+    double scopedCriticalHits;
+    double scopedCriticalHitsAverage;
+    double scopedCriticalHitsMostGame;
     //labels to display variables of Widowmaker
     Label lblVenomMineKills;
     Label lblVenomMineKillsAverage;
@@ -37,18 +37,10 @@ public class Widowmaker extends Hero {
 
         //hero's name
         super.name = "Widowmaker";
-        //set variables unqiue to Widowmaker
-        this.venomMineKills = "ven";
-        this.venomMineKillsAverage = "ven";
-        this.venomMineKillsMostGame = "ven";
-        this.reconAssistsAverage = "ven";
-        this.reconAssistsMostGame = "ven";
-        this.scopedAccuracy = "ven";
-        this.scopedAccuracyBestGame = "ven";
-        this.scopedCriticalHits = "ven";
-        this.scopedCriticalHitsAverage = "ven";
-        this.scopedCriticalHitsMostGame = "ven";
 
+    }
+
+    public void labels(){
         //array list of labels for variables of Widowmaker
         widowmakerLabels = new ArrayList<>();
         widowmakerLabels.add(lblVenomMineKills = new Label("Venom Mine Kills: " + venomMineKills));
@@ -64,6 +56,43 @@ public class Widowmaker extends Hero {
         super.uniqueLabels = widowmakerLabels;
     }
 
+    public void setVenomMineKills(double venomMineKills) {
+        this.venomMineKills = venomMineKills;
+    }
+
+    public void setVenomMineKillsAverage(double venomMineKillsAverage) {
+        this.venomMineKillsAverage = venomMineKillsAverage;
+    }
+
+    public void setVenomMineKillsMostGame(double venomMineKillsMostGame) {
+        this.venomMineKillsMostGame = venomMineKillsMostGame;
+    }
+
+    public void setReconAssistsAverage(double reconAssistsAverage) {
+        this.reconAssistsAverage = reconAssistsAverage;
+    }
+
+    public void setScopedAccuracy(double scopedAccuracy) {
+        this.scopedAccuracy = scopedAccuracy;
+    }
+
+    public void setScopedAccuracyBestGame(double scopedAccuracyBestGame) {
+        this.scopedAccuracyBestGame = scopedAccuracyBestGame;
+    }
+
+    public void setScopedCriticalHits(double scopedCriticalHits) {
+        this.scopedCriticalHits = scopedCriticalHits;
+    }
+
+    public void setScopedCriticalHitsAverage(double scopedCriticalHitsAverage) {
+        this.scopedCriticalHitsAverage = scopedCriticalHitsAverage;
+    }
+
+    public void setScopedCriticalHitsMostGame(double scopedCriticalHitsMostGame) {
+        this.scopedCriticalHitsMostGame = scopedCriticalHitsMostGame;
+    }
+    
+    
     @Override
     public String toString() {
         return name;

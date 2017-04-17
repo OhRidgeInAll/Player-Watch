@@ -10,25 +10,25 @@ import javafx.scene.control.Label;
 public class Ana extends Hero {
 
     //variables unique to Ana
-    String enemiesSlept;
-    String enemiesSleptAverage;
-    String enemiesSleptMostGame;
-    String healingPrevented;
-    String healingPreventedAverage;
-    String healingPreventedMostGame;
-    String nanoBoostAssists;
-    String nanoBoostAssistsAverage;
-    String nanoBoostsAssistsMostGame;
-    String nanoBoostApplied;
-    String nanoBoostAppliedAverage;
-    String nanoBoostAppliedMostGame;
-    String scopedAccuracy;
-    String scopedAccuracyBest;
-    String selfHealing;
-    String selfHealingAverage;
-    String selfHealingMostGame;
-    String unscopedAccuracy;
-    String unscopedAccuracyBest;
+    double enemiesSlept;
+    double enemiesSleptAverage;
+    double enemiesSleptMostGame;
+    double healingPrevented;
+    double healingPreventedAverage;
+    double healingPreventedMostGame;
+    double nanoBoostAssists;
+    double nanoBoostAssistsAverage;
+    double nanoBoostsAssistsMostGame;
+    double nanoBoostApplied;
+    double nanoBoostAppliedAverage;
+    double nanoBoostAppliedMostGame;
+    double scopedAccuracy;
+    double scopedAccuracyBest;
+    double selfHealing;
+    double selfHealingAverage;
+    double selfHealingMostGame;
+    double unscopedAccuracy;
+    double unscopedAccuracyBest;
     //labels to display variables unique to Ana
     Label lblEnemiesSlept;
     Label lblEnemiesSleptAverage;
@@ -55,27 +55,9 @@ public class Ana extends Hero {
 
         //hero's name
         super.name = "Ana";
-        //set variables for Ana
-        this.enemiesSlept = "5";
-        this.enemiesSleptAverage = "5";
-        this.enemiesSleptMostGame = "5";
-        this.healingPrevented = "5";
-        this.healingPreventedAverage = "5";
-        this.healingPreventedMostGame = "5";
-        this.nanoBoostAssists = "5";
-        this.nanoBoostAssistsAverage = "5";
-        this.nanoBoostsAssistsMostGame = "5";
-        this.nanoBoostApplied = "5";
-        this.nanoBoostAppliedAverage = "5";
-        this.nanoBoostAppliedMostGame = "5";
-        this.scopedAccuracy = "5";
-        this.scopedAccuracyBest = "5";
-        this.selfHealing = "5";
-        this.selfHealingAverage = "5";
-        this.selfHealingMostGame = "5";
-        this.unscopedAccuracy = "5";
-        this.unscopedAccuracyBest = "5";
-        
+
+    }
+    public void labels(){
         //array list of labels to display variables of Ana
         this.anaLabels = new ArrayList<>();
         anaLabels.add(lblEnemiesSlept = new Label("Enemies Slept: " + enemiesSlept));
@@ -98,8 +80,89 @@ public class Ana extends Hero {
         anaLabels.add(lblUnscopedAccuracy = new Label("Unscoped Accuracy: " + unscopedAccuracy));
         anaLabels.add(lblUnscopedAccuracyBest = new Label("Unscoped Accuracy Best: " + unscopedAccuracyBest));
         super.uniqueLabels = anaLabels;
-
+    
     }
+
+    public void setEnemiesSlept(double enemiesSlept) {
+        this.enemiesSlept = enemiesSlept;
+    }
+
+    public void setEnemiesSleptAverage(double enemiesSleptAverage) {
+        this.enemiesSleptAverage = enemiesSleptAverage;
+    }
+
+    public void setEnemiesSleptMostGame(double enemiesSleptMostGame) {
+        this.enemiesSleptMostGame = enemiesSleptMostGame;
+    }
+
+    public void setHealingPrevented(double healingPrevented) {
+        this.healingPrevented = healingPrevented;
+    }
+
+    public void setHealingPreventedAverage(double healingPreventedAverage) {
+        this.healingPreventedAverage = healingPreventedAverage;
+    }
+
+    public void setHealingPreventedMostGame(double healingPreventedMostGame) {
+        this.healingPreventedMostGame = healingPreventedMostGame;
+    }
+
+    public void setNanoBoostAssists(double nanoBoostAssists) {
+        this.nanoBoostAssists = nanoBoostAssists;
+    }
+
+    public void setNanoBoostAssistsAverage(double nanoBoostAssistsAverage) {
+        this.nanoBoostAssistsAverage = nanoBoostAssistsAverage;
+    }
+
+    public void setNanoBoostsAssistsMostGame(double nanoBoostsAssistsMostGame) {
+        this.nanoBoostsAssistsMostGame = nanoBoostsAssistsMostGame;
+    }
+
+    public void setNanoBoostApplied(double nanoBoostApplied) {
+        this.nanoBoostApplied = nanoBoostApplied;
+    }
+
+    public void setNanoBoostAppliedAverage(double nanoBoostAppliedAverage) {
+        this.nanoBoostAppliedAverage = nanoBoostAppliedAverage;
+    }
+
+    public void setNanoBoostAppliedMostGame(double nanoBoostAppliedMostGame) {
+        this.nanoBoostAppliedMostGame = nanoBoostAppliedMostGame;
+    }
+
+    public void setScopedAccuracy(double scopedAccuracy) {
+        this.scopedAccuracy = scopedAccuracy;
+    }
+
+    public void setScopedAccuracyBest(double scopedAccuracyBest) {
+        this.scopedAccuracyBest = scopedAccuracyBest;
+    }
+
+    public void setSelfHealing(double selfHealing) {
+        this.selfHealing = selfHealing;
+    }
+
+    public void setSelfHealingAverage(double selfHealingAverage) {
+        this.selfHealingAverage = selfHealingAverage;
+    }
+
+    public void setSelfHealingMostGame(double selfHealingMostGame) {
+        this.selfHealingMostGame = selfHealingMostGame;
+    }
+
+    public void setUnscopedAccuracy(double unscopedAccuracy) {
+        this.unscopedAccuracy = unscopedAccuracy;
+    }
+
+    public void setUnscopedAccuracyBest(double unscopedAccuracyBest) {
+        this.unscopedAccuracyBest = unscopedAccuracyBest;
+    }
+
+    public void setAnaLabels(ArrayList<Label> anaLabels) {
+        this.anaLabels = anaLabels;
+    }
+    
 
     @Override
     public String toString() {

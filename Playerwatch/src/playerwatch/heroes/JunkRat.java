@@ -10,11 +10,11 @@ import javafx.scene.control.Label;
 public class JunkRat extends Hero {
 
     //variables unqiue to JunkRat
-    String enemiesTrapped;
-    String enemiesTrappedMostGame;
-    String riptireKills;
-    String riptireKillsAverage;
-    String riptireKillsMostGame;
+    double enemiesTrapped;
+    double enemiesTrappedMostGame;
+    double riptireKills;
+    double riptireKillsAverage;
+    double riptireKillsMostGame;
     //labels to display variables of JunkRat
     Label lblEnemiesTrapped;
     Label lblEnemiesTrappedMostGame;
@@ -27,13 +27,11 @@ public class JunkRat extends Hero {
 
         //hero's name
         super.name = "Junk Rat";
-        //set variables unqiue to JunkRat
-        this.enemiesTrapped = "junk";
-        this.enemiesTrappedMostGame = "junk";
-        this.riptireKills = "junk";
-        this.riptireKillsAverage = "junk";
-        this.riptireKillsMostGame = "junk";
-        //array list of labels for variables of JunkRat
+
+    }
+
+    public void labels(){
+            //array list of labels for variables of JunkRat
         junkRatLabels = new ArrayList<>();
         junkRatLabels.add(lblEnemiesTrapped = new Label("Enemies Trapped: " + enemiesTrapped));
         junkRatLabels.add(lblEnemiesTrappedMostGame = new Label("Enemies Trapped Most Game: " + enemiesTrappedMostGame));
@@ -43,6 +41,31 @@ public class JunkRat extends Hero {
         super.uniqueLabels = junkRatLabels;
     }
 
+    public double getEnemiesTrapped() {
+        return enemiesTrapped;
+    }
+
+    public double getEnemiesTrappedMostGame() {
+        return enemiesTrappedMostGame;
+    }
+
+    public double getRiptireKills() {
+        return riptireKills;
+    }
+
+    public double getRiptireKillsAverage() {
+        return riptireKillsAverage;
+    }
+
+    public double getRiptireKillsMostGame() {
+        return riptireKillsMostGame;
+    }
+
+    public ArrayList<Label> getJunkRatLabels() {
+        return junkRatLabels;
+    }
+    
+    
     @Override
     public String toString() {
         return name;

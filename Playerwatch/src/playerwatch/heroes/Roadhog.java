@@ -10,18 +10,18 @@ import javafx.scene.control.Label;
 public class Roadhog extends Hero {
 
 //variables unique to Roadhog
-    String enemiesHooked;
-    String enemiesHookedAverage;
-    String enemiesHookedMostGame;
-    String hookAccuracy;
-    String hookAccuracyBestGame;
-    String hookAttempts;
-    String wholeHogKills;
-    String wholeHogKillsAverage;
-    String wholeHogKillsMostGame;
-    String selfHealing;
-    String selfHealingAverage;
-    String selfHealingMostGame;
+    double enemiesHooked;
+    double enemiesHookedAverage;
+    double enemiesHookedMostGame;
+    double hookAccuracy;
+    double hookAccuracyBestGame;
+    double hookAttempts;
+    double wholeHogKills;
+    double wholeHogKillsAverage;
+    double wholeHogKillsMostGame;
+    double selfHealing;
+    double selfHealingAverage;
+    double selfHealingMostGame;
     //labels for variables of Roadhog
     Label lblEnemiesHooked;
     Label lblEnemiesHookedAverage;
@@ -37,24 +37,7 @@ public class Roadhog extends Hero {
     Label lblSelfHealingMostGame;
     ArrayList<Label> roadhogLabels;
 
-    public Roadhog() {
-
-        //hero's name
-        super.name = "Roadhog";
-        //set unique variables of roadhog
-        this.enemiesHooked = "5";
-        this.enemiesHookedAverage = "5";
-        this.enemiesHookedMostGame = "5";
-        this.hookAccuracy = "5";
-        this.hookAccuracyBestGame = "5";
-        this.hookAttempts = "5";
-        this.wholeHogKills = "5";
-        this.wholeHogKillsAverage = "5";
-        this.wholeHogKillsMostGame = "5";
-        this.selfHealing = "5";
-        this.selfHealingAverage = "5";
-        this.selfHealingMostGame = "5";
-        //array list of labels for variables of roadhog
+    public void labels() {
         this.roadhogLabels = new ArrayList<>();
         roadhogLabels.add(lblEnemiesHooked = new Label("Enemies Hooked: " + enemiesHooked));
         roadhogLabels.add(lblEnemiesHookedAverage = new Label("Enemies Hooked Average: " + enemiesHookedAverage));
@@ -69,7 +52,60 @@ public class Roadhog extends Hero {
         roadhogLabels.add(lblSelfHealingAverage = new Label("Self Healing Average: " + selfHealingAverage));
         roadhogLabels.add(lblSelfHealingMostGame = new Label("Self Healing Most Game: " + selfHealingMostGame));
         super.uniqueLabels = roadhogLabels;
+    }
 
+    public Roadhog() {
+        //hero's name
+        super.name = "Roadhog";
+
+    }
+
+    public void setEnemiesHooked(double enemiesHooked) {
+        this.enemiesHooked = enemiesHooked;
+    }
+
+    public void setEnemiesHookedAverage(double enemiesHookedAverage) {
+        this.enemiesHookedAverage = enemiesHookedAverage;
+    }
+
+    public void setEnemiesHookedMostGame(double enemiesHookedMostGame) {
+        this.enemiesHookedMostGame = enemiesHookedMostGame;
+    }
+
+    public void setHookAccuracy(double hookAccuracy) {
+        this.hookAccuracy = hookAccuracy;
+    }
+
+    public void setHookAccuracyBestGame(double hookAccuracyBestGame) {
+        this.hookAccuracyBestGame = hookAccuracyBestGame;
+    }
+
+    public void setHookAttempts(double hookAttempts) {
+        this.hookAttempts = hookAttempts;
+    }
+
+    public void setWholeHogKills(double wholeHogKills) {
+        this.wholeHogKills = wholeHogKills;
+    }
+
+    public void setWholeHogKillsAverage(double wholeHogKillsAverage) {
+        this.wholeHogKillsAverage = wholeHogKillsAverage;
+    }
+
+    public void setWholeHogKillsMostGame(double wholeHogKillsMostGame) {
+        this.wholeHogKillsMostGame = wholeHogKillsMostGame;
+    }
+
+    public void setSelfHealing(double selfHealing) {
+        this.selfHealing = selfHealing;
+    }
+
+    public void setSelfHealingAverage(double selfHealingAverage) {
+        this.selfHealingAverage = selfHealingAverage;
+    }
+
+    public void setSelfHealingMostGame(double selfHealingMostGame) {
+        this.selfHealingMostGame = selfHealingMostGame;
     }
 
     @Override

@@ -10,18 +10,18 @@ import javafx.scene.control.Label;
 public class Reinhardt extends Hero {
 
     //variables unqiue to Reinhardt
-    String chargeKills;
-    String chargeKillsAverage;
-    String chargeKillsMostGame;
-    String damageBlocked;
-    String damageBlockedAverage;
-    String damageBlockedMostGame;
-    String earthShatterKills;
-    String earthShatterKillsAverage;
-    String earthShatterKillsMostGame;
-    String fireStrikeKills;
-    String fireStrikeKillsAverage;
-    String fireStrikeKillsMostGame;
+    double chargeKills;
+    double chargeKillsAverage;
+    double chargeKillsMostGame;
+    double damageBlocked;
+    double damageBlockedAverage;
+    double damageBlockedMostGame;
+    double earthShatterKills;
+    double earthShatterKillsAverage;
+    double earthShatterKillsMostGame;
+    double fireStrikeKills;
+    double fireStrikeKillsAverage;
+    double fireStrikeKillsMostGame;
     //labels to display variables of Reinhardt
     Label lblChargeKills;
     Label lblChargeKillsAverage;
@@ -41,20 +41,10 @@ public class Reinhardt extends Hero {
 
         //hero's name
         super.name = "Reinhardt";
-        //set variables unqiue to Reinhardt
-        this.chargeKills = "shield";
-        this.chargeKillsAverage = "shield";
-        this.chargeKillsMostGame = "shield";
-        this.damageBlocked = "shield";
-        this.damageBlockedAverage = "shield";
-        this.damageBlockedMostGame = "shield";
-        this.earthShatterKills = "shield";
-        this.earthShatterKillsAverage = "shield";
-        this.earthShatterKillsMostGame = "shield";
-        this.fireStrikeKills = "shield";
-        this.fireStrikeKillsAverage = "shield";
-        this.fireStrikeKillsMostGame = "shield";
 
+    }
+
+    public void labels() {
         //array list of labels for variables of Reinhardt
         reinhardtLabels = new ArrayList<>();
         reinhardtLabels.add(lblChargeKills = new Label("Charge Kills: " + chargeKills));
@@ -70,6 +60,54 @@ public class Reinhardt extends Hero {
         reinhardtLabels.add(lblFireStrikeKillsAverage = new Label("Fire Strike Kills Average: " + fireStrikeKillsAverage));
         reinhardtLabels.add(lblFireStrikeKillsMostGame = new Label("Fire Strike Kills Most Game: " + fireStrikeKillsMostGame));
         super.uniqueLabels = reinhardtLabels;
+    }
+
+    public void setChargeKills(double chargeKills) {
+        this.chargeKills = chargeKills;
+    }
+
+    public void setChargeKillsAverage(double chargeKillsAverage) {
+        this.chargeKillsAverage = chargeKillsAverage;
+    }
+
+    public void setChargeKillsMostGame(double chargeKillsMostGame) {
+        this.chargeKillsMostGame = chargeKillsMostGame;
+    }
+
+    public void setDamageBlocked(double damageBlocked) {
+        this.damageBlocked = damageBlocked;
+    }
+
+    public void setDamageBlockedAverage(double damageBlockedAverage) {
+        this.damageBlockedAverage = damageBlockedAverage;
+    }
+
+    public void setDamageBlockedMostGame(double damageBlockedMostGame) {
+        this.damageBlockedMostGame = damageBlockedMostGame;
+    }
+
+    public void setEarthShatterKills(double earthShatterKills) {
+        this.earthShatterKills = earthShatterKills;
+    }
+
+    public void setEarthShatterKillsAverage(double earthShatterKillsAverage) {
+        this.earthShatterKillsAverage = earthShatterKillsAverage;
+    }
+
+    public void setEarthShatterKillsMostGame(double earthShatterKillsMostGame) {
+        this.earthShatterKillsMostGame = earthShatterKillsMostGame;
+    }
+
+    public void setFireStrikeKills(double fireStrikeKills) {
+        this.fireStrikeKills = fireStrikeKills;
+    }
+
+    public void setFireStrikeKillsAverage(double fireStrikeKillsAverage) {
+        this.fireStrikeKillsAverage = fireStrikeKillsAverage;
+    }
+
+    public void setFireStrikeKillsMostGame(double fireStrikeKillsMostGame) {
+        this.fireStrikeKillsMostGame = fireStrikeKillsMostGame;
     }
 
     @Override

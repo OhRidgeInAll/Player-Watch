@@ -10,11 +10,11 @@ import javafx.scene.control.Label;
 public class Zenyatta extends Hero {
 
     //variables unqiue to Zenyatta
-    String transcendenceHealing;
-    String transcendenceHealingBest;
-    String selfHealing;
-    String selfHealingAverage;
-    String selfHealingMostGame;
+    double transcendenceHealing;
+    double transcendenceHealingBest;
+    double selfHealing;
+    double selfHealingAverage;
+    double selfHealingMostGame;
     //labels to display variables of Zenyatta
     Label lblTranscendenceHealing;
     Label lblTranscendenceHealingBest;
@@ -27,13 +27,10 @@ public class Zenyatta extends Hero {
 
         //hero's name
         super.name = "Zenyatta";
-        //set variables unqiue to Zenyatta
-        this.transcendenceHealing = "ball";
-        this.transcendenceHealingBest = "ball";
-        this.selfHealing = "ball";
-        this.selfHealingAverage = "ball";
-        this.selfHealingMostGame = "ball";
 
+    }
+
+    public void labels(){
         //array list of labels for variables of Zenyatta
         zenyattaLabels = new ArrayList<>();
         zenyattaLabels.add(lblTranscendenceHealing = new Label("Transcedence Healing: " + transcendenceHealing));
@@ -44,6 +41,27 @@ public class Zenyatta extends Hero {
         super.uniqueLabels = zenyattaLabels;
     }
 
+    public void setTranscendenceHealing(double transcendenceHealing) {
+        this.transcendenceHealing = transcendenceHealing;
+    }
+
+    public void setTranscendenceHealingBest(double transcendenceHealingBest) {
+        this.transcendenceHealingBest = transcendenceHealingBest;
+    }
+
+    public void setSelfHealing(double selfHealing) {
+        this.selfHealing = selfHealing;
+    }
+
+    public void setSelfHealingAverage(double selfHealingAverage) {
+        this.selfHealingAverage = selfHealingAverage;
+    }
+
+    public void setSelfHealingMostGame(double selfHealingMostGame) {
+        this.selfHealingMostGame = selfHealingMostGame;
+    }
+    
+    
     @Override
     public String toString() {
         return name;

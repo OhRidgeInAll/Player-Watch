@@ -10,12 +10,12 @@ import javafx.scene.control.Label;
 public class Lucio extends Hero {
 
     //variables unqiue to Lucio
-    String soundBarriersProvided;
-    String soundBarriersProvidedAverage;
-    String soundBarriersProvidedMostGame;
-    String selfHealing;
-    String selfHealingAverage;
-    String selfHealingMostGame;
+    double soundBarriersProvided;
+    double soundBarriersProvidedAverage;
+    double soundBarriersProvidedMostGame;
+    double selfHealing;
+    double selfHealingAverage;
+    double selfHealingMostGame;
     //labels to display variables of Lucio
     Label lblSoundBarriersProvided;
     Label lblSoundBarriersProvidedAverage;
@@ -29,14 +29,11 @@ public class Lucio extends Hero {
 
         //hero's name
         super.name = "Lucio";
-        //set variables unqiue to Lucio
-        this.soundBarriersProvided = "lucio";
-        this.soundBarriersProvidedAverage = "lucio";
-        this.soundBarriersProvidedMostGame = "lucio";
-        this.selfHealing = "lucio";
-        this.selfHealingAverage = "lucio";
-        this.selfHealingMostGame = "lucio";
-        //array list of labels for variables of Lucio
+
+    }
+    
+    public void labels(){
+                //array list of labels for variables of Lucio
         lucioLabels = new ArrayList<>();
         lucioLabels.add(lblSoundBarriersProvided = new Label("Sound Barriers Provided: " + soundBarriersProvided));
         lucioLabels.add(lblSoundBarriersProvidedAverage = new Label("Sound Barriers Provided Average: " + soundBarriersProvidedAverage));
@@ -46,6 +43,32 @@ public class Lucio extends Hero {
         lucioLabels.add(lblSelfHealingMostGame = new Label("Self Healing Most Game: " + selfHealingMostGame));
         super.uniqueLabels = lucioLabels;
     }
+
+    public void setSoundBarriersProvided(double soundBarriersProvided) {
+        this.soundBarriersProvided = soundBarriersProvided;
+    }
+
+    public void setSoundBarriersProvidedAverage(double soundBarriersProvidedAverage) {
+        this.soundBarriersProvidedAverage = soundBarriersProvidedAverage;
+    }
+
+    public void setSoundBarriersProvidedMostGame(double soundBarriersProvidedMostGame) {
+        this.soundBarriersProvidedMostGame = soundBarriersProvidedMostGame;
+    }
+
+    public void setSelfHealing(double selfHealing) {
+        this.selfHealing = selfHealing;
+    }
+
+    public void setSelfHealingAverage(double selfHealingAverage) {
+        this.selfHealingAverage = selfHealingAverage;
+    }
+
+    public void setSelfHealingMostGame(double selfHealingMostGame) {
+        this.selfHealingMostGame = selfHealingMostGame;
+    }
+    
+    
 
     @Override
     public String toString() {

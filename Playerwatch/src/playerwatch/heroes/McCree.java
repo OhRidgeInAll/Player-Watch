@@ -10,12 +10,12 @@ import javafx.scene.control.Label;
 public class McCree extends Hero {
 
     //variables unqiue to McCree
-    String deadeyeKills;
-    String deadeyeKillsAverage;
-    String deadeyeKillsMostGame;
-    String fanHammerKills;
-    String fanHammerKillsAverage;
-    String fanHammerKillsMostGame;
+    double deadeyeKills;
+    double deadeyeKillsAverage;
+    double deadeyeKillsMostGame;
+    double fanHammerKills;
+    double fanHammerKillsAverage;
+    double fanHammerKillsMostGame;
     //labels to display variables of McCree
     Label lblDeadeyeKills;
     Label lblDeadeyeKillsAverage;
@@ -29,13 +29,10 @@ public class McCree extends Hero {
 
         //hero's name
         super.name = "McCree";
-        //set variables unqiue to McCree
-        this.deadeyeKills = "Cree";
-        this.deadeyeKillsAverage = "Cree";
-        this.deadeyeKillsMostGame = "Cree";
-        this.fanHammerKills = "Cree";
-        this.fanHammerKillsAverage = "Cree";
-        this.fanHammerKillsMostGame = "Cree";
+
+    }
+
+    public void labels() {
         //array list of labels for variables of McCree
         mcCreeLabels = new ArrayList<>();
         mcCreeLabels.add(lblDeadeyeKills = new Label("Deadeye Kills: " + deadeyeKills));
@@ -45,6 +42,30 @@ public class McCree extends Hero {
         mcCreeLabels.add(lblFanHammerKillsAverage = new Label("Fan Hammer Kills Average: " + fanHammerKillsAverage));
         mcCreeLabels.add(lblFanHammerKillsMostGame = new Label("Fan Hammer Kills Most Game: " + fanHammerKillsMostGame));
         super.uniqueLabels = mcCreeLabels;
+    }
+
+    public void setDeadeyeKills(double deadeyeKills) {
+        this.deadeyeKills = deadeyeKills;
+    }
+
+    public void setDeadeyeKillsAverage(double deadeyeKillsAverage) {
+        this.deadeyeKillsAverage = deadeyeKillsAverage;
+    }
+
+    public void setDeadeyeKillsMostGame(double deadeyeKillsMostGame) {
+        this.deadeyeKillsMostGame = deadeyeKillsMostGame;
+    }
+
+    public void setFanHammerKills(double fanHammerKills) {
+        this.fanHammerKills = fanHammerKills;
+    }
+
+    public void setFanHammerKillsAverage(double fanHammerKillsAverage) {
+        this.fanHammerKillsAverage = fanHammerKillsAverage;
+    }
+
+    public void setFanHammerKillsMostGame(double fanHammerKillsMostGame) {
+        this.fanHammerKillsMostGame = fanHammerKillsMostGame;
     }
 
     @Override

@@ -10,18 +10,18 @@ import javafx.scene.control.Label;
 public class Mei extends Hero {
 
     //variables unqiue to Mei
-    String blizzardKills;
-    String blizzardKillsAverage;
-    String blizzardKillsMostGame;
-    String damageBlocked;
-    String damageBlockedAverage;
-    String damageBlockedMostGame;
-    String enemiesFrozen;
-    String enemiesFrozenAverage;
-    String enemiesFrozenMostGame;
-    String selfHealing;
-    String selfHealingAverage;
-    String selfHealingMostGame;
+    double blizzardKills;
+    double blizzardKillsAverage;
+    double blizzardKillsMostGame;
+    double damageBlocked;
+    double damageBlockedAverage;
+    double damageBlockedMostGame;
+    double enemiesFrozen;
+    double enemiesFrozenAverage;
+    double enemiesFrozenMostGame;
+    double selfHealing;
+    double selfHealingAverage;
+    double selfHealingMostGame;
     //labels to display variables of Mei
     Label lblBlizzardKills;
     Label lblBlizzardKillsAverage;
@@ -41,19 +41,10 @@ public class Mei extends Hero {
 
         //hero's name
         super.name = "Mei";
-        //set variables unqiue to Mei
-        this.blizzardKills = "Bae";
-        this.blizzardKillsAverage = "Bae";
-        this.blizzardKillsMostGame = "Bae";
-        this.damageBlocked = "Bae";
-        this.damageBlockedAverage = "Bae";
-        this.damageBlockedMostGame = "Bae";
-        this.enemiesFrozen = "Bae";
-        this.enemiesFrozenAverage = "Bae";
-        this.enemiesFrozenMostGame = "Bae";
-        this.selfHealing = "Bae";
-        this.selfHealingAverage = "Bae";
-        this.selfHealingMostGame = "Bae";
+
+    }
+
+    public void labels() {
         //array list of labels for variables of Mei
         meiLabels = new ArrayList<>();
         meiLabels.add(lblBlizzardKills = new Label("Blizzard Kills: " + blizzardKills));
@@ -70,6 +61,56 @@ public class Mei extends Hero {
         meiLabels.add(lblSelfHealingMostGame = new Label("Self Healing Most Game: " + selfHealingMostGame));
         super.uniqueLabels = meiLabels;
     }
+
+    public void setBlizzardKills(double blizzardKills) {
+        this.blizzardKills = blizzardKills;
+    }
+
+    public void setBlizzardKillsAverage(double blizzardKillsAverage) {
+        this.blizzardKillsAverage = blizzardKillsAverage;
+    }
+
+    public void setBlizzardKillsMostGame(double blizzardKillsMostGame) {
+        this.blizzardKillsMostGame = blizzardKillsMostGame;
+    }
+
+    public void setDamageBlocked(double damageBlocked) {
+        this.damageBlocked = damageBlocked;
+    }
+
+    public void setDamageBlockedAverage(double damageBlockedAverage) {
+        this.damageBlockedAverage = damageBlockedAverage;
+    }
+
+    public void setDamageBlockedMostGame(double damageBlockedMostGame) {
+        this.damageBlockedMostGame = damageBlockedMostGame;
+    }
+
+    public void setEnemiesFrozen(double enemiesFrozen) {
+        this.enemiesFrozen = enemiesFrozen;
+    }
+
+    public void setEnemiesFrozenAverage(double enemiesFrozenAverage) {
+        this.enemiesFrozenAverage = enemiesFrozenAverage;
+    }
+
+    public void setEnemiesFrozenMostGame(double enemiesFrozenMostGame) {
+        this.enemiesFrozenMostGame = enemiesFrozenMostGame;
+    }
+
+    public void setSelfHealing(double selfHealing) {
+        this.selfHealing = selfHealing;
+    }
+
+    public void setSelfHealingAverage(double selfHealingAverage) {
+        this.selfHealingAverage = selfHealingAverage;
+    }
+
+    public void setSelfHealingMostGame(double selfHealingMostGame) {
+        this.selfHealingMostGame = selfHealingMostGame;
+    }
+    
+    
 
     @Override
     public String toString() {

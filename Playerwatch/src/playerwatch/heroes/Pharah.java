@@ -10,12 +10,12 @@ import javafx.scene.control.Label;
 public class Pharah extends Hero {
 
     //variables unqiue to Pharah
-    String barrageKills;
-    String barrageKillsAverage;
-    String barrageKillsMostGame;
-    String rocketDirectHits;
-    String rocketDirectHitsAverage;
-    String rocketDirectHitsMostGame;
+    double barrageKills;
+    double barrageKillsAverage;
+    double barrageKillsMostGame;
+    double rocketDirectHits;
+    double rocketDirectHitsAverage;
+    double rocketDirectHitsMostGame;
     //labels to display variables of Pharah
     Label lblBarrageKills;
     Label lblBarrageKillsAverage;
@@ -29,14 +29,10 @@ public class Pharah extends Hero {
 
         //hero's name
         super.name = "Pharah";
-        //set variables unqiue to Pharah
-        this.barrageKills = "jets";
-        this.barrageKillsAverage = "jets";
-        this.barrageKillsMostGame = "jets";
-        this.rocketDirectHits = "jets";
-        this.rocketDirectHitsAverage = "jets";
-        this.rocketDirectHitsMostGame = "jets";
 
+    }
+
+    public void labels() {
         //array list of labels for variables of Pharah
         pharahLabels = new ArrayList<>();
         pharahLabels.add(lblBarrageKills = new Label("Barrage Kills: " + barrageKills));
@@ -47,6 +43,32 @@ public class Pharah extends Hero {
         pharahLabels.add(lblRocketDirectHitsMostGame = new Label("Rocket Direct Hits Most Game: " + rocketDirectHitsMostGame));
         super.uniqueLabels = pharahLabels;
     }
+
+    public void setBarrageKills(double barrageKills) {
+        this.barrageKills = barrageKills;
+    }
+
+    public void setBarrageKillsAverage(double barrageKillsAverage) {
+        this.barrageKillsAverage = barrageKillsAverage;
+    }
+
+    public void setBarrageKillsMostGame(double barrageKillsMostGame) {
+        this.barrageKillsMostGame = barrageKillsMostGame;
+    }
+
+    public void setRocketDirectHits(double rocketDirectHits) {
+        this.rocketDirectHits = rocketDirectHits;
+    }
+
+    public void setRocketDirectHitsAverage(double rocketDirectHitsAverage) {
+        this.rocketDirectHitsAverage = rocketDirectHitsAverage;
+    }
+
+    public void setRocketDirectHitsMostGame(double rocketDirectHitsMostGame) {
+        this.rocketDirectHitsMostGame = rocketDirectHitsMostGame;
+    }
+    
+    
 
     @Override
     public String toString() {

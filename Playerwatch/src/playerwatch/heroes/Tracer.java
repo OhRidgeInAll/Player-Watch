@@ -10,15 +10,15 @@ import javafx.scene.control.Label;
 public class Tracer extends Hero {
 
     //variables unqiue to Tracer
-    String pulseBombKills;
-    String pulseBombKillsAverage;
-    String pulseBombKillsMostGame;
-    String pulseBombsAttached;
-    String pulseBombsAttachedAverage;
-    String pulseBombsMostGame;
-    String selfHealing;
-    String selfHealingAverage;
-    String selfHealingMostGame;
+    double pulseBombKills;
+    double pulseBombKillsAverage;
+    double pulseBombKillsMostGame;
+    double pulseBombsAttached;
+    double pulseBombsAttachedAverage;
+    double pulseBombsMostGame;
+    double selfHealing;
+    double selfHealingAverage;
+    double selfHealingMostGame;
     //labels to display variables of Tracer
     Label lblPulseBombKills;
     Label lblPulseBombKillsAverage;
@@ -35,17 +35,10 @@ public class Tracer extends Hero {
 
         //hero's name
         super.name = "Tracer";
-        //set variables unqiue to Tracer
-        this.pulseBombKills = "tracer";
-        this.pulseBombKillsAverage = "tracer";
-        this.pulseBombKillsMostGame = "tracer";
-        this.pulseBombsAttached = "tracer";
-        this.pulseBombsAttachedAverage = "tracer";
-        this.pulseBombsMostGame = "tracer";
-        this.selfHealing = "tracer";
-        this.selfHealingAverage = "tracer";
-        this.selfHealingMostGame = "tracer";
 
+    }
+    
+    public void labels(){
         //array list of labels for variables of Tracer
         tracerLabels = new ArrayList<>();
         tracerLabels.add(lblPulseBombKills = new Label("Pulse Bomb Kills: " + pulseBombKills));
@@ -59,6 +52,44 @@ public class Tracer extends Hero {
         tracerLabels.add(lblSelfHealingMostGame = new Label("Self Healing Most Game: " + selfHealingMostGame));
         super.uniqueLabels = tracerLabels;
     }
+
+    public void setPulseBombKills(double pulseBombKills) {
+        this.pulseBombKills = pulseBombKills;
+    }
+
+    public void setPulseBombKillsAverage(double pulseBombKillsAverage) {
+        this.pulseBombKillsAverage = pulseBombKillsAverage;
+    }
+
+    public void setPulseBombKillsMostGame(double pulseBombKillsMostGame) {
+        this.pulseBombKillsMostGame = pulseBombKillsMostGame;
+    }
+
+    public void setPulseBombsAttached(double pulseBombsAttached) {
+        this.pulseBombsAttached = pulseBombsAttached;
+    }
+
+    public void setPulseBombsAttachedAverage(double pulseBombsAttachedAverage) {
+        this.pulseBombsAttachedAverage = pulseBombsAttachedAverage;
+    }
+
+    public void setPulseBombsMostGame(double pulseBombsMostGame) {
+        this.pulseBombsMostGame = pulseBombsMostGame;
+    }
+
+    public void setSelfHealing(double selfHealing) {
+        this.selfHealing = selfHealing;
+    }
+
+    public void setSelfHealingAverage(double selfHealingAverage) {
+        this.selfHealingAverage = selfHealingAverage;
+    }
+
+    public void setSelfHealingMostGame(double selfHealingMostGame) {
+        this.selfHealingMostGame = selfHealingMostGame;
+    }
+    
+    
 
     @Override
     public String toString() {

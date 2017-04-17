@@ -10,16 +10,16 @@ import javafx.scene.control.Label;
 public class Soldier76 extends Hero {
 
 //variables unique to Soldier
-    String bioticFieldHealingDone;
-    String bioticFieldsDeployed;
-    String helixRocketKills;
-    String helixRocketKillsAverage;
-    String helixRocketKillsMostGame;
-    String tacticalVisorKillsAverage;
-    String tacticalVisorKillsMostGame;
-    String selfHealing;
-    String selfHealingAverage;
-    String selfHealingMostGame;
+    double bioticFieldHealingDone;
+    double bioticFieldsDeployed;
+    double helixRocketKills;
+    double helixRocketKillsAverage;
+    double helixRocketKillsMostGame;
+    double tacticalVisorKillsAverage;
+    double tacticalVisorKillsMostGame;
+    double selfHealing;
+    double selfHealingAverage;
+    double selfHealingMostGame;
      //labels to display unique variables
     Label lblBioticFieldHealingDone;
     Label lblBioticFieldsDeployed;
@@ -37,18 +37,11 @@ public class Soldier76 extends Hero {
 
          //name of the hero
         super.name = "Soldier76";
-        //set unique values of hero
-        this.bioticFieldHealingDone = "1";
-        this.bioticFieldsDeployed = "2";
-        this.helixRocketKills = "3";
-        this.helixRocketKillsAverage = "4";
-        this.helixRocketKillsMostGame = "5";
-        this.tacticalVisorKillsAverage = "6";
-        this.tacticalVisorKillsMostGame = "7";
-        this.selfHealing = "8";
-        this.selfHealingAverage = "9";
-        this.selfHealingMostGame = "10";
-         //array list of labels for output
+
+    }
+
+    public void labels(){
+        //array list of labels for output
         this.soldier76Labels = new ArrayList<>();
         soldier76Labels.add(lblBioticFieldHealingDone = new Label("Biotic Field Healing Done: " + bioticFieldHealingDone));
         soldier76Labels.add(lblBioticFieldsDeployed = new Label("Biotic Fields Deployed: " + bioticFieldsDeployed));
@@ -61,9 +54,49 @@ public class Soldier76 extends Hero {
         soldier76Labels.add(lblSelfHealingAverage = new Label("Self Healing Average: " + selfHealingAverage));
         soldier76Labels.add(lblSelfHealingMostGame = new Label("Self Healing Most Game: " + selfHealingMostGame));
         super.uniqueLabels = soldier76Labels;
-
     }
 
+    public void setBioticFieldHealingDone(double bioticFieldHealingDone) {
+        this.bioticFieldHealingDone = bioticFieldHealingDone;
+    }
+
+    public void setBioticFieldsDeployed(double bioticFieldsDeployed) {
+        this.bioticFieldsDeployed = bioticFieldsDeployed;
+    }
+
+    public void setHelixRocketKills(double helixRocketKills) {
+        this.helixRocketKills = helixRocketKills;
+    }
+
+    public void setHelixRocketKillsAverage(double helixRocketKillsAverage) {
+        this.helixRocketKillsAverage = helixRocketKillsAverage;
+    }
+
+    public void setHelixRocketKillsMostGame(double helixRocketKillsMostGame) {
+        this.helixRocketKillsMostGame = helixRocketKillsMostGame;
+    }
+
+    public void setTacticalVisorKillsAverage(double tacticalVisorKillsAverage) {
+        this.tacticalVisorKillsAverage = tacticalVisorKillsAverage;
+    }
+
+    public void setTacticalVisorKillsMostGame(double tacticalVisorKillsMostGame) {
+        this.tacticalVisorKillsMostGame = tacticalVisorKillsMostGame;
+    }
+
+    public void setSelfHealing(double selfHealing) {
+        this.selfHealing = selfHealing;
+    }
+
+    public void setSelfHealingAverage(double selfHealingAverage) {
+        this.selfHealingAverage = selfHealingAverage;
+    }
+
+    public void setSelfHealingMostGame(double selfHealingMostGame) {
+        this.selfHealingMostGame = selfHealingMostGame;
+    }
+    
+    
     @Override
     public String toString() {
         return name;

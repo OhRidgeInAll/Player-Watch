@@ -10,12 +10,12 @@ import javafx.scene.control.Label;
 public class Sombra extends Hero {
 
     //variables unqiue to Sombra
-    String enemiesEmp;
-    String enemiesEmpAverage;
-    String enemiesEmpMostGame;
-    String enemiesHacked;
-    String enemiesHackedAverage;
-    String enemiesHackedMostGame;
+    double enemiesEmp;
+    double enemiesEmpAverage;
+    double enemiesEmpMostGame;
+    double enemiesHacked;
+    double enemiesHackedAverage;
+    double enemiesHackedMostGame;
     //labels to display variables of Sombra
     Label lblEnemiesEmp;
     Label lblEnemiesEmpAverage;
@@ -29,14 +29,10 @@ public class Sombra extends Hero {
 
         //hero's name
         super.name = "Sombra";
-        //set variables unqiue to Sombra
-        this.enemiesEmp = "hack";
-        this.enemiesEmpAverage = "hack";
-        this.enemiesEmpMostGame = "hack";
-        this.enemiesHacked = "hack";
-        this.enemiesHackedAverage = "hack";
-        this.enemiesHackedMostGame = "hack";
 
+    }
+    
+    public void labels(){
         //array list of labels for variables of Sombra
         sombraLabels = new ArrayList<>();
         sombraLabels.add(lblEnemiesEmp = new Label("Ememies EMP: " + enemiesEmp));
@@ -46,6 +42,30 @@ public class Sombra extends Hero {
         sombraLabels.add(lblEnemiesHackedAverage = new Label("Enemies Hacked Average: " + enemiesHackedAverage));
         sombraLabels.add(lblEnemiesHackedMostGame = new Label("Enemies Hacked Most Game: " + enemiesHackedMostGame));
         super.uniqueLabels = sombraLabels;
+    }
+
+    public void setEnemiesEmp(double enemiesEmp) {
+        this.enemiesEmp = enemiesEmp;
+    }
+
+    public void setEnemiesEmpAverage(double enemiesEmpAverage) {
+        this.enemiesEmpAverage = enemiesEmpAverage;
+    }
+
+    public void setEnemiesEmpMostGame(double enemiesEmpMostGame) {
+        this.enemiesEmpMostGame = enemiesEmpMostGame;
+    }
+
+    public void setEnemiesHacked(double enemiesHacked) {
+        this.enemiesHacked = enemiesHacked;
+    }
+
+    public void setEnemiesHackedAverage(double enemiesHackedAverage) {
+        this.enemiesHackedAverage = enemiesHackedAverage;
+    }
+
+    public void setEnemiesHackedMostGame(double enemiesHackedMostGame) {
+        this.enemiesHackedMostGame = enemiesHackedMostGame;
     }
 
     @Override

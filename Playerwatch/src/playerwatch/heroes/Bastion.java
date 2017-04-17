@@ -10,18 +10,18 @@ import javafx.scene.control.Label;
 public class Bastion extends Hero {
 
     //variables unique to Bastion
-    String reconKills;
-    String reconKillsAverage;
-    String reconKillsMostGame;
-    String sentryKills;
-    String sentryKillsAverage;
-    String sentryKillsMostGame;
-    String tankKills;
-    String tankKillsAverage;
-    String tankKillsMostGame;
-    String selfHealing;
-    String selfHealingAverage;
-    String selfHealingMostGame;
+    double reconKills;
+    double reconKillsAverage;
+    double reconKillsMostGame;
+    double sentryKills;
+    double sentryKillsAverage;
+    double sentryKillsMostGame;
+    double tankKills;
+    double tankKillsAverage;
+    double tankKillsMostGame;
+    double selfHealing;
+    double selfHealingAverage;
+    double selfHealingMostGame;
     //labels to display unique variables of Bastion
     Label lblReconKills;
     Label lblReconKillsAverage;
@@ -41,19 +41,11 @@ public class Bastion extends Hero {
         
         //hero's name
         super.name = "Bastion";
-        //set unique values of Bastion
-        this.reconKills = "2";
-        this.reconKillsAverage = "5";
-        this.reconKillsMostGame = "5";
-        this.sentryKills = "5";
-        this.sentryKillsAverage = "5";
-        this.sentryKillsMostGame = "5";
-        this.tankKills = "5";
-        this.tankKillsAverage = "5";
-        this.tankKillsMostGame = "5";
-        this.selfHealing = "5";
-        this.selfHealingAverage = "5";
-        this.selfHealingMostGame = "5";
+
+    }
+    
+    public void labels(){
+    
         //array list of labels for variables of Bastion
         this.bastionLabels = new ArrayList<>();
         bastionLabels.add(lblReconKills = new Label("Recon Kills: " + reconKills));

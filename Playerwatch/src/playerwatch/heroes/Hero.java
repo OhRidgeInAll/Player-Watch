@@ -2,44 +2,43 @@ package playerwatch.heroes;
 
 import java.util.ArrayList;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 /**
  *
- * @author micha
+ * @author Michael Lyn
  */
 public class Hero {
 
     //Variables that are used for every hero
     String name;
     ImageView heroImage;
-    int soloKills;
-    int soloKillsAverage;
-    int objectiveKills;
-    int objectiveKillsAverage;
-    int eliminations;
-    int multikills;
-    int healingDone;
-    int healingDoneAverage;
-    int multikillBest;
-    int timeSpentonFire;
-    int timeSpentonFireAverage;
-    int damageDoneAverage;
-    int eliminationsAverage;
-    int deaths;
-    int deathsAverage;
-    int environmentalDeaths;
-    int gamesPlayed;
-    int gamesWon;
-    int timePlayed;
-    int gamesTied;
-    int gamesLost;
-    int weaponAccuracy;
-    int winPercentage;
-    int killStreakBest;
-    int criticalHits;
-    int criticalHitAccuracy;
+    double soloKills;
+    double soloKillsAverage;
+    double objectiveKills;
+    double objectiveKillsAverage;
+    double eliminations;
+    double multikills;
+    double healingDone;
+    double healingDoneAverage;
+    double multikillBest;
+    double timeSpentonFire;
+    double timeSpentonFireAverage;
+    double damageDoneAverage;
+    double eliminationsAverage;
+    double deaths;
+    double deathsAverage;
+    double environmentalDeaths;
+    double gamesPlayed;
+    double gamesWon;
+    double timePlayed;
+    double gamesTied;
+    double gamesLost;
+    double weaponAccuracy;
+    double winPercentage;
+    double killStreakBest;
+    double criticalHits;
+    double criticalHitAccuracy;
     //labels to display the variables of instance Hero
     Label lblSoloKills;
     Label lblObjectiveKills;
@@ -80,277 +79,147 @@ public class Hero {
     }
 
     public Hero() {
-        this.heroLabels = new ArrayList<>();
-        heroLabels.add(lblSoloKills = new Label("Solo Kills: "));
-        heroLabels.add(lblObjectiveKills = new Label("Objective Kills: "));
-        heroLabels.add(lblEliminations = new Label("Eliminations: "));
-        heroLabels.add(lblMultikills = new Label("Multi-Kills: "));
-        heroLabels.add(lblHealingDone = new Label("Headling Done: "));
-        heroLabels.add(lblMultikillBest = new Label("Multi-Kills Best: "));
-        heroLabels.add(lblTimeSpentonFireAverage = new Label("Time Spent on Fire Average: "));
-        heroLabels.add(lblSoloKillsAverage = new Label("Solo Kills Average: "));
-        heroLabels.add(lblObjectiveKillsAverage = new Label("Objective Kills Average: "));
-        heroLabels.add(lblHealingDoneAverage = new Label("Healing Done Average: "));
-        heroLabels.add(lblDeathsAverage = new Label("Deaths Average: "));
-        heroLabels.add(lblDamageDoneAverage = new Label("Damage Done Average: "));
-        heroLabels.add(lblEliminationsAverage = new Label("Eliminations Average: "));
-        heroLabels.add(lblDeaths = new Label("Deaths: "));
-        heroLabels.add(lblEnvironmentalDeaths = new Label("Environmental Deaths: "));
-        heroLabels.add(lblGamesPlayed = new Label("Games Played: "));
-        heroLabels.add(lblGamesWon = new Label("Games Won: "));
-        heroLabels.add(lblTimeSpentonFire = new Label("Time Spent on Fire: "));
-        heroLabels.add(lblTimePlayed = new Label("Time Played: "));
-        heroLabels.add(lblGamesTied = new Label("Games Tied: "));
-        heroLabels.add(lblGamesLost = new Label("Games Lost: "));
-        heroLabels.add(lblWeaponAccuracy = new Label("Weapon Accuracy: "));
-        heroLabels.add(lblWinPercentage = new Label("Win Percentage: "));
-        heroLabels.add(lblKillStreakBest = new Label("Kill Streak Best: "));
-        heroLabels.add(lblCriticalHits = new Label("Critical Hits: "));
-        heroLabels.add(lblCriticalHitAccuracy = new Label("Critical Hits Accuracy: "));
         this.name = "HERO";
-        this.soloKills = Integer.parseInt("2");
-        this.objectiveKills = Integer.parseInt("3");
-        this.eliminations = Integer.parseInt("6");
-        this.multikills = Integer.parseInt("7");
-        this.healingDone = Integer.parseInt("8");
-        this.multikillBest = Integer.parseInt("17");
-        this.timeSpentonFireAverage = Integer.parseInt("21");
-        this.soloKillsAverage = Integer.parseInt("22");
-        this.objectiveKillsAverage = Integer.parseInt("24");
-        this.healingDoneAverage = Integer.parseInt("25");
-        this.deathsAverage = Integer.parseInt("27");
-        this.damageDoneAverage = Integer.parseInt("28");
-        this.eliminationsAverage = Integer.parseInt("29");
-        this.deaths = Integer.parseInt("30");
-        this.environmentalDeaths = Integer.parseInt("31");
-        this.gamesPlayed = Integer.parseInt("37");
-        this.gamesWon = Integer.parseInt("38");
-        this.timeSpentonFire = Integer.parseInt("39");
-        this.timePlayed = Integer.parseInt("41");
-        this.gamesTied = Integer.parseInt("43");
-        this.gamesLost = Integer.parseInt("44");
-        this.weaponAccuracy = Integer.parseInt("48");
-        this.winPercentage = Integer.parseInt("50");
-        this.killStreakBest = Integer.parseInt("52");
-        this.criticalHits = Integer.parseInt("53");
-        this.criticalHitAccuracy = Integer.parseInt("55");
     }
 
+    public void generalLabels(){
 
-    public int getSoloKills() {
-        return soloKills;
+        heroLabels = new ArrayList<>();
+        heroLabels.add(lblSoloKills = new Label("Solo Kills: " + soloKills));
+        heroLabels.add(lblObjectiveKills = new Label("Objective Kills: " + objectiveKills));
+        heroLabels.add(lblEliminations = new Label("Eliminations: " + objectiveKills));
+        heroLabels.add(lblMultikills = new Label("Multi-Kills: " + multikills));
+        heroLabels.add(lblHealingDone = new Label("Headling Done: " + healingDone));
+        heroLabels.add(lblMultikillBest = new Label("Multi-Kills Best: " + multikillBest));
+        heroLabels.add(lblTimeSpentonFireAverage = new Label("Time Spent on Fire Average: " + timeSpentonFireAverage));
+        heroLabels.add(lblSoloKillsAverage = new Label("Solo Kills Average: " + soloKillsAverage));
+        heroLabels.add(lblObjectiveKillsAverage = new Label("Objective Kills Average: " + objectiveKillsAverage));
+        heroLabels.add(lblHealingDoneAverage = new Label("Healing Done Average: " + healingDoneAverage));
+        heroLabels.add(lblDeathsAverage = new Label("Deaths Average: " + deathsAverage));
+        heroLabels.add(lblDamageDoneAverage = new Label("Damage Done Average: " + damageDoneAverage));
+        heroLabels.add(lblEliminationsAverage = new Label("Eliminations Average: " + eliminationsAverage));
+        heroLabels.add(lblDeaths = new Label("Deaths: " + deaths));
+        heroLabels.add(lblEnvironmentalDeaths = new Label("Environmental Deaths: " + environmentalDeaths));
+        heroLabels.add(lblGamesPlayed = new Label("Games Played: " + gamesPlayed));
+        heroLabels.add(lblGamesWon = new Label("Games Won: " + gamesWon));
+        heroLabels.add(lblTimeSpentonFire = new Label("Time Spent on Fire: " + timeSpentonFire));
+        heroLabels.add(lblTimePlayed = new Label("Time Played: " + timePlayed));
+        heroLabels.add(lblGamesTied = new Label("Games Tied: " + gamesTied));
+        heroLabels.add(lblGamesLost = new Label("Games Lost: " + gamesLost));
+        heroLabels.add(lblWeaponAccuracy = new Label("Weapon Accuracy: " + weaponAccuracy));
+        heroLabels.add(lblWinPercentage = new Label("Win Percentage: " + winPercentage));
+        heroLabels.add(lblKillStreakBest = new Label("Kill Streak Best: " + killStreakBest));
+        heroLabels.add(lblCriticalHits = new Label("Critical Hits: " + criticalHits));
+        heroLabels.add(lblCriticalHitAccuracy = new Label("Critical Hits Accuracy: " + criticalHitAccuracy));
+        this.heroLabels = heroLabels;
     }
 
-    public void setSoloKills(int soloKills) {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSoloKills(double soloKills) {
         this.soloKills = soloKills;
     }
 
-    public int getObjectiveKills() {
-        return objectiveKills;
-    }
-
-    public void setObjectiveKills(int objectiveKills) {
-        this.objectiveKills = objectiveKills;
-    }
-
-    public int getEliminations() {
-        return eliminations;
-    }
-
-    public void setEliminations(int eliminations) {
-        this.eliminations = eliminations;
-    }
-
-    public int getMultikills() {
-        return multikills;
-    }
-
-    public void setMultikills(int multikills) {
-        this.multikills = multikills;
-    }
-
-    public int getHealingDone() {
-        return healingDone;
-    }
-
-    public void setHealingDone(int healingDone) {
-        this.healingDone = healingDone;
-    }
-
-    public int getMultikillBest() {
-        return multikillBest;
-    }
-
-    public void setMultikillBest(int multikillBest) {
-        this.multikillBest = multikillBest;
-    }
-
-    public int getTimeSpentonFireAverage() {
-        return timeSpentonFireAverage;
-    }
-
-    public void setTimeSpentonFireAverage(int timeSpentonFireAverage) {
-        this.timeSpentonFireAverage = timeSpentonFireAverage;
-    }
-
-    public int getSoloKillsAverage() {
-        return soloKillsAverage;
-    }
-
-    public void setSoloKillsAverage(int soloKillsAverage) {
+    public void setSoloKillsAverage(double soloKillsAverage) {
         this.soloKillsAverage = soloKillsAverage;
     }
 
-    public int getObjectiveKillsAverage() {
-        return objectiveKillsAverage;
+    public void setObjectiveKills(double objectiveKills) {
+        this.objectiveKills = objectiveKills;
     }
 
-    public void setObjectiveKillsAverage(int objectiveKillsAverage) {
+    public void setObjectiveKillsAverage(double objectiveKillsAverage) {
         this.objectiveKillsAverage = objectiveKillsAverage;
     }
 
-    public int getHealingDoneAverage() {
-        return healingDoneAverage;
+    public void setEliminations(double eliminations) {
+        this.eliminations = eliminations;
     }
 
-    public void setHealingDoneAverage(int healingDoneAverage) {
+    public void setMultikills(double multikills) {
+        this.multikills = multikills;
+    }
+
+    public void setHealingDone(double healingDone) {
+        this.healingDone = healingDone;
+    }
+
+    public void setHealingDoneAverage(double healingDoneAverage) {
         this.healingDoneAverage = healingDoneAverage;
     }
 
-    public int getDeathsAverage() {
-        return deathsAverage;
+    public void setMultikillBest(double multikillBest) {
+        this.multikillBest = multikillBest;
     }
 
-    public void setDeathsAverage(int deathsAverage) {
-        this.deathsAverage = deathsAverage;
-    }
-
-    public int getDamageDoneAverage() {
-        return damageDoneAverage;
-    }
-
-    public void setDamageDoneAverage(int damageDoneAverage) {
-        this.damageDoneAverage = damageDoneAverage;
-    }
-
-    public int getEliminationsAverage() {
-        return eliminationsAverage;
-    }
-
-    public void setEliminationsAverage(int eliminationsAverage) {
-        this.eliminationsAverage = eliminationsAverage;
-    }
-
-    public int getDeaths() {
-        return deaths;
-    }
-
-    public void setDeaths(int deaths) {
-        this.deaths = deaths;
-    }
-
-    public int getEnvironmentalDeaths() {
-        return environmentalDeaths;
-    }
-
-    public void setEnvironmentalDeaths(int environmentalDeaths) {
-        this.environmentalDeaths = environmentalDeaths;
-    }
-
-    public int getGamesPlayed() {
-        return gamesPlayed;
-    }
-
-    public void setGamesPlayed(int gamesPlayed) {
-        this.gamesPlayed = gamesPlayed;
-    }
-
-    public int getGamesWon() {
-        return gamesWon;
-    }
-
-    public void setGamesWon(int gamesWon) {
-        this.gamesWon = gamesWon;
-    }
-
-    public int getTimeSpentonFire() {
-        return timeSpentonFire;
-    }
-
-    public void setTimeSpentonFire(int timeSpentonFire) {
+    public void setTimeSpentonFire(double timeSpentonFire) {
         this.timeSpentonFire = timeSpentonFire;
     }
 
-    public int getTimePlayed() {
-        return timePlayed;
+    public void setTimeSpentonFireAverage(double timeSpentonFireAverage) {
+        this.timeSpentonFireAverage = timeSpentonFireAverage;
     }
 
-    public void setTimePlayed(int timePlayed) {
+    public void setDamageDoneAverage(double damageDoneAverage) {
+        this.damageDoneAverage = damageDoneAverage;
+    }
+
+    public void setEliminationsAverage(double eliminationsAverage) {
+        this.eliminationsAverage = eliminationsAverage;
+    }
+
+    public void setDeaths(double deaths) {
+        this.deaths = deaths;
+    }
+
+    public void setDeathsAverage(double deathsAverage) {
+        this.deathsAverage = deathsAverage;
+    }
+
+    public void setEnvironmentalDeaths(double environmentalDeaths) {
+        this.environmentalDeaths = environmentalDeaths;
+    }
+
+    public void setGamesPlayed(double gamesPlayed) {
+        this.gamesPlayed = gamesPlayed;
+    }
+
+    public void setGamesWon(double gamesWon) {
+        this.gamesWon = gamesWon;
+    }
+
+    public void setTimePlayed(double timePlayed) {
         this.timePlayed = timePlayed;
     }
 
-    public int getGamesTied() {
-        return gamesTied;
-    }
-
-    public void setGamesTied(int gamesTied) {
+    public void setGamesTied(double gamesTied) {
         this.gamesTied = gamesTied;
     }
 
-    public int getGamesLost() {
-        return gamesLost;
-    }
-
-    public void setGamesLost(int gamesLost) {
+    public void setGamesLost(double gamesLost) {
         this.gamesLost = gamesLost;
     }
 
-    public int getWeaponAccuracy() {
-        return weaponAccuracy;
-    }
-
-    public void setWeaponAccuracy(int weaponAccuracy) {
+    public void setWeaponAccuracy(double weaponAccuracy) {
         this.weaponAccuracy = weaponAccuracy;
     }
 
-    public int getWinPercentage() {
-        return winPercentage;
-    }
-
-    public void setWinPercentage(int winPercentage) {
+    public void setWinPercentage(double winPercentage) {
         this.winPercentage = winPercentage;
     }
 
-    public int getKillStreakBest() {
-        return killStreakBest;
-    }
-
-    public void setKillStreakBest(int killStreakBest) {
+    public void setKillStreakBest(double killStreakBest) {
         this.killStreakBest = killStreakBest;
     }
 
-    public int getCriticalHits() {
-        return criticalHits;
-    }
-
-    public void setCriticalHits(int criticalHits) {
+    public void setCriticalHits(double criticalHits) {
         this.criticalHits = criticalHits;
     }
 
-    public int getCriticalHitAccuracy() {
-        return criticalHitAccuracy;
-    }
-
-    public void setCriticalHitAccuracy(int criticalHitAccuracy) {
+    public void setCriticalHitAccuracy(double criticalHitAccuracy) {
         this.criticalHitAccuracy = criticalHitAccuracy;
-    }
-
-    String getName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    Image getHeroImage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

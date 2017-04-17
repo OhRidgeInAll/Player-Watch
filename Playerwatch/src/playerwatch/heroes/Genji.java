@@ -10,13 +10,13 @@ import javafx.scene.control.Label;
 public class Genji extends Hero {
 
     //variables unqiue to Genji
-    String damageReflected;
-    String damageReflectedAverage;
-    String damageReflectedMostGame;
-    String dragonbladeKills;
-    String dragonbladeKillsAverage;
-    String dragonbladeKillsMostGame;
-    String dragonblades;
+    double damageReflected;
+    double damageReflectedAverage;
+    double damageReflectedMostGame;
+    double dragonbladeKills;
+    double dragonbladeKillsAverage;
+    double dragonbladeKillsMostGame;
+    double dragonblades;
     //labels to display variables of Genji
     Label lblDamageReflected;
     Label lblDamageReflectedAverage;
@@ -31,14 +31,10 @@ public class Genji extends Hero {
 
         //hero's name
         super.name = "Genji";
-        //set variables unqiue to Genji
-        this.damageReflected = "12";
-        this.damageReflectedAverage = "12";
-        this.damageReflectedMostGame = "12";
-        this.dragonbladeKills = "12";
-        this.dragonbladeKillsAverage = "12";
-        this.dragonbladeKillsMostGame = "12";
-        this.dragonblades = "12";
+ 
+    }
+    
+    public void labels(){
         //array list of labels for variables of Genji
         genjiLabels = new ArrayList<>();
         genjiLabels.add(lblDamageReflected = new Label("Damage Reflected: " + damageReflected));
@@ -51,6 +47,35 @@ public class Genji extends Hero {
         super.uniqueLabels = genjiLabels;
     }
 
+    public void setDamageReflected(double damageReflected) {
+        this.damageReflected = damageReflected;
+    }
+
+    public void setDamageReflectedAverage(double damageReflectedAverage) {
+        this.damageReflectedAverage = damageReflectedAverage;
+    }
+
+    public void setDamageReflectedMostGame(double damageReflectedMostGame) {
+        this.damageReflectedMostGame = damageReflectedMostGame;
+    }
+
+    public void setDragonbladeKills(double dragonbladeKills) {
+        this.dragonbladeKills = dragonbladeKills;
+    }
+
+    public void setDragonbladeKillsAverage(double dragonbladeKillsAverage) {
+        this.dragonbladeKillsAverage = dragonbladeKillsAverage;
+    }
+
+    public void setDragonbladeKillsMostGame(double dragonbladeKillsMostGame) {
+        this.dragonbladeKillsMostGame = dragonbladeKillsMostGame;
+    }
+
+    public void setDragonblades(double dragonblades) {
+        this.dragonblades = dragonblades;
+    }
+
+    
     @Override
     public String toString() {
         return name;

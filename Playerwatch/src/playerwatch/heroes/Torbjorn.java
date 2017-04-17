@@ -10,18 +10,18 @@ import javafx.scene.control.Label;
 public class Torbjorn extends Hero {
 
     //variables unqiue to Torbjorn
-    String armorPacksCreated;
-    String armorPacksCreatedAverage;
-    String armorPacksCreatedMostGame;
-    String moltonCoreKills;
-    String moltonCoreKillsAverage;
-    String moltonCoreKillsMostGame;
-    String torbjornKills;
-    String torbjornKillsAverage;
-    String torbjornKillsMostGame;
-    String turretKills;
-    String turretKillsAverage;
-    String turretKillsMostGame;
+    double armorPacksCreated;
+    double armorPacksCreatedAverage;
+    double armorPacksCreatedMostGame;
+    double moltonCoreKills;
+    double moltonCoreKillsAverage;
+    double moltonCoreKillsMostGame;
+    double torbjornKills;
+    double torbjornKillsAverage;
+    double torbjornKillsMostGame;
+    double turretKills;
+    double turretKillsAverage;
+    double turretKillsMostGame;
     //labels to display variables of Torbjorn
     Label lblArmorPacksCreated;
     Label lblArmorPacksCreatedAverage;
@@ -41,20 +41,10 @@ public class Torbjorn extends Hero {
 
         //hero's name
         super.name = "Torbjorn";
-        //set variables unqiue to Torbjorn
-        this.armorPacksCreated = "tur";
-        this.armorPacksCreatedAverage = "tur";
-        this.armorPacksCreatedMostGame = "tur";
-        this.moltonCoreKills = "tur";
-        this.moltonCoreKillsAverage = "tur";
-        this.moltonCoreKillsMostGame = "tur";
-        this.torbjornKills = "tur";
-        this.torbjornKillsAverage = "tur";
-        this.torbjornKillsMostGame = "tur";
-        this.turretKills = "tur";
-        this.turretKillsAverage = "tur";
-        this.turretKillsMostGame = "tur";
 
+    }
+
+    public void labels(){
         //array list of labels for variables of Torbjorn
         torbjornLabels = new ArrayList<>();
         torbjornLabels.add(lblArmorPacksCreated = new Label("Armor Packs Created: " + armorPacksCreated));
@@ -72,6 +62,55 @@ public class Torbjorn extends Hero {
         super.uniqueLabels = torbjornLabels;
     }
 
+    public void setArmorPacksCreated(double armorPacksCreated) {
+        this.armorPacksCreated = armorPacksCreated;
+    }
+
+    public void setArmorPacksCreatedAverage(double armorPacksCreatedAverage) {
+        this.armorPacksCreatedAverage = armorPacksCreatedAverage;
+    }
+
+    public void setArmorPacksCreatedMostGame(double armorPacksCreatedMostGame) {
+        this.armorPacksCreatedMostGame = armorPacksCreatedMostGame;
+    }
+
+    public void setMoltonCoreKills(double moltonCoreKills) {
+        this.moltonCoreKills = moltonCoreKills;
+    }
+
+    public void setMoltonCoreKillsAverage(double moltonCoreKillsAverage) {
+        this.moltonCoreKillsAverage = moltonCoreKillsAverage;
+    }
+
+    public void setMoltonCoreKillsMostGame(double moltonCoreKillsMostGame) {
+        this.moltonCoreKillsMostGame = moltonCoreKillsMostGame;
+    }
+
+    public void setTorbjornKills(double torbjornKills) {
+        this.torbjornKills = torbjornKills;
+    }
+
+    public void setTorbjornKillsAverage(double torbjornKillsAverage) {
+        this.torbjornKillsAverage = torbjornKillsAverage;
+    }
+
+    public void setTorbjornKillsMostGame(double torbjornKillsMostGame) {
+        this.torbjornKillsMostGame = torbjornKillsMostGame;
+    }
+
+    public void setTurretKills(double turretKills) {
+        this.turretKills = turretKills;
+    }
+
+    public void setTurretKillsAverage(double turretKillsAverage) {
+        this.turretKillsAverage = turretKillsAverage;
+    }
+
+    public void setTurretKillsMostGame(double turretKillsMostGame) {
+        this.turretKillsMostGame = turretKillsMostGame;
+    }
+    
+    
     @Override
     public String toString() {
         return name;

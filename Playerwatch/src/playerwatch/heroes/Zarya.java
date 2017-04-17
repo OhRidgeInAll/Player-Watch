@@ -10,21 +10,21 @@ import javafx.scene.control.Label;
 public class Zarya extends Hero {
 
     //variables unqiue to Zarya
-    String averageEnergyBestGame;
-    String damageBlocked;
-    String damageBlockedAverage;
-    String damageBlockedMostGame;
-    String energyMax;
-    String gravSurgeAverage;
-    String gravSurgeMostGame;
-    String highEnergyKills;
-    String highEnergyKillsAverage;
-    String highEnergyKillsMostGame;
-    String lifetimeEnergyAccumulation;
-    String lifetimeGravSurgeKills;
-    String projectedBarriers;
-    String projectedBarriersAverage;
-    String projectedBarriersMostGame;
+    double averageEnergyBestGame;
+    double damageBlocked;
+    double damageBlockedAverage;
+    double damageBlockedMostGame;
+    double energyMax;
+    double gravSurgeAverage;
+    double gravSurgeMostGame;
+    double highEnergyKills;
+    double highEnergyKillsAverage;
+    double highEnergyKillsMostGame;
+    double lifetimeEnergyAccumulation;
+    double lifetimeGravSurgeKills;
+    double projectedBarriers;
+    double projectedBarriersAverage;
+    double projectedBarriersMostGame;
     //labels to display variables of Zarya
     Label lblAverageEnergyBestGame;
     Label lblDamageBlocked;
@@ -47,23 +47,10 @@ public class Zarya extends Hero {
 
         //hero's name
         super.name = "Zarya";
-        //set variables unqiue to Zarya
-        this.averageEnergyBestGame = "grav";
-        this.damageBlocked = "grav";
-        this.damageBlockedAverage = "grav";
-        this.damageBlockedMostGame = "grav";
-        this.energyMax = "grav";
-        this.gravSurgeAverage = "grav";
-        this.gravSurgeMostGame = "grav";
-        this.highEnergyKills = "grav";
-        this.highEnergyKillsAverage = "grav";
-        this.highEnergyKillsMostGame = "grav";
-        this.lifetimeEnergyAccumulation = "grav";
-        this.lifetimeGravSurgeKills = "grav";
-        this.projectedBarriers = "grav";
-        this.projectedBarriersAverage = "grav";
-        this.projectedBarriersMostGame = "grav";
 
+    }
+    
+    public void labels(){
         //array list of labels for variables of Zarya
         zaryaLabels = new ArrayList<>();
         zaryaLabels.add(lblAverageEnergyBestGame = new Label("Average Energy Best Game: " + averageEnergyBestGame));
@@ -83,6 +70,68 @@ public class Zarya extends Hero {
         zaryaLabels.add(lblProjectedBarriersMostGame = new Label("Projected Barriers Most Game: " + projectedBarriersMostGame));
         super.uniqueLabels = zaryaLabels;
     }
+
+    public void setAverageEnergyBestGame(double averageEnergyBestGame) {
+        this.averageEnergyBestGame = averageEnergyBestGame;
+    }
+
+    public void setDamageBlocked(double damageBlocked) {
+        this.damageBlocked = damageBlocked;
+    }
+
+    public void setDamageBlockedAverage(double damageBlockedAverage) {
+        this.damageBlockedAverage = damageBlockedAverage;
+    }
+
+    public void setDamageBlockedMostGame(double damageBlockedMostGame) {
+        this.damageBlockedMostGame = damageBlockedMostGame;
+    }
+
+    public void setEnergyMax(double energyMax) {
+        this.energyMax = energyMax;
+    }
+
+    public void setGravSurgeAverage(double gravSurgeAverage) {
+        this.gravSurgeAverage = gravSurgeAverage;
+    }
+
+    public void setGravSurgeMostGame(double gravSurgeMostGame) {
+        this.gravSurgeMostGame = gravSurgeMostGame;
+    }
+
+    public void setHighEnergyKills(double highEnergyKills) {
+        this.highEnergyKills = highEnergyKills;
+    }
+
+    public void setHighEnergyKillsAverage(double highEnergyKillsAverage) {
+        this.highEnergyKillsAverage = highEnergyKillsAverage;
+    }
+
+    public void setHighEnergyKillsMostGame(double highEnergyKillsMostGame) {
+        this.highEnergyKillsMostGame = highEnergyKillsMostGame;
+    }
+
+    public void setLifetimeEnergyAccumulation(double lifetimeEnergyAccumulation) {
+        this.lifetimeEnergyAccumulation = lifetimeEnergyAccumulation;
+    }
+
+    public void setLifetimeGravSurgeKills(double lifetimeGravSurgeKills) {
+        this.lifetimeGravSurgeKills = lifetimeGravSurgeKills;
+    }
+
+    public void setProjectedBarriers(double projectedBarriers) {
+        this.projectedBarriers = projectedBarriers;
+    }
+
+    public void setProjectedBarriersAverage(double projectedBarriersAverage) {
+        this.projectedBarriersAverage = projectedBarriersAverage;
+    }
+
+    public void setProjectedBarriersMostGame(double projectedBarriersMostGame) {
+        this.projectedBarriersMostGame = projectedBarriersMostGame;
+    }
+    
+    
 
     @Override
     public String toString() {

@@ -10,15 +10,15 @@ import javafx.scene.control.Label;
 public class Reaper extends Hero {
 
     //variables unqiue to Reaper
-    String deathBlossomKills;
-    String deathBlossomKillsAverage;
-    String deathBlossomKillsMostGame;
-    String soulsConsumed;
-    String soulsConsumedAverage;
-    String soulsConsumedMostGame;
-    String selfHealing;
-    String selfHealingAverage;
-    String selfHealingMostGame;
+    double deathBlossomKills;
+    double deathBlossomKillsAverage;
+    double deathBlossomKillsMostGame;
+    double soulsConsumed;
+    double soulsConsumedAverage;
+    double soulsConsumedMostGame;
+    double selfHealing;
+    double selfHealingAverage;
+    double selfHealingMostGame;
     //labels to display variables of Reaper
     Label lblDeathBlossomKills;
     Label lblDeathBlossomKillsAverage;
@@ -35,18 +35,11 @@ public class Reaper extends Hero {
 
         //hero's name
         super.name = "Reaper";
-        //set variables unqiue to Reaper
-        this.deathBlossomKills = "soul";
-        this.deathBlossomKillsAverage = "soul";
-        this.deathBlossomKillsMostGame = "soul";
-        this.soulsConsumed = "soul";
-        this.soulsConsumedAverage = "soul";
-        this.soulsConsumedMostGame = "soul";
-        this.selfHealing = "soul";
-        this.selfHealingAverage = "soul";
-        this.selfHealingMostGame = "soul";
 
-        //array list of labels for variables of Reaper
+    }
+
+    public void labels(){
+            //array list of labels for variables of Reaper
         reaperLabels = new ArrayList<>();
         reaperLabels.add(lblDeathBlossomKills = new Label("Death Blossom Kills: " + deathBlossomKills));
         reaperLabels.add(lblDeathBlossomKillsAverage = new Label("Death Blossom Kills Average: " + deathBlossomKillsAverage));
@@ -60,6 +53,43 @@ public class Reaper extends Hero {
         super.uniqueLabels = reaperLabels;
     }
 
+    public void setDeathBlossomKills(double deathBlossomKills) {
+        this.deathBlossomKills = deathBlossomKills;
+    }
+
+    public void setDeathBlossomKillsAverage(double deathBlossomKillsAverage) {
+        this.deathBlossomKillsAverage = deathBlossomKillsAverage;
+    }
+
+    public void setDeathBlossomKillsMostGame(double deathBlossomKillsMostGame) {
+        this.deathBlossomKillsMostGame = deathBlossomKillsMostGame;
+    }
+
+    public void setSoulsConsumed(double soulsConsumed) {
+        this.soulsConsumed = soulsConsumed;
+    }
+
+    public void setSoulsConsumedAverage(double soulsConsumedAverage) {
+        this.soulsConsumedAverage = soulsConsumedAverage;
+    }
+
+    public void setSoulsConsumedMostGame(double soulsConsumedMostGame) {
+        this.soulsConsumedMostGame = soulsConsumedMostGame;
+    }
+
+    public void setSelfHealing(double selfHealing) {
+        this.selfHealing = selfHealing;
+    }
+
+    public void setSelfHealingAverage(double selfHealingAverage) {
+        this.selfHealingAverage = selfHealingAverage;
+    }
+
+    public void setSelfHealingMostGame(double selfHealingMostGame) {
+        this.selfHealingMostGame = selfHealingMostGame;
+    }
+    
+    
     @Override
     public String toString() {
         return name;
