@@ -29,7 +29,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import playerwatch.heroes.Hanzo;
 import playerwatch.heroes.JunkRat;
@@ -66,15 +65,20 @@ public class Playerwatch extends Application {
         launch(args);
     }
 
+    //TextField for the BattleTag input
     TextField txtBattleTag;
+    //Label for an error logging in
     Label loginError;
+    //The primary stage of the application
     Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        //set primary stage of start method
         this.primaryStage = primaryStage;
 
+        //create first scene for login
         Scene scene = loginScene();
 
         //set the Scene, Tite, and Icon of the primary stage, do not allow resize
@@ -92,6 +96,7 @@ public class Playerwatch extends Application {
         BorderPane loginPane = new BorderPane();
         loginPane.setId("loginPane");
 
+        //set the center and bottom of the loginPane
         setLoginCenter(loginPane);
         setLoginBottom(loginPane);
 
@@ -112,10 +117,13 @@ public class Playerwatch extends Application {
         BorderPane generalPane = new BorderPane();
         generalPane.setId("generalPane");
 
+        //set the center and bottom of generalPane
         setGeneralCenter(generalPane);
         setGeneralBottom(generalPane);
 
+        //create scene for generalPane
         Scene generalScene = new Scene(generalPane, 400, 400);
+        //get the stylesheet for the generalScene
         generalScene.getStylesheets().addAll(this.getClass()
                 .getResource("PlayerwatchCSS.css").toExternalForm());
 
@@ -127,13 +135,16 @@ public class Playerwatch extends Application {
         BorderPane heroStatsPane = new BorderPane();
         heroStatsPane.setId("heroStatsPane");
 
+        //set the center of the heroStatsPane
         setHeroStatsCenter(heroStatsPane);
+        //get the stylesheet for the heroStatsPane
         heroStatsPane.getStylesheets().addAll(this.getClass()
                 .getResource("PlayerwatchCSS.css").toExternalForm());
 
-        Scene mostPlayScene = new Scene(heroStatsPane, 600, 500);
+        //create the scene for heroStatsPane
+        Scene heroStatsScene = new Scene(heroStatsPane, 600, 500);
 
-        return mostPlayScene;
+        return heroStatsScene;
     }
 
     //center for login pane
@@ -150,17 +161,22 @@ public class Playerwatch extends Application {
         txtBattleTag.setId("BattleTag");
         txtBattleTag.setMaxWidth(200);
 
+        //constrain txtBattleTag for layout alignment
         GridPane.setConstraints(txtBattleTag, 2, 2);
 
+        //button to login to application
         Button btnGeneralScene = new Button("Login");
+        //constrain btnGeneralScene for layout alignment
+        GridPane.setConstraints(btnGeneralScene, 4, 2);
+        //ActionEvent, change the scene of the primary stage to the generalPane
         btnGeneralScene.setOnAction((ActionEvent e) -> {
             primaryStage.setScene(generalScene());
         });
-        GridPane.setConstraints(btnGeneralScene, 4, 2);
-
+        
+        //add txtBattleTag and btnGeneralScene to the centerPane
         centerPane.getChildren().addAll(txtBattleTag, btnGeneralScene);
 
-        //add BattleTag textfield to center pane
+        //set the center of BorderPane main
         main.setCenter(centerPane);
 
     }
@@ -336,12 +352,15 @@ public class Playerwatch extends Application {
         allHeroesArray.add(zarya);
         allHeroesArray.add(zenyatta);
 
+        //Label describing ListView below
         Label chooseHero = new Label("Choose your hero!");
         chooseHero.setStyle("-fx-font:20 Impact; -fx-text-fill:WHITE;");
         //Listview to display sorted list of heros, based upon most played
         ListView<Hero> heroList = new ListView<>();
 
+        //add the array of heroes to the heroList
         heroList.getItems().addAll(allHeroesArray);
+        //add chooseHero and heroList to heroBox
         heroBox.getChildren().addAll(chooseHero, heroList);
 
         Label statPage = new Label("Hero Stats");
