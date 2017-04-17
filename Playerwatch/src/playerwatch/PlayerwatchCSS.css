@@ -1,3 +1,7 @@
+/*
+Author: Michael Lyn
+*/
+/*Style for the login pane*/
 #loginPane{
 
     -fx-background-image: url("overwatchBackground.png");
@@ -5,14 +9,14 @@
     -fx-background-size: 400 400;
     -fx-background-position: center center;
 }
+/*Style for the general pane*/
+#generalPane{
 
-#loginError{
-    -fx-text-fill: red;
+    -fx-background-image: url("statsBackground.png");  
+    -fx-background-position: center center;
 }
-
-/*#BattleTag {
-    -fx-padding: 5px;
-    -fx-border-insets: 5px;
-    -fx-background-insets: 5px;
-
-}*/
+/*Style for the hero stats pane*/
+#heroStatsPane{
+    -fx-background-image: url("statsBackground.png");  
+    -fx-background-position: center center;
+}
