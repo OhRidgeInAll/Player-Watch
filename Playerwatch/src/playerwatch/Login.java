@@ -167,7 +167,10 @@ public class Login {
             roadhog.setSelfHealing((double) usRoadhogGenStats.get("self_healing"));
             roadhog.setSelfHealingAverage((double) usRoadhogAvgStats.get("self_healing_average"));
             roadhog.setSelfHealingMostGame((double) usRoadhogGenStats.get("self_healing_most_in_game"));
-            
+            //General Roadhog Stats
+            roadhog.setEliminations((double) usRoadhogGenStats.get("eliminations"));
+            roadhog.setEliminationsAverage((double) usRoadhogAvgStats.get("eliminations_average"));
+            roadhog.setDeaths((double) usRoadhogGenStats.get("deaths"));
             //Setting Winston Values
             winston.setDamageBlocked((double) usWinstonStats.get("damage_blocked"));
             winston.setDamageBlockedAverage((double) usWinstonAvgStats.get("damage_blocked_average"));
