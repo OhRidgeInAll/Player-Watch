@@ -1,5 +1,12 @@
 package playerwatch;
 
+import playerwatch.heroes.DVa;
+import playerwatch.heroes.Soldier76;
+import playerwatch.heroes.Ana;
+import playerwatch.heroes.Bastion;
+import playerwatch.heroes.Genji;
+import playerwatch.heroes.Roadhog;
+import playerwatch.heroes.Hero;
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
@@ -22,7 +29,24 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import playerwatch.heroes.Hanzo;
+import playerwatch.heroes.JunkRat;
+import playerwatch.heroes.Lucio;
+import playerwatch.heroes.McCree;
+import playerwatch.heroes.Mei;
+import playerwatch.heroes.Pharah;
+import playerwatch.heroes.Reaper;
+import playerwatch.heroes.Reinhardt;
+import playerwatch.heroes.Sombra;
+import playerwatch.heroes.Symmetra;
+import playerwatch.heroes.Torbjorn;
+import playerwatch.heroes.Tracer;
+import playerwatch.heroes.Widowmaker;
+import playerwatch.heroes.Winston;
+import playerwatch.heroes.Zarya;
+import playerwatch.heroes.Zenyatta;
 
 /**
  *
@@ -35,9 +59,9 @@ public class Playerwatch extends Application {
      */
     public static void main(String[] args) {
 
-        Login login = new Login();
+//        Login login = new Login();
 //        
-        JSONObject root = login.login("Original-1425");
+//        login.login("Original-1425");
         //launch the JavaFX application
         launch(args);
     }
@@ -92,6 +116,8 @@ public class Playerwatch extends Application {
         setGeneralBottom(generalPane);
 
         Scene generalScene = new Scene(generalPane, 400, 400);
+        generalScene.getStylesheets().addAll(this.getClass()
+                .getResource("PlayerwatchCSS.css").toExternalForm());
 
         return generalScene;
     }
@@ -99,11 +125,13 @@ public class Playerwatch extends Application {
     private Scene heroStatsScene() {
         //pane for Most Played Hero's Scene
         BorderPane heroStatsPane = new BorderPane();
-        heroStatsPane.setId("mostPlayPane");
+        heroStatsPane.setId("heroStatsPane");
 
         setHeroStatsCenter(heroStatsPane);
+        heroStatsPane.getStylesheets().addAll(this.getClass()
+                .getResource("PlayerwatchCSS.css").toExternalForm());
 
-        Scene mostPlayScene = new Scene(heroStatsPane, 800, 500);
+        Scene mostPlayScene = new Scene(heroStatsPane, 600, 500);
 
         return mostPlayScene;
     }
@@ -141,7 +169,7 @@ public class Playerwatch extends Application {
     private void setLoginBottom(BorderPane main) {
         //label for invalid Battle.net ID input from user
         loginError = new Label("Entered an invalid Battle.net ID");
-        loginError.setId("loginError");
+        loginError.setStyle("-fx-font:20 Arial; -fx-text-fill:RED;");
         BorderPane.setAlignment(loginError, Pos.CENTER);
 
         main.setBottom(loginError);
@@ -172,20 +200,33 @@ public class Playerwatch extends Application {
 
         //labels of names of stats
         Label battleNetName = new Label("Name Variable");
+        battleNetName.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
         Label mostPlay = new Label("Most Played Hero: ");
+        mostPlay.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
         Label winPercent = new Label("Win Percentage");
+        winPercent.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
         Label achievements = new Label("Achievements");
+        achievements.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
         Label eliminations = new Label("Total Eliminations: ");
+        eliminations.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
         Label soloKills = new Label("Total Solo Kills: ");
+        soloKills.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
         Label healingDone = new Label("Healing Done: ");
+        healingDone.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
 
         //labels for variables of stats
         Label mostPlayV = new Label("mostPlayV");
+        mostPlayV.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
         Label winPercentV = new Label("winPercentV");
+        winPercentV.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
         Label achievementsV = new Label("achievmentsV");
+        achievementsV.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
         Label eliminationsV = new Label("eliminationsV");
+        eliminationsV.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
         Label soloKillsV = new Label("soloKillsV");
+        soloKillsV.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
         Label healingDoneV = new Label("healingDoneV");
+        healingDoneV.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
 
         //add labels to corresponding Hbox
         playerName.getChildren().addAll(battleNetName, playerIcon);
@@ -246,33 +287,79 @@ public class Playerwatch extends Application {
         VBox statBox = new VBox(10);
         statBox.setPadding(new Insets(10));
 
-        Hero soldier76 = new Soldier76();
+        //Create instances of every hero
+        Hero ana = new Ana();
+        Hero bastion = new Bastion();
+        Hero dva = new DVa();
+        Hero genji = new Genji();
+        Hero hanzo = new Hanzo();
+        Hero junkRat = new JunkRat();
+        Hero lucio = new Lucio();
+        Hero mcCree = new McCree();
+        Hero mei = new Mei();
+        Hero pharah = new Pharah();
+        Hero reaper = new Reaper();
+        Hero reinhardt = new Reinhardt();
         Hero roadHog = new Roadhog();
+        Hero soldier76 = new Soldier76();
+        Hero sombra = new Sombra();
+        Hero symmetra = new Symmetra();
+        Hero torbjorn = new Torbjorn();
+        Hero tracer = new Tracer();
+        Hero widowmaker = new Widowmaker();
+        Hero winston = new Winston();
+        Hero zarya = new Zarya();
+        Hero zenyatta = new Zenyatta();
+
+        //create arraylist to store all of the heroes, add to arraylist
         ArrayList<Hero> allHeroesArray = new ArrayList<>();
-        allHeroesArray.add(soldier76);
+        allHeroesArray.add(ana);
+        allHeroesArray.add(bastion);
+        allHeroesArray.add(dva);
+        allHeroesArray.add(genji);
+        allHeroesArray.add(hanzo);
+        allHeroesArray.add(junkRat);
+        allHeroesArray.add(lucio);
+        allHeroesArray.add(mcCree);
+        allHeroesArray.add(mei);
+        allHeroesArray.add(pharah);
+        allHeroesArray.add(reaper);
+        allHeroesArray.add(reinhardt);
         allHeroesArray.add(roadHog);
+        allHeroesArray.add(soldier76);
+        allHeroesArray.add(sombra);
+        allHeroesArray.add(symmetra);
+        allHeroesArray.add(torbjorn);
+        allHeroesArray.add(tracer);
+        allHeroesArray.add(widowmaker);
+        allHeroesArray.add(winston);
+        allHeroesArray.add(zarya);
+        allHeroesArray.add(zenyatta);
 
         Label chooseHero = new Label("Choose your hero!");
+        chooseHero.setStyle("-fx-font:20 Impact; -fx-text-fill:WHITE;");
         //Listview to display sorted list of heros, based upon most played
         ListView<Hero> heroList = new ListView<>();
-        
 
         heroList.getItems().addAll(allHeroesArray);
         heroBox.getChildren().addAll(chooseHero, heroList);
 
         Label statPage = new Label("Hero Stats");
+        statPage.setStyle("-fx-font:20 Impact; -fx-text-fill:WHITE;");
         //Scroll pane to go through hero stats of hero chosen
         ScrollPane scrollStats = new ScrollPane();
         VBox statLabels = new VBox(10);
-        
+        statLabels.setPadding(new Insets(5));
+
         heroList.getSelectionModel().selectedItemProperty().addListener(
                 new ChangeListener<Hero>() {
-            
-            Label endOfStats = new Label("You've reached the end of the Stats page");
+
+            Label endOfStats = new Label("You've reached the end of the Stats page!");
+
             @Override
             public void changed(ObservableValue<? extends Hero> ov, Hero oldValue, Hero newValue) {
-                if(statLabels.getChildren().contains(endOfStats)){
-                statLabels.getChildren().clear();
+                if (statLabels.getChildren().contains(endOfStats)) {
+                    statLabels.getChildren().clear();
                 }
                 statLabels.getChildren().addAll(newValue.getUniqueLabels());
                 statLabels.getChildren().addAll(newValue.getHeroLabels());
