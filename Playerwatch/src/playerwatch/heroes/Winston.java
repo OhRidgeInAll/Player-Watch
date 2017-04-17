@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javafx.scene.control.Label;
 
 /**
+ * Class to create Winston hero
  *
  * @author Michael Lyn
  */
@@ -43,6 +44,9 @@ public class Winston extends Hero {
     Label lblPrimalRageKillsMostGame;
     ArrayList<Label> winstonLabels;
 
+    /**
+     * Winston constructor, pass name to hero class
+     */
     public Winston() {
 
         //hero's name
@@ -50,7 +54,10 @@ public class Winston extends Hero {
 
     }
 
-    public void labels(){
+    /**
+     * Method to generate labels for Winston unique labels
+     */
+    public void labels() {
         //array list of labels for variables of Winston
         winstonLabels = new ArrayList<>();
         winstonLabels.add(lblDamageBlocked = new Label("Damage Blocked: " + damageBlocked));
@@ -71,67 +78,146 @@ public class Winston extends Hero {
         super.uniqueLabels = winstonLabels;
     }
 
+    /**
+     * set Winston damageBlocked
+     *
+     * @param damageBlocked
+     */
     public void setDamageBlocked(double damageBlocked) {
         this.damageBlocked = damageBlocked;
     }
 
+    /**
+     * set Winston damageBlockedAverage
+     *
+     * @param damageBlockedAverage
+     */
     public void setDamageBlockedAverage(double damageBlockedAverage) {
         this.damageBlockedAverage = damageBlockedAverage;
     }
 
+    /**
+     * set Winston damageBlockedMostGame
+     *
+     * @param damageBlockedMostGame
+     */
     public void setDamageBlockedMostGame(double damageBlockedMostGame) {
         this.damageBlockedMostGame = damageBlockedMostGame;
     }
 
+    /**
+     * set Winston jumpPackKills
+     *
+     * @param jumpPackKills
+     */
     public void setJumpPackKills(double jumpPackKills) {
         this.jumpPackKills = jumpPackKills;
     }
 
+    /**
+     * set Winston jumpPackKillsAverage
+     *
+     * @param jumpPackKillsAverage
+     */
     public void setJumpPackKillsAverage(double jumpPackKillsAverage) {
         this.jumpPackKillsAverage = jumpPackKillsAverage;
     }
 
+    /**
+     * set Winston jumpPackKillsMostGame
+     *
+     * @param jumpPackKillsMostGame
+     */
     public void setJumpPackKillsMostGame(double jumpPackKillsMostGame) {
         this.jumpPackKillsMostGame = jumpPackKillsMostGame;
     }
 
+    /**
+     * set Winston meleeKills
+     *
+     * @param meleeKills
+     */
     public void setMeleeKills(double meleeKills) {
         this.meleeKills = meleeKills;
     }
 
+    /**
+     * set Winston meleeKillsAverage
+     *
+     * @param meleeKillsAverage
+     */
     public void setMeleeKillsAverage(double meleeKillsAverage) {
         this.meleeKillsAverage = meleeKillsAverage;
     }
 
+    /**
+     * set Winston meleeKillsMostGame
+     *
+     * @param meleeKillsMostGame
+     */
     public void setMeleeKillsMostGame(double meleeKillsMostGame) {
         this.meleeKillsMostGame = meleeKillsMostGame;
     }
 
+    /**
+     * set Winston playersKnocked
+     *
+     * @param playersKnocked
+     */
     public void setPlayersKnocked(double playersKnocked) {
         this.playersKnocked = playersKnocked;
     }
 
+    /**
+     * set Winston playersKnockedAverage
+     *
+     * @param playersKnockedAverage
+     */
     public void setPlayersKnockedAverage(double playersKnockedAverage) {
         this.playersKnockedAverage = playersKnockedAverage;
     }
 
+    /**
+     * set Winston playersKnockedMostGame
+     *
+     * @param playersKnockedMostGame
+     */
     public void setPlayersKnockedMostGame(double playersKnockedMostGame) {
         this.playersKnockedMostGame = playersKnockedMostGame;
     }
 
+    /**
+     * set Winston primalRageKills
+     *
+     * @param primalRageKills
+     */
     public void setPrimalRageKills(double primalRageKills) {
         this.primalRageKills = primalRageKills;
     }
 
+    /**
+     * set Winston primalRageKillsAverage
+     *
+     * @param primalRageKillsAverage
+     */
     public void setPrimalRageKillsAverage(double primalRageKillsAverage) {
         this.primalRageKillsAverage = primalRageKillsAverage;
     }
 
+    /**
+     * set Winston primalRageKillsMostGame
+     *
+     * @param primalRageKillsMostGame
+     */
     public void setPrimalRageKillsMostGame(double primalRageKillsMostGame) {
         this.primalRageKillsMostGame = primalRageKillsMostGame;
     }
-    
-    
+
+    /**
+     * Override toString() method
+     *
+     * @return name - hero's name
+     */
     @Override
     public String toString() {
         return name;

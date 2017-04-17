@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javafx.scene.control.Label;
 
 /**
+ * Class to create Zenyatta hero
  *
  * @author Michael Lyn
  */
@@ -23,6 +24,9 @@ public class Zenyatta extends Hero {
     Label lblSelfHealingMostGame;
     ArrayList<Label> zenyattaLabels;
 
+    /**
+     * Zenyatta constructor, pass name to hero class
+     */
     public Zenyatta() {
 
         //hero's name
@@ -30,7 +34,10 @@ public class Zenyatta extends Hero {
 
     }
 
-    public void labels(){
+    /**
+     * Method to generate labels for Zenyatta unique stats
+     */
+    public void labels() {
         //array list of labels for variables of Zenyatta
         zenyattaLabels = new ArrayList<>();
         zenyattaLabels.add(lblTranscendenceHealing = new Label("Transcedence Healing: " + transcendenceHealing));
@@ -41,27 +48,56 @@ public class Zenyatta extends Hero {
         super.uniqueLabels = zenyattaLabels;
     }
 
+    /**
+     * set Zenyatta transcendenceHealing
+     *
+     * @param transcendenceHealing
+     */
     public void setTranscendenceHealing(double transcendenceHealing) {
         this.transcendenceHealing = transcendenceHealing;
     }
 
+    /**
+     * set Zenyatta transcendenceHealingBest
+     *
+     * @param transcendenceHealingBest
+     */
     public void setTranscendenceHealingBest(double transcendenceHealingBest) {
         this.transcendenceHealingBest = transcendenceHealingBest;
     }
 
+    /**
+     * set Zenyatta selfHealing
+     *
+     * @param selfHealing
+     */
     public void setSelfHealing(double selfHealing) {
         this.selfHealing = selfHealing;
     }
 
+    /**
+     * set Zenyatta selfHealingAverage
+     *
+     * @param selfHealingAverage
+     */
     public void setSelfHealingAverage(double selfHealingAverage) {
         this.selfHealingAverage = selfHealingAverage;
     }
 
+    /**
+     * set Zenyatta selfHealingMostGame
+     *
+     * @param selfHealingMostGame
+     */
     public void setSelfHealingMostGame(double selfHealingMostGame) {
         this.selfHealingMostGame = selfHealingMostGame;
     }
-    
-    
+
+    /**
+     * Override toString() method
+     *
+     * @return name - hero's name
+     */
     @Override
     public String toString() {
         return name;

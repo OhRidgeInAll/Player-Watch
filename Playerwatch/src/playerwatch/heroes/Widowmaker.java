@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javafx.scene.control.Label;
 
 /**
+ * Class to create Widowmaker hero
  *
  * @author Michael Lyn
  */
@@ -33,6 +34,9 @@ public class Widowmaker extends Hero {
     Label lblScopedCriticalHitsMostGame;
     ArrayList<Label> widowmakerLabels;
 
+    /**
+     * Widowmaker constructor, pass name to hero class
+     */
     public Widowmaker() {
 
         //hero's name
@@ -40,7 +44,10 @@ public class Widowmaker extends Hero {
 
     }
 
-    public void labels(){
+    /**
+     * Method to generate labels for Widowmaker unique stats
+     */
+    public void labels() {
         //array list of labels for variables of Widowmaker
         widowmakerLabels = new ArrayList<>();
         widowmakerLabels.add(lblVenomMineKills = new Label("Venom Mine Kills: " + venomMineKills));
@@ -56,43 +63,92 @@ public class Widowmaker extends Hero {
         super.uniqueLabels = widowmakerLabels;
     }
 
+    /**
+     * set Widowmaker venomMineKills
+     *
+     * @param venomMineKills
+     */
     public void setVenomMineKills(double venomMineKills) {
         this.venomMineKills = venomMineKills;
     }
 
+    /**
+     * set Widowmaker venomMineKillsAverage
+     *
+     * @param venomMineKillsAverage
+     */
     public void setVenomMineKillsAverage(double venomMineKillsAverage) {
         this.venomMineKillsAverage = venomMineKillsAverage;
     }
 
+    /**
+     * set Widowmaker venomMineKillsMostGame
+     *
+     * @param venomMineKillsMostGame
+     */
     public void setVenomMineKillsMostGame(double venomMineKillsMostGame) {
         this.venomMineKillsMostGame = venomMineKillsMostGame;
     }
 
+    /**
+     * set Widowmaker reconAssistsAverage
+     *
+     * @param reconAssistsAverage
+     */
     public void setReconAssistsAverage(double reconAssistsAverage) {
         this.reconAssistsAverage = reconAssistsAverage;
     }
 
+    /**
+     * set Widowmaker scopedAccuracy
+     *
+     * @param scopedAccuracy
+     */
     public void setScopedAccuracy(double scopedAccuracy) {
         this.scopedAccuracy = scopedAccuracy;
     }
 
+    /**
+     * set Widowmaker scopedAccuracyBestGame
+     *
+     * @param scopedAccuracyBestGame
+     */
     public void setScopedAccuracyBestGame(double scopedAccuracyBestGame) {
         this.scopedAccuracyBestGame = scopedAccuracyBestGame;
     }
 
+    /**
+     * set Widowmaker scopedCriticalHits
+     *
+     * @param scopedCriticalHits
+     */
     public void setScopedCriticalHits(double scopedCriticalHits) {
         this.scopedCriticalHits = scopedCriticalHits;
     }
 
+    /**
+     * set Widowmaker scopedCriticalHitsAverage
+     *
+     * @param scopedCriticalHitsAverage
+     */
     public void setScopedCriticalHitsAverage(double scopedCriticalHitsAverage) {
         this.scopedCriticalHitsAverage = scopedCriticalHitsAverage;
     }
 
+    /**
+     * set Widowmaker scopedCriticalHitsMostGame
+     *
+     * @param scopedCriticalHitsMostGame
+     */
     public void setScopedCriticalHitsMostGame(double scopedCriticalHitsMostGame) {
         this.scopedCriticalHitsMostGame = scopedCriticalHitsMostGame;
     }
-    
-    
+
+    /**
+     * Override toString() method
+     *
+     * @return name - hero's name
+     */
     @Override
     public String toString() {
         return name;

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javafx.scene.control.Label;
 
 /**
+ * Class to create Tracer hero
  *
  * @author Michael Lyn
  */
@@ -31,14 +32,20 @@ public class Tracer extends Hero {
     Label lblSelfHealingMostGame;
     ArrayList<Label> tracerLabels;
 
+    /**
+     * Tracer constructor, pass name to hero class
+     */
     public Tracer() {
 
         //hero's name
         super.name = "Tracer";
 
     }
-    
-    public void labels(){
+
+    /**
+     * Method to generate labels for Tracer unique stats
+     */
+    public void labels() {
         //array list of labels for variables of Tracer
         tracerLabels = new ArrayList<>();
         tracerLabels.add(lblPulseBombKills = new Label("Pulse Bomb Kills: " + pulseBombKills));
@@ -53,44 +60,92 @@ public class Tracer extends Hero {
         super.uniqueLabels = tracerLabels;
     }
 
+    /**
+     * set Tracer pulseBombKills
+     *
+     * @param pulseBombKills
+     */
     public void setPulseBombKills(double pulseBombKills) {
         this.pulseBombKills = pulseBombKills;
     }
 
+    /**
+     * set Tracer pulseBombKillsAverage
+     *
+     * @param pulseBombKillsAverage
+     */
     public void setPulseBombKillsAverage(double pulseBombKillsAverage) {
         this.pulseBombKillsAverage = pulseBombKillsAverage;
     }
 
+    /**
+     * set Tracer pulseBombKillsMostGame
+     *
+     * @param pulseBombKillsMostGame
+     */
     public void setPulseBombKillsMostGame(double pulseBombKillsMostGame) {
         this.pulseBombKillsMostGame = pulseBombKillsMostGame;
     }
 
+    /**
+     * set Tracer pulseBombsAttached
+     *
+     * @param pulseBombsAttached
+     */
     public void setPulseBombsAttached(double pulseBombsAttached) {
         this.pulseBombsAttached = pulseBombsAttached;
     }
 
+    /**
+     * set Tracer pulseBombsAttachedAverage
+     *
+     * @param pulseBombsAttachedAverage
+     */
     public void setPulseBombsAttachedAverage(double pulseBombsAttachedAverage) {
         this.pulseBombsAttachedAverage = pulseBombsAttachedAverage;
     }
 
+    /**
+     * set Tracer pulseBombsMostGame
+     *
+     * @param pulseBombsMostGame
+     */
     public void setPulseBombsMostGame(double pulseBombsMostGame) {
         this.pulseBombsMostGame = pulseBombsMostGame;
     }
 
+    /**
+     * set Tracer selfHealing
+     *
+     * @param selfHealing
+     */
     public void setSelfHealing(double selfHealing) {
         this.selfHealing = selfHealing;
     }
 
+    /**
+     * set Tracer selfHealingAverage
+     *
+     * @param selfHealingAverage
+     */
     public void setSelfHealingAverage(double selfHealingAverage) {
         this.selfHealingAverage = selfHealingAverage;
     }
 
+    /**
+     * set Tracer selfHealingMostGame
+     *
+     * @param selfHealingMostGame
+     */
     public void setSelfHealingMostGame(double selfHealingMostGame) {
         this.selfHealingMostGame = selfHealingMostGame;
     }
-    
-    
 
+    /**
+     * Override toString() method
+     *
+     * @return name - hero's name
+     */
     @Override
     public String toString() {
         return name;

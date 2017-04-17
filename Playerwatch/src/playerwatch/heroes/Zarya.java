@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javafx.scene.control.Label;
 
 /**
+ * Class to create Zarya hero
  *
  * @author Michael Lyn
  */
@@ -43,14 +44,20 @@ public class Zarya extends Hero {
     Label lblProjectedBarriersMostGame;
     ArrayList<Label> zaryaLabels;
 
+    /**
+     * Zarya constructor, pass name to hero class
+     */
     public Zarya() {
 
         //hero's name
         super.name = "Zarya";
 
     }
-    
-    public void labels(){
+
+    /**
+     * Method to generate labels for Zarya unique stats
+     */
+    public void labels() {
         //array list of labels for variables of Zarya
         zaryaLabels = new ArrayList<>();
         zaryaLabels.add(lblAverageEnergyBestGame = new Label("Average Energy Best Game: " + averageEnergyBestGame));
@@ -71,68 +78,146 @@ public class Zarya extends Hero {
         super.uniqueLabels = zaryaLabels;
     }
 
+    /**
+     * set Zarya averageEnergyBestGame
+     *
+     * @param averageEnergyBestGame
+     */
     public void setAverageEnergyBestGame(double averageEnergyBestGame) {
         this.averageEnergyBestGame = averageEnergyBestGame;
     }
 
+    /**
+     * set Zarya damageBlocked
+     *
+     * @param damageBlocked
+     */
     public void setDamageBlocked(double damageBlocked) {
         this.damageBlocked = damageBlocked;
     }
 
+    /**
+     * set Zarya damageBlockedAverage
+     *
+     * @param damageBlockedAverage
+     */
     public void setDamageBlockedAverage(double damageBlockedAverage) {
         this.damageBlockedAverage = damageBlockedAverage;
     }
 
+    /**
+     * set Zarya damageBlockedMostGame
+     *
+     * @param damageBlockedMostGame
+     */
     public void setDamageBlockedMostGame(double damageBlockedMostGame) {
         this.damageBlockedMostGame = damageBlockedMostGame;
     }
 
+    /**
+     * set Zarya energyMax
+     *
+     * @param energyMax
+     */
     public void setEnergyMax(double energyMax) {
         this.energyMax = energyMax;
     }
 
+    /**
+     * set Zarya gravSurgeAverage
+     *
+     * @param gravSurgeAverage
+     */
     public void setGravSurgeAverage(double gravSurgeAverage) {
         this.gravSurgeAverage = gravSurgeAverage;
     }
 
+    /**
+     * set Zarya gravSurgeMostGame
+     *
+     * @param gravSurgeMostGame
+     */
     public void setGravSurgeMostGame(double gravSurgeMostGame) {
         this.gravSurgeMostGame = gravSurgeMostGame;
     }
 
+    /**
+     * set Zarya highEnergyKills
+     *
+     * @param highEnergyKills
+     */
     public void setHighEnergyKills(double highEnergyKills) {
         this.highEnergyKills = highEnergyKills;
     }
 
+    /**
+     * set Zarya highEnergyKillsAverage
+     *
+     * @param highEnergyKillsAverage
+     */
     public void setHighEnergyKillsAverage(double highEnergyKillsAverage) {
         this.highEnergyKillsAverage = highEnergyKillsAverage;
     }
 
+    /**
+     * set Zarya highEnergyKillsMostGame
+     *
+     * @param highEnergyKillsMostGame
+     */
     public void setHighEnergyKillsMostGame(double highEnergyKillsMostGame) {
         this.highEnergyKillsMostGame = highEnergyKillsMostGame;
     }
 
+    /**
+     * set Zarya lifetimeEnergyAccumulation
+     *
+     * @param lifetimeEnergyAccumulation
+     */
     public void setLifetimeEnergyAccumulation(double lifetimeEnergyAccumulation) {
         this.lifetimeEnergyAccumulation = lifetimeEnergyAccumulation;
     }
 
+    /**
+     * set Zarya lifetimeGravSurgeKills
+     *
+     * @param lifetimeGravSurgeKills
+     */
     public void setLifetimeGravSurgeKills(double lifetimeGravSurgeKills) {
         this.lifetimeGravSurgeKills = lifetimeGravSurgeKills;
     }
 
+    /**
+     * set Zarya projectedBarriers
+     *
+     * @param projectedBarriers
+     */
     public void setProjectedBarriers(double projectedBarriers) {
         this.projectedBarriers = projectedBarriers;
     }
 
+    /**
+     * set Zarya projectedBarriersAverage
+     *
+     * @param projectedBarriersAverage
+     */
     public void setProjectedBarriersAverage(double projectedBarriersAverage) {
         this.projectedBarriersAverage = projectedBarriersAverage;
     }
 
+    /**
+     * set Zarya projectedBarriersMostGame
+     *
+     * @param projectedBarriersMostGame
+     */
     public void setProjectedBarriersMostGame(double projectedBarriersMostGame) {
         this.projectedBarriersMostGame = projectedBarriersMostGame;
     }
-    
-    
 
+    /**
+     * Override toString() method
+     *
+     * @return name - hero's name
+     */
     @Override
     public String toString() {
         return name;

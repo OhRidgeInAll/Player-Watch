@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javafx.scene.control.Label;
 
 /**
+ * Class to create McCree hero
  *
  * @author Michael Lyn
  */
@@ -25,6 +26,9 @@ public class McCree extends Hero {
     Label lblFanHammerKillsMostGame;
     ArrayList<Label> mcCreeLabels;
 
+    /**
+     * McCree constructor, pass name to hero class
+     */
     public McCree() {
 
         //hero's name
@@ -32,6 +36,9 @@ public class McCree extends Hero {
 
     }
 
+    /**
+     * Method to generate labels for McCree unique stats
+     */
     public void labels() {
         //array list of labels for variables of McCree
         mcCreeLabels = new ArrayList<>();
@@ -44,30 +51,65 @@ public class McCree extends Hero {
         super.uniqueLabels = mcCreeLabels;
     }
 
+    /**
+     * set McCree deadeyeKills
+     *
+     * @param deadeyeKills
+     */
     public void setDeadeyeKills(double deadeyeKills) {
         this.deadeyeKills = deadeyeKills;
     }
 
+    /**
+     * set McCree deadeyeKillsAverage
+     *
+     * @param deadeyeKillsAverage
+     */
     public void setDeadeyeKillsAverage(double deadeyeKillsAverage) {
         this.deadeyeKillsAverage = deadeyeKillsAverage;
     }
 
+    /**
+     * set McCree deadeyeKillsMostGame
+     *
+     * @param deadeyeKillsMostGame
+     */
     public void setDeadeyeKillsMostGame(double deadeyeKillsMostGame) {
         this.deadeyeKillsMostGame = deadeyeKillsMostGame;
     }
 
+    /**
+     * set McCree fanHammerKills
+     *
+     * @param fanHammerKills
+     */
     public void setFanHammerKills(double fanHammerKills) {
         this.fanHammerKills = fanHammerKills;
     }
 
+    /**
+     * set McCree fanHammerKillsAverage
+     *
+     * @param fanHammerKillsAverage
+     */
     public void setFanHammerKillsAverage(double fanHammerKillsAverage) {
         this.fanHammerKillsAverage = fanHammerKillsAverage;
     }
 
+    /**
+     * set McCree fanHammerKillsMostGame
+     *
+     * @param fanHammerKillsMostGame
+     */
     public void setFanHammerKillsMostGame(double fanHammerKillsMostGame) {
         this.fanHammerKillsMostGame = fanHammerKillsMostGame;
     }
 
+    /**
+     * Override toString() method
+     *
+     * @return name - hero's name
+     */
     @Override
     public String toString() {
         return name;

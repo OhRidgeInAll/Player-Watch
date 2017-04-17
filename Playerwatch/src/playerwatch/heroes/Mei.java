@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javafx.scene.control.Label;
 
 /**
+ * Class to create Mei hero
  *
  * @author Michael Lyn
  */
@@ -37,6 +38,9 @@ public class Mei extends Hero {
     Label lblSelfHealingMostGame;
     ArrayList<Label> meiLabels;
 
+    /**
+     * Mei constructor, pass name to hero class
+     */
     public Mei() {
 
         //hero's name
@@ -44,6 +48,9 @@ public class Mei extends Hero {
 
     }
 
+    /**
+     * Method to generate labels for Mei unique stats
+     */
     public void labels() {
         //array list of labels for variables of Mei
         meiLabels = new ArrayList<>();
@@ -62,56 +69,119 @@ public class Mei extends Hero {
         super.uniqueLabels = meiLabels;
     }
 
+    /**
+     * set Mei blizzardKills
+     *
+     * @param blizzardKills
+     */
     public void setBlizzardKills(double blizzardKills) {
         this.blizzardKills = blizzardKills;
     }
 
+    /**
+     * set Mei blizzardKillsAverage
+     *
+     * @param blizzardKillsAverage
+     */
     public void setBlizzardKillsAverage(double blizzardKillsAverage) {
         this.blizzardKillsAverage = blizzardKillsAverage;
     }
 
+    /**
+     * set Mei blizzardKillsMostGame
+     *
+     * @param blizzardKillsMostGame
+     */
     public void setBlizzardKillsMostGame(double blizzardKillsMostGame) {
         this.blizzardKillsMostGame = blizzardKillsMostGame;
     }
 
+    /**
+     * set Mei damageBlocked
+     *
+     * @param damageBlocked
+     */
     public void setDamageBlocked(double damageBlocked) {
         this.damageBlocked = damageBlocked;
     }
 
+    /**
+     * set Mei damageBlockedAverage
+     *
+     * @param damageBlockedAverage
+     */
     public void setDamageBlockedAverage(double damageBlockedAverage) {
         this.damageBlockedAverage = damageBlockedAverage;
     }
 
+    /**
+     * set Mei damageBlockedMostGame
+     *
+     * @param damageBlockedMostGame
+     */
     public void setDamageBlockedMostGame(double damageBlockedMostGame) {
         this.damageBlockedMostGame = damageBlockedMostGame;
     }
 
+    /**
+     * set Mei enemiesFrozen
+     *
+     * @param enemiesFrozen
+     */
     public void setEnemiesFrozen(double enemiesFrozen) {
         this.enemiesFrozen = enemiesFrozen;
     }
 
+    /**
+     * set Mei enemiesFrozenAverage
+     *
+     * @param enemiesFrozenAverage
+     */
     public void setEnemiesFrozenAverage(double enemiesFrozenAverage) {
         this.enemiesFrozenAverage = enemiesFrozenAverage;
     }
 
+    /**
+     * set Mei enemiesFrozenMostGame
+     *
+     * @param enemiesFrozenMostGame
+     */
     public void setEnemiesFrozenMostGame(double enemiesFrozenMostGame) {
         this.enemiesFrozenMostGame = enemiesFrozenMostGame;
     }
 
+    /**
+     * set Mei selfHealing
+     *
+     * @param selfHealing
+     */
     public void setSelfHealing(double selfHealing) {
         this.selfHealing = selfHealing;
     }
 
+    /**
+     * set Mei selfHealingAverage
+     *
+     * @param selfHealingAverage
+     */
     public void setSelfHealingAverage(double selfHealingAverage) {
         this.selfHealingAverage = selfHealingAverage;
     }
 
+    /**
+     * set Mei selfHealingMostGame
+     *
+     * @param selfHealingMostGame
+     */
     public void setSelfHealingMostGame(double selfHealingMostGame) {
         this.selfHealingMostGame = selfHealingMostGame;
     }
-    
-    
 
+    /**
+     * Override toString() method
+     *
+     * @return name - hero's name
+     */
     @Override
     public String toString() {
         return name;

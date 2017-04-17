@@ -5,7 +5,7 @@ import javafx.scene.control.Label;
 
 /**
  * Class to create JunkRat hero
- * 
+ *
  * @author Michael Lyn
  */
 public class JunkRat extends Hero {
@@ -24,6 +24,9 @@ public class JunkRat extends Hero {
     Label lblRiptireKillsMostGame;
     ArrayList<Label> junkRatLabels;
 
+    /**
+     * JunkRat constructor, pass name of hero
+     */
     public JunkRat() {
 
         //hero's name
@@ -31,8 +34,11 @@ public class JunkRat extends Hero {
 
     }
 
-    public void labels(){
-            //array list of labels for variables of JunkRat
+    /**
+     * Method to generate labels of Pharah unique stats
+     */
+    public void labels() {
+        //array list of labels for variables of JunkRat
         junkRatLabels = new ArrayList<>();
         junkRatLabels.add(lblEnemiesTrapped = new Label("Enemies Trapped: " + enemiesTrapped));
         junkRatLabels.add(lblEnemiesTrappedMostGame = new Label("Enemies Trapped Most Game: " + enemiesTrappedMostGame));
@@ -42,26 +48,56 @@ public class JunkRat extends Hero {
         super.uniqueLabels = junkRatLabels;
     }
 
-    public double getEnemiesTrapped() {
-        return enemiesTrapped;
+    /**
+     * set JunkRat enemiesTrapped
+     *
+     * @param enemiesTrapped
+     */
+    public void setEnemiesTrapped(double enemiesTrapped) {
+        this.enemiesTrapped = enemiesTrapped;
     }
 
-    public double getEnemiesTrappedMostGame() {
-        return enemiesTrappedMostGame;
+    /**
+     * set JunkRat enemiesTrappedMostGame
+     *
+     * @param enemiesTrappedMostGame
+     */
+    public void setEnemiesTrappedMostGame(double enemiesTrappedMostGame) {
+        this.enemiesTrappedMostGame = enemiesTrappedMostGame;
     }
 
-    public double getRiptireKills() {
-        return riptireKills;
+    /**
+     * set JunkRat riptireKills
+     *
+     * @param riptireKills
+     */
+    public void setRiptireKills(double riptireKills) {
+        this.riptireKills = riptireKills;
     }
 
-    public double getRiptireKillsAverage() {
-        return riptireKillsAverage;
+    /**
+     * set JunkRat riptireKillsAverage
+     *
+     * @param riptireKillsAverage
+     */
+    public void setRiptireKillsAverage(double riptireKillsAverage) {
+        this.riptireKillsAverage = riptireKillsAverage;
     }
 
-    public double getRiptireKillsMostGame() {
-        return riptireKillsMostGame;
+    /**
+     * set JunkRat riptireKillsMostGame
+     *
+     * @param riptireKillsMostGame
+     */
+    public void setRiptireKillsMostGame(double riptireKillsMostGame) {
+        this.riptireKillsMostGame = riptireKillsMostGame;
     }
-    
+
+    /**
+     * Override toString() method
+     *
+     * @return name - hero's name
+     */
     @Override
     public String toString() {
         return name;

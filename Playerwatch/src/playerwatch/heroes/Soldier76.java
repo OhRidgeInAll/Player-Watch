@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import javafx.scene.control.Label;
 
 /**
+ * Class to create Solider76 hero
  *
  * @author Michael Lyn
  */
@@ -20,7 +21,7 @@ public class Soldier76 extends Hero {
     double selfHealing;
     double selfHealingAverage;
     double selfHealingMostGame;
-     //labels to display unique variables
+    //labels to display unique variables
     Label lblBioticFieldHealingDone;
     Label lblBioticFieldsDeployed;
     Label lblHelixRocketKills;
@@ -33,14 +34,20 @@ public class Soldier76 extends Hero {
     Label lblSelfHealingMostGame;
     ArrayList<Label> soldier76Labels;
 
+    /**
+     * Soldier76 constructor, pass name to hero class
+     */
     public Soldier76() {
 
-         //name of the hero
+        //name of the hero
         super.name = "Soldier76";
 
     }
 
-    public void labels(){
+    /**
+     * Method to generate labels for Soldier76 unique stats
+     */
+    public void labels() {
         //array list of labels for output
         this.soldier76Labels = new ArrayList<>();
         soldier76Labels.add(lblBioticFieldHealingDone = new Label("Biotic Field Healing Done: " + bioticFieldHealingDone));
@@ -56,47 +63,101 @@ public class Soldier76 extends Hero {
         super.uniqueLabels = soldier76Labels;
     }
 
+    /**
+     * set Soldier76 bioticFieldHealingDone
+     *
+     * @param bioticFieldHealingDone
+     */
     public void setBioticFieldHealingDone(double bioticFieldHealingDone) {
         this.bioticFieldHealingDone = bioticFieldHealingDone;
     }
 
+    /**
+     * set Soldier76 bioticFieldsDeployed
+     *
+     * @param bioticFieldsDeployed
+     */
     public void setBioticFieldsDeployed(double bioticFieldsDeployed) {
         this.bioticFieldsDeployed = bioticFieldsDeployed;
     }
 
+    /**
+     * set Soldier76 helixRocketKills
+     *
+     * @param helixRocketKills
+     */
     public void setHelixRocketKills(double helixRocketKills) {
         this.helixRocketKills = helixRocketKills;
     }
 
+    /**
+     * set Soldier76 helixRocketKillsAverage
+     *
+     * @param helixRocketKillsAverage
+     */
     public void setHelixRocketKillsAverage(double helixRocketKillsAverage) {
         this.helixRocketKillsAverage = helixRocketKillsAverage;
     }
 
+    /**
+     * set Soldier76 helixRocketKillsMostGame
+     *
+     * @param helixRocketKillsMostGame
+     */
     public void setHelixRocketKillsMostGame(double helixRocketKillsMostGame) {
         this.helixRocketKillsMostGame = helixRocketKillsMostGame;
     }
 
+    /**
+     * set Soldier76 tacticalVisorKillsAverage
+     *
+     * @param tacticalVisorKillsAverage
+     */
     public void setTacticalVisorKillsAverage(double tacticalVisorKillsAverage) {
         this.tacticalVisorKillsAverage = tacticalVisorKillsAverage;
     }
 
+    /**
+     * set Soldier76 tacticalVisorKillsMostGame
+     *
+     * @param tacticalVisorKillsMostGame
+     */
     public void setTacticalVisorKillsMostGame(double tacticalVisorKillsMostGame) {
         this.tacticalVisorKillsMostGame = tacticalVisorKillsMostGame;
     }
 
+    /**
+     * set Soldier76 selfHealing
+     *
+     * @param selfHealing
+     */
     public void setSelfHealing(double selfHealing) {
         this.selfHealing = selfHealing;
     }
 
+    /**
+     * set Soldier76 selfHealingAverage
+     *
+     * @param selfHealingAverage
+     */
     public void setSelfHealingAverage(double selfHealingAverage) {
         this.selfHealingAverage = selfHealingAverage;
     }
 
+    /**
+     * set Soldier76 selfHealingMostGame
+     *
+     * @param selfHealingMostGame
+     */
     public void setSelfHealingMostGame(double selfHealingMostGame) {
         this.selfHealingMostGame = selfHealingMostGame;
     }
-    
-    
+
+    /**
+     * Override toString() method
+     *
+     * @return name - hero's name
+     */
     @Override
     public String toString() {
         return name;
