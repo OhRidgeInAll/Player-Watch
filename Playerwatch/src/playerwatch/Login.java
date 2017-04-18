@@ -354,11 +354,11 @@ public class Login {
             //Estabilishing Soldier76 Variables
             soldier76.setTacticalVisorKillsMostGame((double) usSoldier76Stats.get("tactical_visor_kills_most_in_game"));
             soldier76.setTacticalVisorKillsAverage((double) usSoldier76AvgStats.get("tactical_visor_kills_average"));
-            soldier76.setBioticFieldsDeployed((double) usSoldier76Stats.get("biotic_field"));
-            soldier76.setBioticFieldHealingDone((double) usSoldier76Stats.get("biotic_fields"));
-            soldier76.setHelixRocketKills((double) usSoldier76Stats.get(""));
-            soldier76.setHelixRocketKillsAverage((double) usSoldier76AvgStats.get(""));
-            soldier76.setHelixRocketKillsMostGame((double) usSoldier76Stats.get(""));
+            soldier76.setBioticFieldsDeployed((double) usSoldier76Stats.get("biotic_fields_deployed"));
+            soldier76.setBioticFieldHealingDone((double) usSoldier76Stats.get("biotic_field_healing_done"));
+            soldier76.setHelixRocketKills((double) usSoldier76Stats.get("helix_rocket_kills"));
+            soldier76.setHelixRocketKillsAverage((double) usSoldier76AvgStats.get("helix_rocket_kills_average"));
+            soldier76.setHelixRocketKillsMostGame((double) usSoldier76Stats.get("helix_rocket_kills_most_in_game"));
             
             //Implementing Soldier76 General Stats
 
@@ -377,7 +377,7 @@ public class Login {
             soldier76.setCriticalHitAccuracy((double) usSoldier76GenStats.get("critical_hit_accuracy"));
             
             //Sombra 
-            sombra.setDamageBlocked((double) usSombraStats.get("damage_blocked"));
+            sombra.setEnemiesHacked((double) usSombraGenStats.get("enemies_hacked"));
             
 
             //Implementing Sombra General Stats
