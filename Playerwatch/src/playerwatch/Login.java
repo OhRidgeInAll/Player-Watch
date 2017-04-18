@@ -560,7 +560,11 @@ public class Login {
             ana.setTimePlayed((double) usAnaGenStats.get("time_played"));
 
             //Widowmaker Stats
-            widowmaker.setScopedAccuracy((double) usWidowmakerStats.get(""));
+            widowmaker.setScopedAccuracy((double) usWidowmakerStats.get("scoped_accuracy"));
+            widowmaker.setScopedAccuracyBestGame((double) usWidowmakerStats.get("scoped_accuracy_best_in_game"));
+            widowmaker.setVenomMineKills((double) usWidowmakerStats.get("venom_mine_kills"));
+            widowmaker.setVenomMineKillsAverage((double) usWidowmakerAvgStats.get("venom_mine_kills_average"));
+            widowmaker.setVenomMineKillsMostGame((double) usWidowmakerStats.get("venom_mine_kills_most_in_game"));
             
             //Implementing Widowmaker General Stats
 
@@ -580,6 +584,8 @@ public class Login {
             
             //Initializing Mei stats
             mei.setBlizzardKills((double) usMeiStats.get("blizzard_kills"));
+            mei.setBlizzardKillsAverage((double) usMeiStats.get("blizzard_kills_average"));
+            mei.setBlizzardKillsMostGame((double) usMeiStats.get("blizzard_kills_most_in_game"));
             
             //Implementing Mei General Stats
 
@@ -599,6 +605,8 @@ public class Login {
             
             //Symmetra Initialization
             symmetra.setPlayersTeleported((double) usSymmetraStats.get("players_teleported"));
+            symmetra.setPlayersTeleportedAverage((double) usSymmetraStats.get("players_teleported_average"));
+            symmetra.setPlayersTeleportedMostGame((double) usSymmetraStats.get("players_teleported_most_in_game"));
             
             //Implementing Symmetra General Stats
 
@@ -608,13 +616,9 @@ public class Login {
             symmetra.setDeathsAverage((double) usSymmetraAvgStats.get("deaths_average"));
             symmetra.setSoloKills((double) usSymmetraGenStats.get("solo_kills"));
             symmetra.setSoloKillsAverage((double) usSymmetraAvgStats.get("solo_kills_average"));
-            symmetra.setObjectiveKills((double) usSymmetraGenStats.get("objective_kills"));
             symmetra.setObjectiveKillsAverage((double) usSymmetraAvgStats.get("objective_kills_average"));
-            symmetra.setWeaponAccuracy((double) usSymmetraGenStats.get("weapon_accuracy"));
             symmetra.setGamesWon((double) usSymmetraGenStats.get("games_won"));
             symmetra.setTimePlayed((double) usSymmetraGenStats.get("time_played"));
-            symmetra.setCriticalHits((double) usSymmetraGenStats.get("critical_hits"));
-            symmetra.setCriticalHitAccuracy((double) usSymmetraGenStats.get("critical_hit_accuracy"));
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
