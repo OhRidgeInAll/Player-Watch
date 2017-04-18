@@ -356,9 +356,9 @@ public class Login {
             soldier76.setTacticalVisorKillsAverage((double) usSoldier76AvgStats.get("tactical_visor_kills_average"));
             soldier76.setBioticFieldsDeployed((double) usSoldier76Stats.get("biotic_fields_deployed"));
             soldier76.setBioticFieldHealingDone((double) usSoldier76Stats.get("biotic_field_healing_done"));
-            soldier76.setHelixRocketKills((double) usSoldier76Stats.get("helix_rocket_kills"));
-            soldier76.setHelixRocketKillsAverage((double) usSoldier76AvgStats.get("helix_rocket_kills_average"));
-            soldier76.setHelixRocketKillsMostGame((double) usSoldier76Stats.get("helix_rocket_kills_most_in_game"));
+            soldier76.setHelixRocketKills((double) usSoldier76Stats.get("helix_rockets_kills"));
+            soldier76.setHelixRocketKillsAverage((double) usSoldier76AvgStats.get("helix_rockets_kills_average"));
+            soldier76.setHelixRocketKillsMostGame((double) usSoldier76Stats.get("helix_rockets_kills_most_in_game"));
             
             //Implementing Soldier76 General Stats
 
@@ -378,7 +378,11 @@ public class Login {
             
             //Sombra 
             sombra.setEnemiesHacked((double) usSombraGenStats.get("enemies_hacked"));
-            
+            sombra.setEnemiesHackedAverage((double) usSombraAvgStats.get("enemies_hacked_average"));
+            sombra.setEnemiesHackedMostGame((double) usSombraGenStats.get("enemies_hacked_most_in_game"));
+            sombra.setEnemiesEmp((double) usSombraGenStats.get("enemies_empd"));
+            sombra.setEnemiesEmpAverage((double) usSombraAvgStats.get("enemies_empd_average"));
+            sombra.setEnemiesEmpMostGame((double) usSombraGenStats.get("enemies_empd_most_in_game"));
 
             //Implementing Sombra General Stats
 
@@ -386,12 +390,10 @@ public class Login {
             sombra.setEliminationsAverage((double) usSombraAvgStats.get("eliminations_average"));
             sombra.setDeaths((double) usSombraGenStats.get("deaths"));
             sombra.setDeathsAverage((double) usSombraAvgStats.get("deaths_average"));
-            sombra.setSoloKills((double) usSombraGenStats.get("solo_kills"));
             sombra.setSoloKillsAverage((double) usSombraAvgStats.get("solo_kills_average"));
             sombra.setObjectiveKills((double) usSombraGenStats.get("objective_kills"));
             sombra.setObjectiveKillsAverage((double) usSombraAvgStats.get("objective_kills_average"));
             sombra.setWeaponAccuracy((double) usSombraGenStats.get("weapon_accuracy"));
-            sombra.setGamesWon((double) usSombraGenStats.get("games_won"));
             sombra.setTimePlayed((double) usSombraGenStats.get("time_played"));
             sombra.setCriticalHits((double) usSombraGenStats.get("critical_hits"));
             sombra.setCriticalHitAccuracy((double) usSombraGenStats.get("critical_hit_accuracy"));
