@@ -2,7 +2,6 @@ package playerwatch.heroes;
 
 import java.util.ArrayList;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
 
 /**
  * Class that extends all unique Heroes
@@ -23,7 +22,6 @@ public class Hero {
     double deaths;
     double deathsAverage;
     double environmentalDeaths;
-    double gamesPlayed;
     double gamesWon;
     double timePlayed;
     double weaponAccuracy;
@@ -39,7 +37,6 @@ public class Hero {
     Label lblEliminationsAverage;
     Label lblDeaths;
     Label lblEnvironmentalDeaths;
-    Label lblGamesPlayed;
     Label lblGamesWon;
     Label lblTimePlayed;
     Label lblWeaponAccuracy;
@@ -87,13 +84,20 @@ public class Hero {
         heroLabels.add(lblEliminationsAverage = new Label("Eliminations Average: " + eliminationsAverage));
         heroLabels.add(lblDeaths = new Label("Deaths: " + deaths));
         heroLabels.add(lblEnvironmentalDeaths = new Label("Environmental Deaths: " + environmentalDeaths));
-        heroLabels.add(lblGamesPlayed = new Label("Games Played: " + gamesPlayed));
         heroLabels.add(lblGamesWon = new Label("Games Won: " + gamesWon));
         heroLabels.add(lblTimePlayed = new Label("Time Played: " + timePlayed));
         heroLabels.add(lblWeaponAccuracy = new Label("Weapon Accuracy: " + weaponAccuracy));
         heroLabels.add(lblCriticalHits = new Label("Critical Hits: " + criticalHits));
         heroLabels.add(lblCriticalHitAccuracy = new Label("Critical Hits Accuracy: " + criticalHitAccuracy));
         this.heroLabels = heroLabels;
+    }
+
+    /**
+     * get Name of Hero
+     * @return name
+     */
+    public String getName() {
+        return name;
     }
 
     /**
@@ -169,19 +173,19 @@ public class Hero {
     }
 
     /**
-     * set Hero gamesPlayed
-     * @param gamesPlayed 
-     */
-    public void setGamesPlayed(double gamesPlayed) {
-        this.gamesPlayed = gamesPlayed;
-    }
-
-    /**
      * set Hero gamesWon
      * @param gamesWon 
      */
     public void setGamesWon(double gamesWon) {
         this.gamesWon = gamesWon;
+    }
+
+    /**
+     * get Hero timePlayed
+     * @return timePlayed
+     */
+    public double getTimePlayed() {
+        return timePlayed;
     }
 
     /**
@@ -262,14 +266,6 @@ public class Hero {
      */
     public double getDeathsAverage() {
         return deathsAverage;
-    }
-
-    /**
-     * get Hero gamesPlayed
-     * @return gamesPlayed
-     */
-    public double getGamesPlayed() {
-        return gamesPlayed;
     }
 
     /**

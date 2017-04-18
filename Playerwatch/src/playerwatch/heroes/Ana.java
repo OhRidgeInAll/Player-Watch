@@ -14,9 +14,6 @@ public class Ana extends Hero {
     double enemiesSlept;
     double enemiesSleptAverage;
     double enemiesSleptMostGame;
-    double healingPrevented;
-    double healingPreventedAverage;
-    double healingPreventedMostGame;
     double nanoBoostAssists;
     double nanoBoostAssistsAverage;
     double nanoBoostsAssistsMostGame;
@@ -34,9 +31,6 @@ public class Ana extends Hero {
     Label lblEnemiesSlept;
     Label lblEnemiesSleptAverage;
     Label lblEnemiesSleptMostGame;
-    Label lblHealingPrevented;
-    Label lblHealingPreventedAverage;
-    Label lblHealingPreventedMostGame;
     Label lblNanoBoostAssists;
     Label lblNanoBoostAssistsAverage;
     Label lblNanoBoostsAssistsMostGame;
@@ -71,9 +65,6 @@ public class Ana extends Hero {
         anaLabels.add(lblEnemiesSlept = new Label("Enemies Slept: " + enemiesSlept));
         anaLabels.add(lblEnemiesSleptAverage = new Label("Enemies Slept Average: " + enemiesSleptAverage));
         anaLabels.add(lblEnemiesSleptMostGame = new Label("Enemies Slept Most Game: " + enemiesSleptMostGame));
-        anaLabels.add(lblHealingPrevented = new Label("Healing Prevented: " + healingPrevented));
-        anaLabels.add(lblHealingPreventedAverage = new Label("Healing Prevented Average: " + healingPreventedAverage));
-        anaLabels.add(lblHealingPreventedMostGame = new Label("Healing Prevented Most Game: " + healingPreventedMostGame));
         anaLabels.add(lblNanoBoostAssists = new Label("Nano Boost Assists: " + nanoBoostAssists));
         anaLabels.add(lblNanoBoostAssistsAverage = new Label("Nano Boost Assists Average: " + nanoBoostAssistsAverage));
         anaLabels.add(lblNanoBoostsAssistsMostGame = new Label("Nano Boost Assits Most Game: " + nanoBoostsAssistsMostGame));
@@ -116,33 +107,6 @@ public class Ana extends Hero {
      */
     public void setEnemiesSleptMostGame(double enemiesSleptMostGame) {
         this.enemiesSleptMostGame = enemiesSleptMostGame;
-    }
-
-    /**
-     * set Ana healingPrevented
-     *
-     * @param healingPrevented
-     */
-    public void setHealingPrevented(double healingPrevented) {
-        this.healingPrevented = healingPrevented;
-    }
-
-    /**
-     * set Ana healingPreventedAverage
-     *
-     * @param healingPreventedAverage
-     */
-    public void setHealingPreventedAverage(double healingPreventedAverage) {
-        this.healingPreventedAverage = healingPreventedAverage;
-    }
-
-    /**
-     * set Ana healingPreventedMostGame
-     *
-     * @param healingPreventedMostGame
-     */
-    public void setHealingPreventedMostGame(double healingPreventedMostGame) {
-        this.healingPreventedMostGame = healingPreventedMostGame;
     }
 
     /**

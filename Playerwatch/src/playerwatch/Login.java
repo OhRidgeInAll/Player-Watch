@@ -584,7 +584,7 @@ public class Login {
             
             //Initializing Mei stats
             mei.setBlizzardKills((double) usMeiStats.get("blizzard_kills"));
-            mei.setBlizzardKillsAverage((double) usMeiStats.get("blizzard_kills_average"));
+            mei.setBlizzardKillsAverage((double) usMeiAvgStats.get("blizzard_kills_average"));
             mei.setBlizzardKillsMostGame((double) usMeiStats.get("blizzard_kills_most_in_game"));
             
             //Implementing Mei General Stats
@@ -605,7 +605,7 @@ public class Login {
             
             //Symmetra Initialization
             symmetra.setPlayersTeleported((double) usSymmetraStats.get("players_teleported"));
-            symmetra.setPlayersTeleportedAverage((double) usSymmetraStats.get("players_teleported_average"));
+            symmetra.setPlayersTeleportedAverage((double) usSymmetraAvgStats.get("players_teleported_average"));
             symmetra.setPlayersTeleportedMostGame((double) usSymmetraStats.get("players_teleported_most_in_game"));
             
             //Implementing Symmetra General Stats

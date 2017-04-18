@@ -18,9 +18,6 @@ public class Soldier76 extends Hero {
     double helixRocketKillsMostGame;
     double tacticalVisorKillsAverage;
     double tacticalVisorKillsMostGame;
-    double selfHealing;
-    double selfHealingAverage;
-    double selfHealingMostGame;
     //labels to display unique variables
     Label lblBioticFieldHealingDone;
     Label lblBioticFieldsDeployed;
@@ -29,9 +26,6 @@ public class Soldier76 extends Hero {
     Label lblHelixRocketKillsMostGame;
     Label lblTacticalVisorKillsAverage;
     Label lblTacticalVisorKillsMostGame;
-    Label lblSelfHealing;
-    Label lblSelfHealingAverage;
-    Label lblSelfHealingMostGame;
     ArrayList<Label> soldier76Labels;
 
     /**
@@ -57,9 +51,6 @@ public class Soldier76 extends Hero {
         soldier76Labels.add(lblHelixRocketKillsMostGame = new Label("Helix Rocket Kills Most Game: " + helixRocketKillsMostGame));
         soldier76Labels.add(lblTacticalVisorKillsAverage = new Label("Tactical Visor Kills Average: " + tacticalVisorKillsAverage));
         soldier76Labels.add(lblTacticalVisorKillsMostGame = new Label("Tactical Visor Kills Most Game: " + tacticalVisorKillsMostGame));
-        soldier76Labels.add(lblSelfHealing = new Label("Self Healing: " + selfHealing));
-        soldier76Labels.add(lblSelfHealingAverage = new Label("Self Healing Average: " + selfHealingAverage));
-        soldier76Labels.add(lblSelfHealingMostGame = new Label("Self Healing Most Game: " + selfHealingMostGame));
         super.uniqueLabels = soldier76Labels;
     }
 
@@ -124,33 +115,6 @@ public class Soldier76 extends Hero {
      */
     public void setTacticalVisorKillsMostGame(double tacticalVisorKillsMostGame) {
         this.tacticalVisorKillsMostGame = tacticalVisorKillsMostGame;
-    }
-
-    /**
-     * set Soldier76 selfHealing
-     *
-     * @param selfHealing
-     */
-    public void setSelfHealing(double selfHealing) {
-        this.selfHealing = selfHealing;
-    }
-
-    /**
-     * set Soldier76 selfHealingAverage
-     *
-     * @param selfHealingAverage
-     */
-    public void setSelfHealingAverage(double selfHealingAverage) {
-        this.selfHealingAverage = selfHealingAverage;
-    }
-
-    /**
-     * set Soldier76 selfHealingMostGame
-     *
-     * @param selfHealingMostGame
-     */
-    public void setSelfHealingMostGame(double selfHealingMostGame) {
-        this.selfHealingMostGame = selfHealingMostGame;
     }
 
     /**
