@@ -410,10 +410,15 @@ public class Login {
             bastion.setReconKillsAverage((double) usBastionAvgStats.get("recon_kills_average"));
             bastion.setReconKillsMostGame((double) usBastionStats.get("recon_kills_most_in_game"));
             bastion.setTankKills((double) usBastionStats.get("tank_kills"));
-            bastion.setTankKillsAverage((double) usBastionStats.get("tank_kills_average"));
+            bastion.setTankKillsAverage((double) usBastionAvgStats.get("tank_kills_average"));
             bastion.setTankKillsMostGame((double) usBastionStats.get("tank_kills_most_in_game"));
+            bastion.setSentryKills((double) usBastionStats.get("sentry_kills"));
+            bastion.setSentryKillsAverage((double) usBastionAvgStats.get("sentry_kills_average"));
+            bastion.setSentryKillsMostGame((double) usBastionStats.get("sentry_kills_most_in_game"));
+            bastion.setSelfHealing((double) usBastionGenStats.get("self_healing"));
+            bastion.setSelfHealingAverage((double) usBastionAvgStats.get("self_healing_average"));
+            bastion.setSelfHealingMostGame((double) usBastionGenStats.get("self_healing_most_in_game"));
             
-
             //Implementing Bastion General Stats
 
             bastion.setEliminations((double) usBastionGenStats.get("eliminations"));
@@ -438,6 +443,9 @@ public class Login {
             reaper.setDeathBlossomKills((double) usReaperStats.get("death_blossom_kills"));
             reaper.setDeathBlossomKillsAverage((double) usReaperAvgStats.get("death_blossom_kills_average"));
             reaper.setDeathBlossomKillsMostGame((double) usReaperStats.get("death_blossom_kills_most_in_game"));
+            reaper.setSelfHealing((double) usReaperGenStats.get("death_blossom_kills"));
+            reaper.setSelfHealingAverage((double) usReaperAvgStats.get("death_blossom_kills_average"));
+            reaper.setSelfHealingMostGame((double) usReaperGenStats.get("death_blossom_kills_most_in_game"));
 
             //Implementing Reaper General Stats
 
