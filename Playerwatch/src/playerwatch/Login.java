@@ -173,7 +173,11 @@ public class Login {
             JSONObject usGenjiStats = (JSONObject) usGenji.get("hero_stats");
             JSONObject usGenjiGenStats = (JSONObject) usGenji.get("general_stats");
             JSONObject usGenjiAvgStats = (JSONObject) usGenji.get("average_stats");
-            
+            JSONObject usAna = (JSONObject) usHeroQuickplay.get("ana");
+            JSONObject usAnaStats = (JSONObject) usAna.get("hero_stats");
+            JSONObject usAnaGenStats = (JSONObject) usAna.get("general_stats");
+            JSONObject usAnaAvgStats = (JSONObject) usAna.get("average_stats");
+
             //Setting Roadhog Values
             roadhog.setEnemiesHooked((double) usRoadhogStats.get("enemies_hooked"));
             roadhog.setEnemiesHookedAverage((double) usRoadhogAvgStats.get("enemies_hooked_average"));
@@ -201,7 +205,7 @@ public class Login {
             roadhog.setTimePlayed((double) usRoadhogGenStats.get("time_played"));
             roadhog.setCriticalHits((double) usRoadhogGenStats.get("critical_hits"));
             roadhog.setCriticalHitAccuracy((double) usRoadhogGenStats.get("critical_hit_accuracy"));
-            
+
             //Setting Winston Values
             winston.setDamageBlocked((double) usWinstonStats.get("damage_blocked"));
             winston.setDamageBlockedAverage((double) usWinstonAvgStats.get("damage_blocked_average"));
@@ -232,7 +236,7 @@ public class Login {
             winston.setTimePlayed((double) usWinstonGenStats.get("time_played"));
             winston.setCriticalHits(0);
             winston.setCriticalHitAccuracy(0);
-            
+
             //Setting Zarya Values
             zarya.setDamageBlocked((double) usZaryaStats.get("damage_blocked"));
             zarya.setDamageBlockedAverage((double) usZaryaAvgStats.get("damage_blocked_average"));
@@ -265,7 +269,7 @@ public class Login {
             zarya.setTimePlayed((double) usZaryaGenStats.get("time_played"));
             zarya.setCriticalHits(0);
             zarya.setCriticalHitAccuracy(0);
-            
+
             //Setting Zenyatta Values
             zenyatta.setTranscendenceHealing((double) usZenyattaGenStats.get("transcendence_healing"));
             zenyatta.setTranscendenceHealingBest((double) usZenyattaStats.get("transcendence_healing_best"));
@@ -292,10 +296,9 @@ public class Login {
             tracer.setPulseBombKillsMostGame((double) usTracerStats.get("pulse_bomb_kills_most_in_game"));
             tracer.setPulseBombsAttached((double) usTracerStats.get("pulse_bombs_attached"));
             tracer.setPulseBombsAttachedAverage((double) usTracerAvgStats.get("pulse_bombs_attached_average"));
-            tracer.setPulseBombsMostGame((double) usTracerStats.get("pulse_bombs_attached_most_in_game"));            
+            tracer.setPulseBombsMostGame((double) usTracerStats.get("pulse_bombs_attached_most_in_game"));
 
             //Implementing Tracer General Stats
-
             tracer.setEliminations((double) usTracerGenStats.get("eliminations"));
             tracer.setEliminationsAverage((double) usTracerAvgStats.get("eliminations_average"));
             tracer.setDeaths((double) usTracerGenStats.get("deaths"));
@@ -309,9 +312,8 @@ public class Login {
             tracer.setTimePlayed((double) usTracerGenStats.get("time_played"));
             tracer.setCriticalHits((double) usTracerGenStats.get("critical_hits"));
             tracer.setCriticalHitAccuracy((double) usTracerGenStats.get("critical_hit_accuracy"));
-            
+
             //Assigning Torbjorn Values
-            
             torbjorn.setArmorPacksCreated((double) usTorbjornStats.get("armor_packs_created"));
             torbjorn.setArmorPacksCreatedAverage((double) usTorbjornAvgStats.get("armor_packs_created_average"));
             torbjorn.setTorbjornKills((double) usTorbjornStats.get("torbjorn_kills"));
@@ -322,10 +324,9 @@ public class Login {
             torbjorn.setMoltenCoreKillsMostGame((double) usTorbjornStats.get("molten_core_kills_most_in_game"));
             torbjorn.setTorbjornKillsMostGame((double) usTorbjornStats.get("torbjorn_kills_most_in_game"));
             torbjorn.setTurretKills((double) usTorbjornStats.get("turret_kills"));
-            torbjorn.setTurretKillsAverage((double) usTorbjornAvgStats.get("turret_kills_average"));            
+            torbjorn.setTurretKillsAverage((double) usTorbjornAvgStats.get("turret_kills_average"));
 
             //Implementing Torbjorn General Stats
-
             torbjorn.setEliminations((double) usTorbjornGenStats.get("eliminations"));
             torbjorn.setEliminationsAverage((double) usTorbjornAvgStats.get("eliminations_average"));
             torbjorn.setDeaths((double) usTorbjornGenStats.get("deaths"));
@@ -339,7 +340,7 @@ public class Login {
             torbjorn.setTimePlayed((double) usTorbjornGenStats.get("time_played"));
             torbjorn.setCriticalHits((double) usTorbjornGenStats.get("critical_hits"));
             torbjorn.setCriticalHitAccuracy((double) usTorbjornGenStats.get("critical_hit_accuracy"));
-            
+
             //Initializing Mercy Variables
             mercy.setPlayersResurrected((double) usMercyStats.get("players_resurrected"));
             mercy.setPlayersResurrectedAverage((double) usMercyAvgStats.get("players_resurrected_average"));
@@ -349,7 +350,6 @@ public class Login {
             mercy.setSelfHealingMostGame((double) usMercyGenStats.get("self_healing_most_in_game"));
 
             //Implementing Mercy General Stats
-
             mercy.setEliminations((double) usMercyGenStats.get("eliminations"));
             mercy.setBlasterKills((double) usMercyGenStats.get("blaster_kills"));
             mercy.setBlasterKillsAverage((double) usMercyAvgStats.get("blaster_kills_average"));
@@ -366,7 +366,7 @@ public class Login {
             mercy.setTimePlayed((double) usMercyGenStats.get("time_played"));
             mercy.setCriticalHits((double) usMercyGenStats.get("critical_hits"));
             mercy.setCriticalHitAccuracy((double) usMercyGenStats.get("critical_hit_accuracy"));
-            
+
             //Estabilishing Soldier76 Variables
             soldier76.setTacticalVisorKillsMostGame((double) usSoldier76Stats.get("tactical_visor_kills_most_in_game"));
             soldier76.setTacticalVisorKillsAverage((double) usSoldier76AvgStats.get("tactical_visor_kills_average"));
@@ -375,9 +375,8 @@ public class Login {
             soldier76.setHelixRocketKills((double) usSoldier76Stats.get("helix_rockets_kills"));
             soldier76.setHelixRocketKillsAverage((double) usSoldier76AvgStats.get("helix_rockets_kills_average"));
             soldier76.setHelixRocketKillsMostGame((double) usSoldier76Stats.get("helix_rockets_kills_most_in_game"));
-            
-            //Implementing Soldier76 General Stats
 
+            //Implementing Soldier76 General Stats
             soldier76.setEliminations((double) usSoldier76GenStats.get("eliminations"));
             soldier76.setEliminationsAverage((double) usSoldier76AvgStats.get("eliminations_average"));
             soldier76.setDeaths((double) usSoldier76GenStats.get("deaths"));
@@ -391,7 +390,7 @@ public class Login {
             soldier76.setTimePlayed((double) usSoldier76GenStats.get("time_played"));
             soldier76.setCriticalHits((double) usSoldier76GenStats.get("critical_hits"));
             soldier76.setCriticalHitAccuracy((double) usSoldier76GenStats.get("critical_hit_accuracy"));
-            
+
             //Sombra 
             sombra.setEnemiesHacked((double) usSombraGenStats.get("enemies_hacked"));
             sombra.setEnemiesHackedAverage((double) usSombraAvgStats.get("enemies_hacked_average"));
@@ -401,7 +400,6 @@ public class Login {
             sombra.setEnemiesEmpMostGame((double) usSombraGenStats.get("enemies_empd_most_in_game"));
 
             //Implementing Sombra General Stats
-
             sombra.setEliminations((double) usSombraGenStats.get("eliminations"));
             sombra.setEliminationsAverage((double) usSombraAvgStats.get("eliminations_average"));
             sombra.setDeaths((double) usSombraGenStats.get("deaths"));
@@ -412,7 +410,7 @@ public class Login {
             sombra.setWeaponAccuracy((double) usSombraGenStats.get("weapon_accuracy"));
             sombra.setTimePlayed((double) usSombraGenStats.get("time_played"));
             sombra.setCriticalHits((double) usSombraGenStats.get("critical_hits"));
-            
+
             //Bastion Stats
             bastion.setReconKills((double) usBastionStats.get("recon_kills"));
             bastion.setReconKillsAverage((double) usBastionAvgStats.get("recon_kills_average"));
@@ -426,9 +424,8 @@ public class Login {
             bastion.setSelfHealing((double) usBastionGenStats.get("self_healing"));
             bastion.setSelfHealingAverage((double) usBastionAvgStats.get("self_healing_average"));
             bastion.setSelfHealingMostGame((double) usBastionGenStats.get("self_healing_most_in_game"));
-            
-            //Implementing Bastion General Stats
 
+            //Implementing Bastion General Stats
             bastion.setEliminations((double) usBastionGenStats.get("eliminations"));
             bastion.setEliminationsAverage((double) usBastionAvgStats.get("eliminations_average"));
             bastion.setDeaths((double) usBastionGenStats.get("deaths"));
@@ -442,9 +439,8 @@ public class Login {
             bastion.setTimePlayed((double) usBastionGenStats.get("time_played"));
             bastion.setCriticalHits((double) usBastionGenStats.get("critical_hits"));
             bastion.setCriticalHitAccuracy((double) usBastionGenStats.get("critical_hit_accuracy"));
-            
+
             //Reaper Stats initialization
-            
             reaper.setSoulsConsumed((double) usReaperStats.get("souls_consumed"));
             reaper.setSoulsConsumedAverage((double) usReaperAvgStats.get("souls_consumed_average"));
             reaper.setSoulsConsumedMostGame((double) usReaperStats.get("souls_consumed_most_in_game"));
@@ -456,7 +452,6 @@ public class Login {
             reaper.setSelfHealingMostGame((double) usReaperGenStats.get("self_healing_most_in_game"));
 
             //Implementing Reaper General Stats
-
             reaper.setEliminations((double) usReaperGenStats.get("eliminations"));
             reaper.setEliminationsAverage((double) usReaperAvgStats.get("eliminations_average"));
             reaper.setDeaths((double) usReaperGenStats.get("deaths"));
@@ -470,7 +465,7 @@ public class Login {
             reaper.setTimePlayed((double) usReaperGenStats.get("time_played"));
             reaper.setCriticalHits((double) usReaperGenStats.get("critical_hits"));
             reaper.setCriticalHitAccuracy((double) usReaperGenStats.get("critical_hit_accuracy"));
-            
+
             //DVa Online: Stats initialized
             dva.setMechCalled((double) usDvaStats.get("mechs_called"));
             dva.setMechCalledAverage((double) usDvaAvgStats.get("mechs_called_average"));
@@ -481,10 +476,8 @@ public class Login {
             dva.setDamageBlockedAverage((double) usDvaAvgStats.get("damage_blocked_average"));
             dva.setDamageBlockedMostGame((double) usDvaStats.get("damage_blocked_most_in_game"));
             dva.setMechDeaths((double) usDvaStats.get("mech_deaths"));
-            
 
             //Implementing Dva General Stats
-
             dva.setEliminations((double) usDvaGenStats.get("eliminations"));
             dva.setEliminationsAverage((double) usDvaAvgStats.get("eliminations_average"));
             dva.setDeaths((double) usDvaGenStats.get("deaths"));
@@ -498,7 +491,7 @@ public class Login {
             dva.setTimePlayed((double) usDvaGenStats.get("time_played"));
             dva.setCriticalHits((double) usDvaGenStats.get("critical_hits"));
             dva.setCriticalHitAccuracy((double) usDvaGenStats.get("critical_hit_accuracy"));
-            
+
             //Genji Stats Initialization
             genji.setDragonbladeKills((double) usGenjiStats.get("dragonblade_kills"));
             genji.setDragonbladeKillsAverage((double) usGenjiAvgStats.get("dragonblade_kills_average"));
@@ -509,7 +502,6 @@ public class Login {
             genji.setDamageReflectedMostGame((double) usGenjiStats.get("damage_reflected_most_in_game"));
 
             //Implementing Genji General Stats
-
             genji.setEliminations((double) usGenjiGenStats.get("eliminations"));
             genji.setEliminationsAverage((double) usGenjiAvgStats.get("eliminations_average"));
             genji.setDeaths((double) usGenjiGenStats.get("deaths"));
@@ -523,8 +515,42 @@ public class Login {
             genji.setTimePlayed((double) usGenjiGenStats.get("time_played"));
             genji.setCriticalHits((double) usGenjiGenStats.get("critical_hits"));
             genji.setCriticalHitAccuracy((double) usGenjiGenStats.get("critical_hit_accuracy"));
+
+            //Ana Stats initialization
+            ana.setEnemiesSlept((double) usAnaGenStats.get("enemies_slept"));
+            ana.setEnemiesSleptAverage((double) usAnaAvgStats.get("enemies_slept_average"));
+            ana.setEnemiesSleptMostGame((double) usAnaGenStats.get("enemies_slept_most_in_game"));
+            ana.setNanoBoostApplied((double) usAnaStats.get("nano_boosts_applied"));
+            ana.setNanoBoostAppliedAverage((double) usAnaAvgStats.get("nano_boosts_applied_average"));
+            ana.setNanoBoostAppliedMostGame((double) usAnaStats.get("nano_boosts_applied_most_in_game"));
+            ana.setNanoBoostAssists((double) usAnaStats.get("nano_boost_assists"));
+            ana.setNanoBoostAssistsAverage((double) usAnaAvgStats.get("nano_boost_assists_average"));
+            ana.setNanoBoostsAssistsMostGame((double) usAnaStats.get("nano_boost_assists_most_in_game"));
+            ana.setScopedAccuracy((double) usAnaStats.get("scoped_accuracy"));
+            ana.setScopedAccuracyBest((double) usAnaStats.get("scoped_accuracy_best"));
+            ana.setUnscopedAccuracy((double) usAnaStats.get("unscoped_accuracy"));
+            ana.setUnscopedAccuracyBest((double) usAnaGenStats.get("unscoped_accuracy_best"));
+            ana.setSelfHealing((double) usAnaGenStats.get("self_healing"));
+            ana.setSelfHealingMostGame((double) usAnaGenStats.get("self_healing_most_in_game"));
             
+
             
+
+            //Implementing Ana General Stats
+            ana.setEliminations((double) usAnaGenStats.get("eliminations"));
+            ana.setEliminationsAverage((double) usAnaAvgStats.get("eliminations_average"));
+            ana.setDeaths((double) usAnaGenStats.get("deaths"));
+            ana.setDeathsAverage((double) usAnaAvgStats.get("deaths_average"));
+            ana.setSoloKills((double) usAnaGenStats.get("solo_kills"));
+            ana.setSoloKillsAverage((double) usAnaAvgStats.get("solo_kills_average"));
+            ana.setObjectiveKills((double) usAnaGenStats.get("objective_kills"));
+            ana.setObjectiveKillsAverage((double) usAnaAvgStats.get("objective_kills_average"));
+            ana.setWeaponAccuracy((double) usAnaGenStats.get("weapon_accuracy"));
+            ana.setGamesWon((double) usAnaGenStats.get("games_won"));
+            ana.setTimePlayed((double) usAnaGenStats.get("time_played"));
+            ana.setCriticalHits((double) usAnaGenStats.get("critical_hits"));
+            ana.setCriticalHitAccuracy((double) usAnaGenStats.get("critical_hit_accuracy"));
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
