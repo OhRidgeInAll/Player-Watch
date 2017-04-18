@@ -321,6 +321,38 @@ public class Login {
             tracer.setCriticalHits((double) usTracerGenStats.get("critical_hits"));
             tracer.setCriticalHitAccuracy((double) usTracerGenStats.get("critical_hit_accuracy"));
             
+            //Assigning Torbjorn Values
+            
+            torbjorn.setArmorPacksCreated((double) usTorbjornStats.get("armor_packs_created"));
+            torbjorn.setArmorPacksCreatedAverage((double) usTorbjornAvgStats.get("armor_packs_created_average"));
+            torbjorn.setArmorPacksCreatedMostGame((double) usTorbjornStats.get("armor_packs_created_most_in_game"));
+            torbjorn.setTorbjornKills((double) usTorbjornStats.get("torbjorn_kills"));
+            torbjorn.setTorbjornKillsAverage((double) usTorbjornAvgStats.get("torbjorn_kills_average"));
+            torbjorn.setTorbjornKillsMostGame((double) usTorbjornStats.get("torbjorn_kills_most_in_game"));
+            
+
+            //Implementing Torbjorn General Stats
+
+            torbjorn.setEliminations((double) usTorbjornGenStats.get("eliminations"));
+            torbjorn.setEliminationsAverage((double) usTorbjornAvgStats.get("eliminations_average"));
+            torbjorn.setDeaths((double) usTorbjornGenStats.get("deaths"));
+            torbjorn.setDeathsAverage((double) usTorbjornAvgStats.get("deaths_average"));
+            torbjorn.setSoloKills((double) usTorbjornGenStats.get("solo_kills"));
+            torbjorn.setSoloKillsAverage((double) usTorbjornAvgStats.get("solo_kills_average"));
+            torbjorn.setObjectiveKills((double) usTorbjornGenStats.get("objective_kills"));
+            torbjorn.setObjectiveKillsAverage((double) usTorbjornAvgStats.get("objective_kills_average"));
+            torbjorn.setMultikills((double) usTorbjornGenStats.get("objective_kills_average"));
+            torbjorn.setMultikillBest((double) usTorbjornAvgStats.get("objective_kills_average"));
+            torbjorn.setTimeSpentonFire((double) usTorbjornGenStats.get("time_spent_on_fire"));
+            torbjorn.setTimeSpentonFireAverage((double) usTorbjornAvgStats.get("time_spent_on_fire_average"));
+            torbjorn.setWeaponAccuracy((double) usTorbjornGenStats.get("weapon_accuracy"));
+            torbjorn.setGamesTied((double) usTorbjornGenStats.get("games_tied"));
+            torbjorn.setGamesLost((double) usTorbjornGenStats.get("games_lost"));
+            torbjorn.setGamesWon((double) usTorbjornGenStats.get("games_won"));
+            torbjorn.setTimePlayed((double) usTorbjornGenStats.get("time_played"));
+            torbjorn.setCriticalHits((double) usTorbjornGenStats.get("critical_hits"));
+            torbjorn.setCriticalHitAccuracy((double) usTorbjornGenStats.get("critical_hit_accuracy"));
+            
             
             
         } catch (FileNotFoundException ex) {
