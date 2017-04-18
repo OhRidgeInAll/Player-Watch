@@ -109,7 +109,7 @@ public class Login {
         return null;
     }
 
-    public void initializeStats(Ana ana, Bastion bastion, DVa dva, Genji genji, Hanzo hanzo, Hero hero, JunkRat junkrat, Lucio lucio, McCree mccree, Mei mei, Mercy mercy, Pharah pharah, Reaper reaper, Reinhardt reinhardt, Roadhog roadhog, Soldier76 soldier76, Sombra sombra, Symmetra symettra, Torbjorn torbjorn, Tracer tracer, Widowmaker widowmaker, Winston winston, Zarya zarya, Zenyatta zenyatta) {
+    public void initializeStats(Ana ana, Bastion bastion, DVa dva, Genji genji, Hanzo hanzo, Hero hero, JunkRat junkrat, Lucio lucio, McCree mccree, Mei mei, Mercy mercy, Pharah pharah, Reaper reaper, Reinhardt reinhardt, Roadhog roadhog, Soldier76 soldier76, Sombra sombra, Symmetra symmetra, Torbjorn torbjorn, Tracer tracer, Widowmaker widowmaker, Winston winston, Zarya zarya, Zenyatta zenyatta) {
         FileReader reader = null;
         try {
             File file = new File(battletag + "-heroes.txt");
@@ -173,18 +173,18 @@ public class Login {
             JSONObject usGenjiStats = (JSONObject) usGenji.get("hero_stats");
             JSONObject usGenjiGenStats = (JSONObject) usGenji.get("general_stats");
             JSONObject usGenjiAvgStats = (JSONObject) usGenji.get("average_stats");
-            JSONObject usMei = (JSONObject) usHeroQuickplay.get("ana");
+            JSONObject usMei = (JSONObject) usHeroQuickplay.get("mei");
             JSONObject usMeiStats = (JSONObject) usMei.get("hero_stats");
             JSONObject usMeiGenStats = (JSONObject) usMei.get("general_stats");
             JSONObject usMeiAvgStats = (JSONObject) usMei.get("average_stats");
-            JSONObject usWidowmaker = (JSONObject) usHeroQuickplay.get("ana");
+            JSONObject usWidowmaker = (JSONObject) usHeroQuickplay.get("widowmaker");
             JSONObject usWidowmakerStats = (JSONObject) usWidowmaker.get("hero_stats");
             JSONObject usWidowmakerGenStats = (JSONObject) usWidowmaker.get("general_stats");
             JSONObject usWidowmakerAvgStats = (JSONObject) usWidowmaker.get("average_stats");
-            JSONObject usSymettra = (JSONObject) usHeroQuickplay.get("ana");
-            JSONObject usSymettraStats = (JSONObject) usSymettra.get("hero_stats");
-            JSONObject usSymettraGenStats = (JSONObject) usSymettra.get("general_stats");
-            JSONObject usSymettraAvgStats = (JSONObject) usSymettra.get("average_stats");
+            JSONObject usSymmetra = (JSONObject) usHeroQuickplay.get("symmetra");
+            JSONObject usSymmetraStats = (JSONObject) usSymmetra.get("hero_stats");
+            JSONObject usSymmetraGenStats = (JSONObject) usSymmetra.get("general_stats");
+            JSONObject usSymmetraAvgStats = (JSONObject) usSymmetra.get("average_stats");
             JSONObject usAna = (JSONObject) usHeroQuickplay.get("ana");
             JSONObject usAnaStats = (JSONObject) usAna.get("hero_stats");
             JSONObject usAnaGenStats = (JSONObject) usAna.get("general_stats");
@@ -596,6 +596,25 @@ public class Login {
             mei.setTimePlayed((double) usMeiGenStats.get("time_played"));
             mei.setCriticalHits((double) usMeiGenStats.get("critical_hits"));
             mei.setCriticalHitAccuracy((double) usMeiGenStats.get("critical_hit_accuracy"));
+            
+            //Symmetra Initialization
+            symmetra.setPlayersTeleported((double) usSymmetraStats.get("players_teleported"));
+            
+            //Implementing Symmetra General Stats
+
+            symmetra.setEliminations((double) usSymmetraGenStats.get("eliminations"));
+            symmetra.setEliminationsAverage((double) usSymmetraAvgStats.get("eliminations_average"));
+            symmetra.setDeaths((double) usSymmetraGenStats.get("deaths"));
+            symmetra.setDeathsAverage((double) usSymmetraAvgStats.get("deaths_average"));
+            symmetra.setSoloKills((double) usSymmetraGenStats.get("solo_kills"));
+            symmetra.setSoloKillsAverage((double) usSymmetraAvgStats.get("solo_kills_average"));
+            symmetra.setObjectiveKills((double) usSymmetraGenStats.get("objective_kills"));
+            symmetra.setObjectiveKillsAverage((double) usSymmetraAvgStats.get("objective_kills_average"));
+            symmetra.setWeaponAccuracy((double) usSymmetraGenStats.get("weapon_accuracy"));
+            symmetra.setGamesWon((double) usSymmetraGenStats.get("games_won"));
+            symmetra.setTimePlayed((double) usSymmetraGenStats.get("time_played"));
+            symmetra.setCriticalHits((double) usSymmetraGenStats.get("critical_hits"));
+            symmetra.setCriticalHitAccuracy((double) usSymmetraGenStats.get("critical_hit_accuracy"));
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
