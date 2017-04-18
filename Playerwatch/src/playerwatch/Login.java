@@ -225,6 +225,104 @@ public class Login {
             winston.setCriticalHits((double) usWinstonGenStats.get("critical_hits"));
             winston.setCriticalHitAccuracy((double) usWinstonGenStats.get("critical_hit_accuracy"));
             
+            //Setting Zarya Values
+            zarya.setDamageBlocked((double) usZaryaStats.get("damage_blocked"));
+            zarya.setDamageBlockedAverage((double) usZaryaAvgStats.get("damage_blocked_average"));
+            zarya.setDamageBlockedMostGame((double) usZaryaStats.get("damage_blocked_most_in_game"));
+            zarya.setHighEnergyKills((double) usZaryaStats.get("high_energy_kills"));
+            zarya.setHighEnergyKillsMostGame((double) usZaryaStats.get("high_energy_kills_most_in_game"));
+            zarya.setHighEnergyKillsAverage((double) usZaryaAvgStats.get("jump_pack_kills_average"));
+            zarya.setEnergyMax((double) usZaryaStats.get("energy_maximum"));
+            zarya.setDamageBlocked((double) usZaryaStats.get("damage_blocked"));
+            zarya.setDamageBlockedAverage((double) usZaryaAvgStats.get("damage_blocked_average"));
+            zarya.setDamageBlockedMostGame((double) usZaryaStats.get("damage_blocked_most_in_game"));
+            zarya.setProjectedBarriers((double) usZaryaStats.get("projected_barriers_applied"));
+            zarya.setProjectedBarriersAverage((double) usZaryaAvgStats.get("projected_barriers_applied_average"));
+            zarya.setProjectedBarriersMostGame((double) usZaryaStats.get("projected_barriers_applied_most_in_game"));
+            zarya.setGravSurgeMostGame((double) usZaryaStats.get("graviton_surge_most_in_game"));
+            zarya.setLifetimeGravSurgeKills((double) usZaryaStats.get("lifetime_graviton_surge_kills"));
+            zarya.setGravSurgeAverage((double) usZaryaAvgStats.get("graviton_surge_kills_average"));
+            zarya.setLifetimeEnergyAccumulation((double) usZaryaStats.get("lifetime_energy_accumulation"));
+            //Zarya General Stats
+            zarya.setEliminations((double) usZaryaGenStats.get("eliminations"));
+            zarya.setEliminationsAverage((double) usZaryaAvgStats.get("eliminations_average"));
+            zarya.setDeaths((double) usZaryaGenStats.get("deaths"));
+            zarya.setDeathsAverage((double) usZaryaAvgStats.get("deaths_average"));
+            zarya.setSoloKills((double) usZaryaGenStats.get("solo_kills"));
+            zarya.setSoloKillsAverage((double) usZaryaAvgStats.get("solo_kills_average"));
+            zarya.setObjectiveKills((double) usZaryaGenStats.get("objective_kills"));
+            zarya.setObjectiveKillsAverage((double) usZaryaAvgStats.get("objective_kills_average"));
+            zarya.setMultikills((double) usZaryaGenStats.get("objective_kills_average"));
+            zarya.setMultikillBest((double) usZaryaAvgStats.get("objective_kills_average"));
+            zarya.setTimeSpentonFire((double) usZaryaGenStats.get("time_spent_on_fire"));
+            zarya.setTimeSpentonFireAverage((double) usZaryaAvgStats.get("time_spent_on_fire_average"));
+            zarya.setWeaponAccuracy((double) usZaryaGenStats.get("weapon_accuracy"));
+            zarya.setGamesTied((double) usZaryaGenStats.get("games_tied"));
+            zarya.setGamesLost((double) usZaryaGenStats.get("games_lost"));
+            zarya.setGamesWon((double) usZaryaGenStats.get("games_won"));
+            zarya.setTimePlayed((double) usZaryaGenStats.get("time_played"));
+            zarya.setCriticalHits((double) usZaryaGenStats.get("critical_hits"));
+            zarya.setCriticalHitAccuracy((double) usZaryaGenStats.get("critical_hit_accuracy"));
+            
+            //Setting Zenyatta Values
+            zenyatta.setTranscendenceHealing((double) usZenyattaGenStats.get("transcendence_healing"));
+            zenyatta.setHealingDoneAverage((double) usZenyattaAvgStats.get("healing_done_average"));
+            zenyatta.setTranscendenceHealingBest((double) usZenyattaStats.get("transcendence_healing_best"));
+            zenyatta.setSelfHealing((double) usZenyattaGenStats.get("self_healing"));
+            zenyatta.setSelfHealingMostGame((double) usZenyattaGenStats.get("self_healing_most_in_game"));
+            zenyatta.setSelfHealingAverage((double) usZenyattaAvgStats.get("self_healing_average"));
+            //Setting Zenyatta General Values
+            zenyatta.setEliminations((double) usZenyattaGenStats.get("eliminations"));
+            zenyatta.setEliminationsAverage((double) usZenyattaAvgStats.get("eliminations_average"));
+            zenyatta.setDeaths((double) usZenyattaGenStats.get("deaths"));
+            zenyatta.setDeathsAverage((double) usZenyattaAvgStats.get("deaths_average"));
+            zenyatta.setSoloKills((double) usZenyattaGenStats.get("solo_kills"));
+            zenyatta.setSoloKillsAverage((double) usZenyattaAvgStats.get("solo_kills_average"));
+            zenyatta.setObjectiveKills((double) usZenyattaGenStats.get("objective_kills"));
+            zenyatta.setObjectiveKillsAverage((double) usZenyattaAvgStats.get("objective_kills_average"));
+            zenyatta.setMultikills((double) usZenyattaGenStats.get("objective_kills_average"));
+            zenyatta.setMultikillBest((double) usZenyattaAvgStats.get("objective_kills_average"));
+            zenyatta.setTimeSpentonFire((double) usZenyattaGenStats.get("time_spent_on_fire"));
+            zenyatta.setTimeSpentonFireAverage((double) usZenyattaAvgStats.get("time_spent_on_fire_average"));
+            zenyatta.setWeaponAccuracy((double) usZenyattaGenStats.get("weapon_accuracy"));
+            zenyatta.setGamesTied((double) usZenyattaGenStats.get("games_tied"));
+            zenyatta.setGamesLost((double) usZenyattaGenStats.get("games_lost"));
+            zenyatta.setGamesWon((double) usZenyattaGenStats.get("games_won"));
+            zenyatta.setTimePlayed((double) usZenyattaGenStats.get("time_played"));
+            zenyatta.setCriticalHits((double) usZenyattaGenStats.get("critical_hits"));
+            zenyatta.setCriticalHitAccuracy((double) usZenyattaGenStats.get("critical_hit_accuracy"));
+            //Assigning Tracer Values
+            tracer.setPulseBombKills((double) usTracerStats.get("pulse_bomb_kills"));
+            tracer.setPulseBombKillsAverage((double) usTracerAvgStats.get("pulse_bomb_kills_average"));
+            tracer.setPulseBombKillsMostGame((double) usTracerStats.get("pulse_bomb_kills_most_in_game"));
+            tracer.setPulseBombsAttached((double) usTracerStats.get("pulse_bombs_attached"));
+            tracer.setPulseBombsAttachedAverage((double) usTracerAvgStats.get("pulse_bombs_attached_average"));
+            tracer.setPulseBombsMostGame((double) usTracerStats.get("pulse_bombs_attached_most_in_game"));            
+
+            //Implementing Tracer General Stats
+
+            tracer.setEliminations((double) usTracerGenStats.get("eliminations"));
+            tracer.setEliminationsAverage((double) usTracerAvgStats.get("eliminations_average"));
+            tracer.setDeaths((double) usTracerGenStats.get("deaths"));
+            tracer.setDeathsAverage((double) usTracerAvgStats.get("deaths_average"));
+            tracer.setSoloKills((double) usTracerGenStats.get("solo_kills"));
+            tracer.setSoloKillsAverage((double) usTracerAvgStats.get("solo_kills_average"));
+            tracer.setObjectiveKills((double) usTracerGenStats.get("objective_kills"));
+            tracer.setObjectiveKillsAverage((double) usTracerAvgStats.get("objective_kills_average"));
+            tracer.setMultikills((double) usTracerGenStats.get("objective_kills_average"));
+            tracer.setMultikillBest((double) usTracerAvgStats.get("objective_kills_average"));
+            tracer.setTimeSpentonFire((double) usTracerGenStats.get("time_spent_on_fire"));
+            tracer.setTimeSpentonFireAverage((double) usTracerAvgStats.get("time_spent_on_fire_average"));
+            tracer.setWeaponAccuracy((double) usTracerGenStats.get("weapon_accuracy"));
+            tracer.setGamesTied((double) usTracerGenStats.get("games_tied"));
+            tracer.setGamesLost((double) usTracerGenStats.get("games_lost"));
+            tracer.setGamesWon((double) usTracerGenStats.get("games_won"));
+            tracer.setTimePlayed((double) usTracerGenStats.get("time_played"));
+            tracer.setCriticalHits((double) usTracerGenStats.get("critical_hits"));
+            tracer.setCriticalHitAccuracy((double) usTracerGenStats.get("critical_hit_accuracy"));
+            
+            
+            
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
