@@ -180,8 +180,6 @@ public class Login {
             roadhog.setSoloKillsAverage((double) usRoadhogAvgStats.get("solo_kills_average"));
             roadhog.setObjectiveKills((double) usRoadhogGenStats.get("objective_kills"));
             roadhog.setObjectiveKillsAverage((double) usRoadhogAvgStats.get("objective_kills_average"));
-            roadhog.setMultikills((double) usRoadhogGenStats.get("multikills"));
-            roadhog.setMultikillBest((double) usRoadhogGenStats.get("multikill_best"));
             roadhog.setWeaponAccuracy((double) usRoadhogGenStats.get("weapon_accuracy"));
             roadhog.setGamesWon((double) usRoadhogGenStats.get("games_won"));
             roadhog.setTimePlayed((double) usRoadhogGenStats.get("time_played"));
@@ -213,8 +211,6 @@ public class Login {
             winston.setSoloKillsAverage((double) usWinstonAvgStats.get("solo_kills_average"));
             winston.setObjectiveKills((double) usWinstonGenStats.get("objective_kills"));
             winston.setObjectiveKillsAverage((double) usWinstonAvgStats.get("objective_kills_average"));
-            winston.setMultikills((double) usWinstonGenStats.get("multikills"));
-            winston.setMultikillBest((double) usWinstonGenStats.get("multikill_best"));
             winston.setWeaponAccuracy(0);
             winston.setGamesWon((double) usWinstonGenStats.get("games_won"));
             winston.setTimePlayed((double) usWinstonGenStats.get("time_played"));
@@ -248,8 +244,6 @@ public class Login {
             zarya.setSoloKillsAverage((double) usZaryaAvgStats.get("solo_kills_average"));
             zarya.setObjectiveKills((double) usZaryaGenStats.get("objective_kills"));
             zarya.setObjectiveKillsAverage((double) usZaryaAvgStats.get("objective_kills_average"));
-            zarya.setMultikills((double) usZaryaGenStats.get("multikills"));
-            zarya.setMultikillBest((double) usZaryaGenStats.get("multikill_best"));
             zarya.setWeaponAccuracy((double) usZaryaGenStats.get("weapon_accuracy"));
             zarya.setGamesWon((double) usZaryaGenStats.get("games_won"));
             zarya.setTimePlayed((double) usZaryaGenStats.get("time_played"));
@@ -258,7 +252,6 @@ public class Login {
             
             //Setting Zenyatta Values
             zenyatta.setTranscendenceHealing((double) usZenyattaGenStats.get("transcendence_healing"));
-            zenyatta.setHealingDoneAverage((double) usZenyattaAvgStats.get("healing_done_average"));
             zenyatta.setTranscendenceHealingBest((double) usZenyattaStats.get("transcendence_healing_best"));
             zenyatta.setSelfHealing((double) usZenyattaGenStats.get("self_healing"));
             zenyatta.setSelfHealingMostGame((double) usZenyattaGenStats.get("self_healing_most_in_game"));
@@ -272,8 +265,6 @@ public class Login {
             zenyatta.setSoloKillsAverage((double) usZenyattaAvgStats.get("solo_kills_average"));
             zenyatta.setObjectiveKills((double) usZenyattaGenStats.get("objective_kills"));
             zenyatta.setObjectiveKillsAverage((double) usZenyattaAvgStats.get("objective_kills_average"));
-            zenyatta.setMultikills((double) usZenyattaGenStats.get("multikills"));
-            zenyatta.setMultikillBest((double) usZenyattaGenStats.get("multikill_best"));
             zenyatta.setWeaponAccuracy((double) usZenyattaGenStats.get("weapon_accuracy"));
             zenyatta.setGamesWon((double) usZenyattaGenStats.get("games_won"));
             zenyatta.setTimePlayed((double) usZenyattaGenStats.get("time_played"));
@@ -297,8 +288,6 @@ public class Login {
             tracer.setSoloKillsAverage((double) usTracerAvgStats.get("solo_kills_average"));
             tracer.setObjectiveKills((double) usTracerGenStats.get("objective_kills"));
             tracer.setObjectiveKillsAverage((double) usTracerAvgStats.get("objective_kills_average"));
-            tracer.setMultikills((double) usTracerGenStats.get("multikills"));
-            tracer.setMultikillBest((double) usTracerGenStats.get("multikill_best"));
             tracer.setWeaponAccuracy((double) usTracerGenStats.get("weapon_accuracy"));
             tracer.setGamesWon((double) usTracerGenStats.get("games_won"));
             tracer.setTimePlayed((double) usTracerGenStats.get("time_played"));
@@ -312,9 +301,9 @@ public class Login {
             torbjorn.setTorbjornKills((double) usTorbjornStats.get("torbjorn_kills"));
             torbjorn.setTorbjornKillsAverage((double) usTorbjornAvgStats.get("torbjorn_kills_average"));
             torbjorn.setTorbjornKillsMostGame((double) usTorbjornStats.get("torbjorn_kills_most_in_game"));
-            torbjorn.setMoltonCoreKills((double) usTorbjornStats.get("molten_core_kills"));
-            torbjorn.setMoltonCoreKillsAverage((double) usTorbjornAvgStats.get("molten_core_kills_average"));
-            torbjorn.setMoltonCoreKillsMostGame((double) usTorbjornStats.get("molten_core_kills_most_in_game"));
+            torbjorn.setMoltenCoreKills((double) usTorbjornStats.get("molten_core_kills"));
+            torbjorn.setMoltenCoreKillsAverage((double) usTorbjornAvgStats.get("molten_core_kills_average"));
+            torbjorn.setMoltenCoreKillsMostGame((double) usTorbjornStats.get("molten_core_kills_most_in_game"));
             torbjorn.setTorbjornKillsMostGame((double) usTorbjornStats.get("torbjorn_kills_most_in_game"));
             torbjorn.setTurretKills((double) usTorbjornStats.get("turret_kills"));
             torbjorn.setTurretKillsAverage((double) usTorbjornAvgStats.get("turret_kills_average"));            
@@ -329,8 +318,6 @@ public class Login {
             torbjorn.setSoloKillsAverage((double) usTorbjornAvgStats.get("solo_kills_average"));
             torbjorn.setObjectiveKills((double) usTorbjornGenStats.get("objective_kills"));
             torbjorn.setObjectiveKillsAverage((double) usTorbjornAvgStats.get("objective_kills_average"));
-            torbjorn.setMultikills((double) usTorbjornGenStats.get("multikills"));
-            torbjorn.setMultikillBest((double) usTorbjornGenStats.get("multikill_best"));
             torbjorn.setWeaponAccuracy((double) usTorbjornGenStats.get("weapon_accuracy"));
             torbjorn.setGamesWon((double) usTorbjornGenStats.get("games_won"));
             torbjorn.setTimePlayed((double) usTorbjornGenStats.get("time_played"));
@@ -341,7 +328,6 @@ public class Login {
             mercy.setPlayersResurrected((double) usMercyStats.get("players_resurrected"));
             mercy.setPlayersResurrectedAverage((double) usMercyAvgStats.get("players_resurrected_average"));
             mercy.setPlayersResurrectedMostGame((double) usMercyStats.get("players_resurrected_most_in_game"));
-            mercy.setHealingDone((double) usMercyGenStats.get("healing_done"));
             mercy.setSelfHealing((double) usMercyGenStats.get("self_healing"));
             mercy.setSelfHealingAverage((double) usMercyGenStats.get("self_healing_average"));
             mercy.setSelfHealingMostGame((double) usMercyGenStats.get("self_healing_most_in_game"));
@@ -359,8 +345,6 @@ public class Login {
             mercy.setSoloKillsAverage((double) usMercyAvgStats.get("solo_kills_average"));
             mercy.setObjectiveKills((double) usMercyGenStats.get("objective_kills"));
             mercy.setObjectiveKillsAverage((double) usMercyAvgStats.get("objective_kills_average"));
-            mercy.setMultikills((double) usMercyGenStats.get("multikills"));
-            mercy.setMultikillBest((double) usMercyGenStats.get("multikill_best"));
             mercy.setWeaponAccuracy((double) usMercyGenStats.get("weapon_accuracy"));
             mercy.setGamesWon((double) usMercyGenStats.get("games_won"));
             mercy.setTimePlayed((double) usMercyGenStats.get("time_played"));
