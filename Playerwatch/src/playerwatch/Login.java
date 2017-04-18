@@ -360,8 +360,6 @@ public class Login {
             soldier76.setHelixRocketKillsAverage((double) usSoldier76AvgStats.get(""));
             soldier76.setHelixRocketKillsMostGame((double) usSoldier76Stats.get(""));
             
-            
-
             //Implementing Soldier76 General Stats
 
             soldier76.setEliminations((double) usSoldier76GenStats.get("eliminations"));
@@ -372,13 +370,14 @@ public class Login {
             soldier76.setSoloKillsAverage((double) usSoldier76AvgStats.get("solo_kills_average"));
             soldier76.setObjectiveKills((double) usSoldier76GenStats.get("objective_kills"));
             soldier76.setObjectiveKillsAverage((double) usSoldier76AvgStats.get("objective_kills_average"));
-            soldier76.setMultikills((double) usSoldier76GenStats.get("multikills"));
-            soldier76.setMultikillBest((double) usSoldier76GenStats.get("multikill_best"));
             soldier76.setWeaponAccuracy((double) usSoldier76GenStats.get("weapon_accuracy"));
             soldier76.setGamesWon((double) usSoldier76GenStats.get("games_won"));
             soldier76.setTimePlayed((double) usSoldier76GenStats.get("time_played"));
             soldier76.setCriticalHits((double) usSoldier76GenStats.get("critical_hits"));
             soldier76.setCriticalHitAccuracy((double) usSoldier76GenStats.get("critical_hit_accuracy"));
+            
+            //Sombra 
+            
             
         } catch (NullPointerException ex) {
             System.out.println("This value hasn't been indexed. Either you haven't initialized this character or the server has dropped connection");
