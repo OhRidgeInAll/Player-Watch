@@ -173,6 +173,18 @@ public class Login {
             JSONObject usGenjiStats = (JSONObject) usGenji.get("hero_stats");
             JSONObject usGenjiGenStats = (JSONObject) usGenji.get("general_stats");
             JSONObject usGenjiAvgStats = (JSONObject) usGenji.get("average_stats");
+            JSONObject usMei = (JSONObject) usHeroQuickplay.get("ana");
+            JSONObject usMeiStats = (JSONObject) usMei.get("hero_stats");
+            JSONObject usMeiGenStats = (JSONObject) usMei.get("general_stats");
+            JSONObject usMeiAvgStats = (JSONObject) usMei.get("average_stats");
+            JSONObject usWidowmaker = (JSONObject) usHeroQuickplay.get("ana");
+            JSONObject usWidowmakerStats = (JSONObject) usWidowmaker.get("hero_stats");
+            JSONObject usWidowmakerGenStats = (JSONObject) usWidowmaker.get("general_stats");
+            JSONObject usWidowmakerAvgStats = (JSONObject) usWidowmaker.get("average_stats");
+            JSONObject usSymettra = (JSONObject) usHeroQuickplay.get("ana");
+            JSONObject usSymettraStats = (JSONObject) usSymettra.get("hero_stats");
+            JSONObject usSymettraGenStats = (JSONObject) usSymettra.get("general_stats");
+            JSONObject usSymettraAvgStats = (JSONObject) usSymettra.get("average_stats");
             JSONObject usAna = (JSONObject) usHeroQuickplay.get("ana");
             JSONObject usAnaStats = (JSONObject) usAna.get("hero_stats");
             JSONObject usAnaGenStats = (JSONObject) usAna.get("general_stats");
@@ -531,11 +543,8 @@ public class Login {
             ana.setUnscopedAccuracy((double) usAnaStats.get("unscoped_accuracy"));
             ana.setUnscopedAccuracyBest((double) usAnaGenStats.get("unscoped_accuracy_best_in_game"));
             ana.setSelfHealing((double) usAnaGenStats.get("self_healing"));
-            ana.setSelfHealingAverage((double) usAnaAvgStats.get("self_healing_average"));         
+            ana.setSelfHealingAverage((double) usAnaAvgStats.get("self_healing_average"));
             ana.setSelfHealingMostGame((double) usAnaGenStats.get("self_healing_most_in_game"));
-            
-
-            
 
             //Implementing Ana General Stats
             ana.setEliminations((double) usAnaGenStats.get("eliminations"));
@@ -549,6 +558,44 @@ public class Login {
             ana.setWeaponAccuracy((double) usAnaGenStats.get("weapon_accuracy"));
             ana.setGamesWon((double) usAnaGenStats.get("games_won"));
             ana.setTimePlayed((double) usAnaGenStats.get("time_played"));
+
+            //Widowmaker Stats
+            widowmaker.setScopedAccuracy((double) usWidowmakerStats.get(""));
+            
+            //Implementing Widowmaker General Stats
+
+            widowmaker.setEliminations((double) usWidowmakerGenStats.get("eliminations"));
+            widowmaker.setEliminationsAverage((double) usWidowmakerAvgStats.get("eliminations_average"));
+            widowmaker.setDeaths((double) usWidowmakerGenStats.get("deaths"));
+            widowmaker.setDeathsAverage((double) usWidowmakerAvgStats.get("deaths_average"));
+            widowmaker.setSoloKills((double) usWidowmakerGenStats.get("solo_kills"));
+            widowmaker.setSoloKillsAverage((double) usWidowmakerAvgStats.get("solo_kills_average"));
+            widowmaker.setObjectiveKills((double) usWidowmakerGenStats.get("objective_kills"));
+            widowmaker.setObjectiveKillsAverage((double) usWidowmakerAvgStats.get("objective_kills_average"));
+            widowmaker.setWeaponAccuracy((double) usWidowmakerGenStats.get("weapon_accuracy"));
+            widowmaker.setGamesWon((double) usWidowmakerGenStats.get("games_won"));
+            widowmaker.setTimePlayed((double) usWidowmakerGenStats.get("time_played"));
+            widowmaker.setCriticalHits((double) usWidowmakerGenStats.get("critical_hits"));
+            widowmaker.setCriticalHitAccuracy((double) usWidowmakerGenStats.get("critical_hit_accuracy"));
+            
+            //Initializing Mei stats
+            mei.setBlizzardKills((double) usMeiStats.get("blizzard_kills"));
+            
+            //Implementing Mei General Stats
+
+            mei.setEliminations((double) usMeiGenStats.get("eliminations"));
+            mei.setEliminationsAverage((double) usMeiAvgStats.get("eliminations_average"));
+            mei.setDeaths((double) usMeiGenStats.get("deaths"));
+            mei.setDeathsAverage((double) usMeiAvgStats.get("deaths_average"));
+            mei.setSoloKills((double) usMeiGenStats.get("solo_kills"));
+            mei.setSoloKillsAverage((double) usMeiAvgStats.get("solo_kills_average"));
+            mei.setObjectiveKills((double) usMeiGenStats.get("objective_kills"));
+            mei.setObjectiveKillsAverage((double) usMeiAvgStats.get("objective_kills_average"));
+            mei.setWeaponAccuracy((double) usMeiGenStats.get("weapon_accuracy"));
+            mei.setGamesWon((double) usMeiGenStats.get("games_won"));
+            mei.setTimePlayed((double) usMeiGenStats.get("time_played"));
+            mei.setCriticalHits((double) usMeiGenStats.get("critical_hits"));
+            mei.setCriticalHitAccuracy((double) usMeiGenStats.get("critical_hit_accuracy"));
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
