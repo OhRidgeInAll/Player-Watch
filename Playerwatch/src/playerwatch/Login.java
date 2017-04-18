@@ -329,7 +329,7 @@ public class Login {
             mercy.setPlayersResurrectedAverage((double) usMercyAvgStats.get("players_resurrected_average"));
             mercy.setPlayersResurrectedMostGame((double) usMercyStats.get("players_resurrected_most_in_game"));
             mercy.setSelfHealing((double) usMercyGenStats.get("self_healing"));
-            mercy.setSelfHealingAverage((double) usMercyGenStats.get("self_healing_average"));
+            mercy.setSelfHealingAverage((double) usMercyAvgStats.get("self_healing_average"));
             mercy.setSelfHealingMostGame((double) usMercyGenStats.get("self_healing_most_in_game"));
 
             //Implementing Mercy General Stats
@@ -350,6 +350,35 @@ public class Login {
             mercy.setTimePlayed((double) usMercyGenStats.get("time_played"));
             mercy.setCriticalHits((double) usMercyGenStats.get("critical_hits"));
             mercy.setCriticalHitAccuracy((double) usMercyGenStats.get("critical_hit_accuracy"));
+            
+            //Estabilishing Soldier76 Variables
+            soldier76.setTacticalVisorKillsMostGame((double) usSoldier76Stats.get("tactical_visor_kills_most_in_game"));
+            soldier76.setTacticalVisorKillsAverage((double) usSoldier76AvgStats.get("tactical_visor_kills_average"));
+            soldier76.setBioticFieldsDeployed((double) usSoldier76Stats.get("biotic_field"));
+            soldier76.setBioticFieldHealingDone((double) usSoldier76Stats.get("biotic_fields"));
+            soldier76.setHelixRocketKills((double) usSoldier76Stats.get(""));
+            soldier76.setHelixRocketKillsAverage((double) usSoldier76AvgStats.get(""));
+            soldier76.setHelixRocketKillsMostGame((double) usSoldier76Stats.get(""));
+            
+            
+
+            //Implementing Soldier76 General Stats
+
+            soldier76.setEliminations((double) usSoldier76GenStats.get("eliminations"));
+            soldier76.setEliminationsAverage((double) usSoldier76AvgStats.get("eliminations_average"));
+            soldier76.setDeaths((double) usSoldier76GenStats.get("deaths"));
+            soldier76.setDeathsAverage((double) usSoldier76AvgStats.get("deaths_average"));
+            soldier76.setSoloKills((double) usSoldier76GenStats.get("solo_kills"));
+            soldier76.setSoloKillsAverage((double) usSoldier76AvgStats.get("solo_kills_average"));
+            soldier76.setObjectiveKills((double) usSoldier76GenStats.get("objective_kills"));
+            soldier76.setObjectiveKillsAverage((double) usSoldier76AvgStats.get("objective_kills_average"));
+            soldier76.setMultikills((double) usSoldier76GenStats.get("multikills"));
+            soldier76.setMultikillBest((double) usSoldier76GenStats.get("multikill_best"));
+            soldier76.setWeaponAccuracy((double) usSoldier76GenStats.get("weapon_accuracy"));
+            soldier76.setGamesWon((double) usSoldier76GenStats.get("games_won"));
+            soldier76.setTimePlayed((double) usSoldier76GenStats.get("time_played"));
+            soldier76.setCriticalHits((double) usSoldier76GenStats.get("critical_hits"));
+            soldier76.setCriticalHitAccuracy((double) usSoldier76GenStats.get("critical_hit_accuracy"));
             
         } catch (NullPointerException ex) {
             System.out.println("This value hasn't been indexed. Either you haven't initialized this character or the server has dropped connection");
