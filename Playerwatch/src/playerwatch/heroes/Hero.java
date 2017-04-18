@@ -14,17 +14,11 @@ public class Hero {
 
     //Variables that are used for every hero
     String name;
-    ImageView heroImage;
     double soloKills;
     double soloKillsAverage;
     double objectiveKills;
     double objectiveKillsAverage;
     double eliminations;
-    double multikills;
-    double healingDone;
-    double healingDoneAverage;
-    double multikillBest;
-    double damageDoneAverage;
     double eliminationsAverage;
     double deaths;
     double deathsAverage;
@@ -32,36 +26,23 @@ public class Hero {
     double gamesPlayed;
     double gamesWon;
     double timePlayed;
-    double gamesTied;
-    double gamesLost;
     double weaponAccuracy;
-    double winPercentage;
-    double killStreakBest;
     double criticalHits;
     double criticalHitAccuracy;
     //labels to display the variables of instance Hero
     Label lblSoloKills;
     Label lblObjectiveKills;
     Label lblEliminations;
-    Label lblMultikills;
-    Label lblHealingDone;
-    Label lblMultikillBest;
     Label lblSoloKillsAverage;
     Label lblObjectiveKillsAverage;
-    Label lblHealingDoneAverage;
     Label lblDeathsAverage;
-    Label lblDamageDoneAverage;
     Label lblEliminationsAverage;
     Label lblDeaths;
     Label lblEnvironmentalDeaths;
     Label lblGamesPlayed;
     Label lblGamesWon;
     Label lblTimePlayed;
-    Label lblGamesTied;
-    Label lblGamesLost;
     Label lblWeaponAccuracy;
-    Label lblWinPercentage;
-    Label lblKillStreakBest;
     Label lblCriticalHits;
     Label lblCriticalHitAccuracy;
     //array list to store Hero class labels, and store Unique hero labels
@@ -70,7 +51,7 @@ public class Hero {
 
     /**
      * get the uniqueLabels of each hero, variables unique to the hero
-     * @return 
+     * @return uniqueLabels
      */
     public ArrayList<Label> getUniqueLabels() {
         return uniqueLabels;
@@ -78,7 +59,7 @@ public class Hero {
 
     /**
      * get the heroLabels of each hero, variables shared between heroes
-     * @return 
+     * @return heroLabels
      */
     public ArrayList<Label> getHeroLabels() {
         return heroLabels;
@@ -100,25 +81,16 @@ public class Hero {
         heroLabels.add(lblSoloKills = new Label("Solo Kills: " + soloKills));
         heroLabels.add(lblObjectiveKills = new Label("Objective Kills: " + objectiveKills));
         heroLabels.add(lblEliminations = new Label("Eliminations: " + objectiveKills));
-        heroLabels.add(lblMultikills = new Label("Multi-Kills: " + multikills));
-        heroLabels.add(lblHealingDone = new Label("Headling Done: " + healingDone));
-        heroLabels.add(lblMultikillBest = new Label("Multi-Kills Best: " + multikillBest));
         heroLabels.add(lblSoloKillsAverage = new Label("Solo Kills Average: " + soloKillsAverage));
         heroLabels.add(lblObjectiveKillsAverage = new Label("Objective Kills Average: " + objectiveKillsAverage));
-        heroLabels.add(lblHealingDoneAverage = new Label("Healing Done Average: " + healingDoneAverage));
         heroLabels.add(lblDeathsAverage = new Label("Deaths Average: " + deathsAverage));
-        heroLabels.add(lblDamageDoneAverage = new Label("Damage Done Average: " + damageDoneAverage));
         heroLabels.add(lblEliminationsAverage = new Label("Eliminations Average: " + eliminationsAverage));
         heroLabels.add(lblDeaths = new Label("Deaths: " + deaths));
         heroLabels.add(lblEnvironmentalDeaths = new Label("Environmental Deaths: " + environmentalDeaths));
         heroLabels.add(lblGamesPlayed = new Label("Games Played: " + gamesPlayed));
         heroLabels.add(lblGamesWon = new Label("Games Won: " + gamesWon));
         heroLabels.add(lblTimePlayed = new Label("Time Played: " + timePlayed));
-        heroLabels.add(lblGamesTied = new Label("Games Tied: " + gamesTied));
-        heroLabels.add(lblGamesLost = new Label("Games Lost: " + gamesLost));
         heroLabels.add(lblWeaponAccuracy = new Label("Weapon Accuracy: " + weaponAccuracy));
-        heroLabels.add(lblWinPercentage = new Label("Win Percentage: " + winPercentage));
-        heroLabels.add(lblKillStreakBest = new Label("Kill Streak Best: " + killStreakBest));
         heroLabels.add(lblCriticalHits = new Label("Critical Hits: " + criticalHits));
         heroLabels.add(lblCriticalHitAccuracy = new Label("Critical Hits Accuracy: " + criticalHitAccuracy));
         this.heroLabels = heroLabels;
@@ -162,46 +134,6 @@ public class Hero {
      */
     public void setEliminations(double eliminations) {
         this.eliminations = eliminations;
-    }
-
-    /**
-     * set Hero multikills
-     * @param multikills 
-     */
-    public void setMultikills(double multikills) {
-        this.multikills = multikills;
-    }
-
-    /**
-     * set Hero healingDone
-     * @param healingDone 
-     */
-    public void setHealingDone(double healingDone) {
-        this.healingDone = healingDone;
-    }
-
-    /**
-     * set Hero healingDoneAverage
-     * @param healingDoneAverage 
-     */
-    public void setHealingDoneAverage(double healingDoneAverage) {
-        this.healingDoneAverage = healingDoneAverage;
-    }
-
-    /**
-     * set Hero multikillBest
-     * @param multikillBest 
-     */
-    public void setMultikillBest(double multikillBest) {
-        this.multikillBest = multikillBest;
-    }
-
-    /**
-     * set Hero damageDoneAverage
-     * @param damageDoneAverage 
-     */
-    public void setDamageDoneAverage(double damageDoneAverage) {
-        this.damageDoneAverage = damageDoneAverage;
     }
 
     /**
@@ -259,23 +191,7 @@ public class Hero {
     public void setTimePlayed(double timePlayed) {
         this.timePlayed = timePlayed;
     }
-
-    /**
-     * set Hero gamesTied
-     * @param gamesTied 
-     */
-    public void setGamesTied(double gamesTied) {
-        this.gamesTied = gamesTied;
-    }
-
-    /**
-     * set Hero gamesLost
-     * @param gamesLost 
-     */
-    public void setGamesLost(double gamesLost) {
-        this.gamesLost = gamesLost;
-    }
-
+    
     /**
      * set Hero weaponAccuracy
      * @param weaponAccuracy 
@@ -283,23 +199,7 @@ public class Hero {
     public void setWeaponAccuracy(double weaponAccuracy) {
         this.weaponAccuracy = weaponAccuracy;
     }
-
-    /**
-     * set Hero winPercetage
-     * @param winPercentage 
-     */
-    public void setWinPercentage(double winPercentage) {
-        this.winPercentage = winPercentage;
-    }
-
-    /**
-     * set Hero killStreakBest
-     * @param killStreakBest 
-     */
-    public void setKillStreakBest(double killStreakBest) {
-        this.killStreakBest = killStreakBest;
-    }
-
+    
     /**
      * set Hero criticalHits
      * @param criticalHits 
@@ -314,6 +214,70 @@ public class Hero {
      */
     public void setCriticalHitAccuracy(double criticalHitAccuracy) {
         this.criticalHitAccuracy = criticalHitAccuracy;
+    }
+
+    /**
+     * get Hero soloKills
+     * @return soloKills
+     */
+    public double getSoloKills() {
+        return soloKills;
+    }
+
+    /**
+     * get Hero soloKillsAverage
+     * @return soloKillsAverage
+     */
+    public double getSoloKillsAverage() {
+        return soloKillsAverage;
+    }
+
+    /**
+     * get Hero eliminations
+     * @return eliminations
+     */
+    public double getEliminations() {
+        return eliminations;
+    }
+
+    /**
+     * get Hero eliminationsAverage
+     * @return eliminationsAverage
+     */
+    public double getEliminationsAverage() {
+        return eliminationsAverage;
+    }
+
+    /**
+     * get Hero deaths
+     * @return deaths
+     */
+    public double getDeaths() {
+        return deaths;
+    }
+
+    /**
+     * get Hero deathsAverage
+     * @return deathsAverage
+     */
+    public double getDeathsAverage() {
+        return deathsAverage;
+    }
+
+    /**
+     * get Hero gamesPlayed
+     * @return gamesPlayed
+     */
+    public double getGamesPlayed() {
+        return gamesPlayed;
+    }
+
+    /**
+     * get Hero gamesWon
+     * @return gamesWon
+     */
+    public double getGamesWon() {
+        return gamesWon;
     }
 
 }

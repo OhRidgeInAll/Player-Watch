@@ -14,9 +14,9 @@ public class Torbjorn extends Hero {
     double armorPacksCreated;
     double armorPacksCreatedAverage;
     double armorPacksCreatedMostGame;
-    double moltonCoreKills;
-    double moltonCoreKillsAverage;
-    double moltonCoreKillsMostGame;
+    double moltenCoreKills;
+    double moltenCoreKillsAverage;
+    double moltenCoreKillsMostGame;
     double torbjornKills;
     double torbjornKillsAverage;
     double torbjornKillsMostGame;
@@ -27,9 +27,9 @@ public class Torbjorn extends Hero {
     Label lblArmorPacksCreated;
     Label lblArmorPacksCreatedAverage;
     Label lblArmorPacksCreatedMostGame;
-    Label lblMoltonCoreKills;
-    Label lblMoltonCoreKillsAverage;
-    Label lblMoltonCoreKillsMostGame;
+    Label lblMoltenCoreKills;
+    Label lblMoltenCoreKillsAverage;
+    Label lblMoltenCoreKillsMostGame;
     Label lblTorbjornKills;
     Label lblTorbjornKillsAverage;
     Label lblTorbjornKillsMostGame;
@@ -57,9 +57,9 @@ public class Torbjorn extends Hero {
         torbjornLabels.add(lblArmorPacksCreated = new Label("Armor Packs Created: " + armorPacksCreated));
         torbjornLabels.add(lblArmorPacksCreatedAverage = new Label("Armor Packs Created Average: " + armorPacksCreatedAverage));
         torbjornLabels.add(lblArmorPacksCreatedMostGame = new Label("Armor Packs Created Most Game: " + armorPacksCreatedMostGame));
-        torbjornLabels.add(lblMoltonCoreKills = new Label("Molton Core Kills: " + moltonCoreKills));
-        torbjornLabels.add(lblMoltonCoreKillsAverage = new Label("Molton Core Kills Average: " + moltonCoreKillsAverage));
-        torbjornLabels.add(lblMoltonCoreKillsMostGame = new Label("Molton Core Kills Most Game: " + moltonCoreKillsMostGame));
+        torbjornLabels.add(lblMoltenCoreKills = new Label("Molten Core Kills: " + moltenCoreKills));
+        torbjornLabels.add(lblMoltenCoreKillsAverage = new Label("Molten Core Kills Average: " + moltenCoreKillsAverage));
+        torbjornLabels.add(lblMoltenCoreKillsMostGame = new Label("Molten Core Kills Most Game: " + moltenCoreKillsMostGame));
         torbjornLabels.add(lblTorbjornKills = new Label("Torbjorn Kills: " + torbjornKills));
         torbjornLabels.add(lblTorbjornKillsAverage = new Label("Torbjorn Kills Average: " + torbjornKillsAverage));
         torbjornLabels.add(lblTorbjornKillsMostGame = new Label("Torbjorn Kills Most Game: " + torbjornKillsMostGame));
@@ -97,30 +97,30 @@ public class Torbjorn extends Hero {
     }
 
     /**
-     * set Torbjorn moltonCoreKills
+     * set Torbjorn moltenCoreKills
      *
-     * @param moltonCoreKills
+     * @param moltenCoreKills
      */
-    public void setMoltonCoreKills(double moltonCoreKills) {
-        this.moltonCoreKills = moltonCoreKills;
+    public void setMoltenCoreKills(double moltenCoreKills) {
+        this.moltenCoreKills = moltenCoreKills;
     }
 
     /**
-     * set Tobjorn moltonCoreKillsAverage
+     * set Tobjorn moltenCoreKillsAverage
      *
-     * @param moltonCoreKillsAverage
+     * @param moltenCoreKillsAverage
      */
-    public void setMoltonCoreKillsAverage(double moltonCoreKillsAverage) {
-        this.moltonCoreKillsAverage = moltonCoreKillsAverage;
+    public void setMoltenCoreKillsAverage(double moltenCoreKillsAverage) {
+        this.moltenCoreKillsAverage = moltenCoreKillsAverage;
     }
 
     /**
-     * set Torbjorn moltonCoreKillsMostGame
+     * set Torbjorn moltenCoreKillsMostGame
      *
-     * @param moltonCoreKillsMostGame
+     * @param moltenCoreKillsMostGame
      */
-    public void setMoltonCoreKillsMostGame(double moltonCoreKillsMostGame) {
-        this.moltonCoreKillsMostGame = moltonCoreKillsMostGame;
+    public void setMoltenCoreKillsMostGame(double moltenCoreKillsMostGame) {
+        this.moltenCoreKillsMostGame = moltenCoreKillsMostGame;
     }
 
     /**

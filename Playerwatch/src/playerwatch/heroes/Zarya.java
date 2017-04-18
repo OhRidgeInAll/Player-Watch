@@ -11,7 +11,6 @@ import javafx.scene.control.Label;
 public class Zarya extends Hero {
 
     //variables unqiue to Zarya
-    double averageEnergyBestGame;
     double damageBlocked;
     double damageBlockedAverage;
     double damageBlockedMostGame;
@@ -27,7 +26,6 @@ public class Zarya extends Hero {
     double projectedBarriersAverage;
     double projectedBarriersMostGame;
     //labels to display variables of Zarya
-    Label lblAverageEnergyBestGame;
     Label lblDamageBlocked;
     Label lblDamageBlockedAverage;
     Label lblDamageBlockedMostGame;
@@ -60,7 +58,6 @@ public class Zarya extends Hero {
     public void labels() {
         //array list of labels for variables of Zarya
         zaryaLabels = new ArrayList<>();
-        zaryaLabels.add(lblAverageEnergyBestGame = new Label("Average Energy Best Game: " + averageEnergyBestGame));
         zaryaLabels.add(lblDamageBlocked = new Label("Damage Blocked: " + damageBlocked));
         zaryaLabels.add(lblDamageBlockedAverage = new Label("Damage Blocked Average: " + damageBlockedAverage));
         zaryaLabels.add(lblDamageBlockedMostGame = new Label("Damage Blocked Most Game: " + damageBlockedMostGame));
@@ -76,15 +73,6 @@ public class Zarya extends Hero {
         zaryaLabels.add(lblProjectedBarriersAverage = new Label("Projected Barriers Average: " + projectedBarriersAverage));
         zaryaLabels.add(lblProjectedBarriersMostGame = new Label("Projected Barriers Most Game: " + projectedBarriersMostGame));
         super.uniqueLabels = zaryaLabels;
-    }
-
-    /**
-     * set Zarya averageEnergyBestGame
-     *
-     * @param averageEnergyBestGame
-     */
-    public void setAverageEnergyBestGame(double averageEnergyBestGame) {
-        this.averageEnergyBestGame = averageEnergyBestGame;
     }
 
     /**

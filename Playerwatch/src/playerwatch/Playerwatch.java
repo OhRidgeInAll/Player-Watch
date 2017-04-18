@@ -24,7 +24,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -53,19 +52,19 @@ import playerwatch.heroes.Zarya;
 import playerwatch.heroes.Zenyatta;
 
 /**
+ * The main application class, contains JavaFX for Playerwatch
  *
  * @author Michael Lyn, Garrett Holland
  */
 public class Playerwatch extends Application {
 
     /**
+     * Launches the JavaFX application
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
 
-//        Login login = new Login();
-//        
-//        login.login("Original-1425");
         //launch the JavaFX application
         launch(args);
     }
@@ -77,11 +76,20 @@ public class Playerwatch extends Application {
     //The primary stage of the application
     Stage primaryStage;
 
-    Login battle;
+    //Instance of Login, contains ability to create textfile from JSON and
+    //set variables of heroes
+    Login battleLogin;
 
+    //The login pane
     BorderPane loginPane;
 
+    //ArrayList of all the heroes
     ArrayList<Hero> allHeroesArray;
+
+    double totalElims;
+    double totalSoloKills;
+    double totalDeaths;
+    double totalGamesWon;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -132,7 +140,7 @@ public class Playerwatch extends Application {
         setGeneralBottom(generalPane);
 
         //create scene for generalPane
-        Scene generalScene = new Scene(generalPane, 400, 400);
+        Scene generalScene = new Scene(generalPane, 380, 350);
         //get the stylesheet for the generalScene
         generalScene.getStylesheets().addAll(this.getClass()
                 .getResource("PlayerwatchCSS.css").toExternalForm());
@@ -171,7 +179,7 @@ public class Playerwatch extends Application {
         txtBattleTag.setId("BattleTag");
         txtBattleTag.setMaxWidth(200);
 
-        battle = new Login();
+        battleLogin = new Login();
 
         //constrain txtBattleTag for layout alignment
         GridPane.setConstraints(txtBattleTag, 2, 2);
@@ -185,7 +193,7 @@ public class Playerwatch extends Application {
 
             if ("Original-1425".equals(txtBattleTag.getText())) {
                 try {
-                    battle.login(txtBattleTag.getText());
+                    battleLogin.login(txtBattleTag.getText());
                 } catch (IOException | ParseException ex) {
                     Logger.getLogger(Playerwatch.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -215,7 +223,7 @@ public class Playerwatch extends Application {
                 Zarya zarya = new Zarya();
                 Zenyatta zenyatta = new Zenyatta();
 
-                battle.initializeStats(ana, bastion, dva, genji, hanzo, mei, junkRat, lucio, mcCree, mei, mercy, pharah, reaper, reinhardt, roadHog, soldier76, sombra, symmetra, torbjorn, tracer, widowmaker, winston, zarya, zenyatta);
+                battleLogin.initializeStats(ana, bastion, dva, genji, hanzo, mei, junkRat, lucio, mcCree, mei, mercy, pharah, reaper, reinhardt, roadHog, soldier76, sombra, symmetra, torbjorn, tracer, widowmaker, winston, zarya, zenyatta);
                 //set the labels for each instance of every hero, unique and general
                 ana.labels();
                 ana.generalLabels();
@@ -321,62 +329,55 @@ public class Playerwatch extends Application {
         VBox vBox = new VBox(10);
 
         //Hboxes to contain labels with stats
-        HBox playerName = new HBox(10);
-        HBox mostPlayHbox = new HBox(10);
-        HBox winPercentHbox = new HBox(10);
-        HBox achieveHbox = new HBox(10);
+        HBox playerNameHbox = new HBox(10);
         HBox soloKillsHbox = new HBox(10);
         HBox elimHbox = new HBox(10);
-        HBox healingHbox = new HBox(10);
+        HBox deathsHbox = new HBox(10);
+        HBox gamesWonHbox = new HBox(10);
 
-        String Icon = "https://blzgdapipro-a.akamaihd.net/game/unlocks/0x0250000000000BAD.png";
-        //create image from url given by JSON
-        ImageView playerIcon = new ImageView(Icon);
-        playerIcon.setFitWidth(50);
-        playerIcon.setFitHeight(50);
-
+        //calculate total of stats for generalPane
+        totalStats();
         //labels of names of stats
-        Label battleNetName = new Label("Name Variable");
-        battleNetName.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
-        Label mostPlay = new Label("Most Played Hero: ");
-        mostPlay.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
-        Label winPercent = new Label("Win Percentage");
-        winPercent.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
-        Label achievements = new Label("Achievements");
-        achievements.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
+        Label battleNetName = new Label(txtBattleTag.getText());
+        battleNetName.setStyle("-fx-font:24 Arial; -fx-text-fill:WHITE;");
+
         Label eliminations = new Label("Total Eliminations: ");
-        eliminations.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
+        eliminations.setStyle("-fx-font:20 Arial; -fx-text-fill:WHITE;");
+
         Label soloKills = new Label("Total Solo Kills: ");
-        soloKills.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
-        Label healingDone = new Label("Healing Done: ");
-        healingDone.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
+        soloKills.setStyle("-fx-font:20 Arial; -fx-text-fill:WHITE;");
+
+        Label deaths = new Label("Total Deaths: ");
+        deaths.setStyle("-fx-font:20 Arial; -fx-text-fill:WHITE;");
+
+        Label gamesWon = new Label("Games Won: ");
+        gamesWon.setStyle("-fx-font:20 Arial; -fx-text-fill:WHITE;");
 
         //labels for variables of stats
-        Label mostPlayV = new Label("mostPlayV");
-        mostPlayV.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
-        Label winPercentV = new Label("winPercentV");
-        winPercentV.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
-        Label achievementsV = new Label("achievmentsV");
-        achievementsV.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
-        Label eliminationsV = new Label("eliminationsV");
-        eliminationsV.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
-        Label soloKillsV = new Label("soloKillsV");
-        soloKillsV.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
-        Label healingDoneV = new Label("healingDoneV");
-        healingDoneV.setStyle("-fx-font:16 Arial; -fx-text-fill:WHITE;");
+        Label eliminationsV = new Label("" + totalElims);
+        eliminationsV.setStyle("-fx-font:20 Arial; -fx-text-fill:WHITE;");
+
+        Label soloKillsV = new Label("" + totalSoloKills);
+        soloKillsV.setStyle("-fx-font:20 Arial; -fx-text-fill:WHITE;");
+
+        Label deathsV = new Label("" + totalDeaths);
+        deathsV.setStyle("-fx-font:20 Arial; -fx-text-fill:WHITE;");
+        
+        Label gamesWonV = new Label("" + totalGamesWon);
+        gamesWonV.setStyle("-fx-font:20 Arial; -fx-text-fill:WHITE;");
+
+
 
         //add labels to corresponding Hbox
-        playerName.getChildren().addAll(battleNetName, playerIcon);
-        mostPlayHbox.getChildren().addAll(mostPlay, mostPlayV);
-        winPercentHbox.getChildren().addAll(winPercent, winPercentV);
-        achieveHbox.getChildren().addAll(achievements, achievementsV);
+        playerNameHbox.getChildren().addAll(battleNetName);
         soloKillsHbox.getChildren().addAll(soloKills, soloKillsV);
         elimHbox.getChildren().addAll(eliminations, eliminationsV);
-        healingHbox.getChildren().addAll(healingDone, healingDoneV);
+        deathsHbox.getChildren().addAll(deaths, deathsV);
+        gamesWonHbox.getChildren().addAll(gamesWon, gamesWonV);
 
         //add Hboxes to main Vbox
-        vBox.getChildren().addAll(playerName, mostPlayHbox, winPercentHbox,
-                achieveHbox, soloKillsHbox, elimHbox, healingHbox);
+        vBox.getChildren().addAll(playerNameHbox, soloKillsHbox, 
+                elimHbox, deathsHbox, gamesWonHbox);
 
         //set margins for vBox withing StackPane
         StackPane.setMargin(vBox, new Insets(50));
@@ -427,10 +428,16 @@ public class Playerwatch extends Application {
         //Listview to display sorted list of heros, based upon most played
         ListView<Hero> heroList = new ListView<>();
 
+        //Button to return to generalPane
+        Button btnReturn = new Button("Back");
+        btnReturn.setOnAction((ActionEvent e) -> {
+            primaryStage.setScene(generalScene());
+        });
+
         //add the array of heroes to the heroList
         heroList.getItems().addAll(allHeroesArray);
         //add chooseHero and heroList to the heroBox
-        heroBox.getChildren().addAll(chooseHero, heroList);
+        heroBox.getChildren().addAll(chooseHero, heroList, btnReturn);
 
         //Label describing the ScrollPane below
         Label statPage = new Label("Hero Stats");
@@ -466,11 +473,6 @@ public class Playerwatch extends Application {
         }
         );
 
-        Button btnReturn = new Button("Back");
-        btnReturn.setOnAction((ActionEvent e) -> {
-            primaryStage.setScene(generalScene());
-        });
-
         //add the statPage label and the scrollStats scroll pane to the VBox statBox
         statBox.getChildren().addAll(statPage, scrollStats);
 
@@ -479,6 +481,30 @@ public class Playerwatch extends Application {
 
         //set the center of BorderPane main to hBox
         main.setCenter(hBox);
+
+    }
+
+    /**
+     * Method to calculate totals of stats on generalPane
+     */
+    public void totalStats() {
+
+        //Calculate Total for SoloKills
+        allHeroesArray.forEach((Hero hero) -> {
+            totalSoloKills += hero.getSoloKills();
+        });
+        //Calculate Total for Eliminations
+        allHeroesArray.forEach((Hero hero) -> {
+            totalElims += hero.getEliminations();
+        });
+        //Calculate Total for Deaths
+        allHeroesArray.forEach((Hero hero) -> {
+            totalDeaths += hero.getDeaths();
+        });
+        //Calculate Total for GamesWon
+        allHeroesArray.forEach((Hero hero) -> {
+            totalGamesWon += hero.getGamesWon();
+        });
 
     }
 }
