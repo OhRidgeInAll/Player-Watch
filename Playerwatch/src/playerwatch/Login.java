@@ -157,6 +157,14 @@ public class Login {
             JSONObject usMercyStats = (JSONObject) usMercy.get("hero_stats");
             JSONObject usMercyGenStats = (JSONObject) usMercy.get("general_stats");
             JSONObject usMercyAvgStats = (JSONObject) usMercy.get("average_stats");
+            JSONObject usReaper = (JSONObject) usHeroQuickplay.get("reaper");
+            JSONObject usReaperStats = (JSONObject) usReaper.get("hero_stats");
+            JSONObject usReaperGenStats = (JSONObject) usReaper.get("general_stats");
+            JSONObject usReaperAvgStats = (JSONObject) usReaper.get("average_stats");
+            JSONObject usBastion = (JSONObject) usHeroQuickplay.get("bastion");
+            JSONObject usBastionStats = (JSONObject) usBastion.get("hero_stats");
+            JSONObject usBastionGenStats = (JSONObject) usBastion.get("general_stats");
+            JSONObject usBastionAvgStats = (JSONObject) usBastion.get("average_stats");
             
             //Setting Roadhog Values
             roadhog.setEnemiesHooked((double) usRoadhogStats.get("enemies_hooked"));
@@ -396,7 +404,56 @@ public class Login {
             sombra.setWeaponAccuracy((double) usSombraGenStats.get("weapon_accuracy"));
             sombra.setTimePlayed((double) usSombraGenStats.get("time_played"));
             sombra.setCriticalHits((double) usSombraGenStats.get("critical_hits"));
-            sombra.setCriticalHitAccuracy((double) usSombraGenStats.get("critical_hit_accuracy"));
+            
+            //Bastion Stats
+            bastion.setReconKills((double) usBastionStats.get("recon_kills"));
+            bastion.setReconKillsAverage((double) usBastionAvgStats.get("recon_kills_average"));
+            bastion.setReconKillsMostGame((double) usBastionStats.get("recon_kills_most_in_game"));
+            bastion.setTankKills((double) usBastionStats.get("tank_kills"));
+            bastion.setTankKillsAverage((double) usBastionStats.get("tank_kills_average"));
+            bastion.setTankKillsMostGame((double) usBastionStats.get("tank_kills_most_in_game"));
+            
+
+            //Implementing Bastion General Stats
+
+            bastion.setEliminations((double) usBastionGenStats.get("eliminations"));
+            bastion.setEliminationsAverage((double) usBastionAvgStats.get("eliminations_average"));
+            bastion.setDeaths((double) usBastionGenStats.get("deaths"));
+            bastion.setDeathsAverage((double) usBastionAvgStats.get("deaths_average"));
+            bastion.setSoloKills((double) usBastionGenStats.get("solo_kills"));
+            bastion.setSoloKillsAverage((double) usBastionAvgStats.get("solo_kills_average"));
+            bastion.setObjectiveKills((double) usBastionGenStats.get("objective_kills"));
+            bastion.setObjectiveKillsAverage((double) usBastionAvgStats.get("objective_kills_average"));
+            bastion.setWeaponAccuracy((double) usBastionGenStats.get("weapon_accuracy"));
+            bastion.setGamesWon((double) usBastionGenStats.get("games_won"));
+            bastion.setTimePlayed((double) usBastionGenStats.get("time_played"));
+            bastion.setCriticalHits((double) usBastionGenStats.get("critical_hits"));
+            bastion.setCriticalHitAccuracy((double) usBastionGenStats.get("critical_hit_accuracy"));
+            
+            //Reaper Stats initialization
+            
+            reaper.setSoulsConsumed((double) usReaperStats.get("souls_consumed"));
+            reaper.setSoulsConsumedAverage((double) usReaperAvgStats.get("souls_consumed_average"));
+            reaper.setSoulsConsumedMostGame((double) usReaperStats.get("souls_consumed_most_in_game"));
+            reaper.setDeathBlossomKills((double) usReaperStats.get("death_blossom_kills"));
+            reaper.setDeathBlossomKillsAverage((double) usReaperAvgStats.get("death_blossom_kills_average"));
+            reaper.setDeathBlossomKillsMostGame((double) usReaperStats.get("death_blossom_kills_most_in_game"));
+
+            //Implementing Reaper General Stats
+
+            reaper.setEliminations((double) usReaperGenStats.get("eliminations"));
+            reaper.setEliminationsAverage((double) usReaperAvgStats.get("eliminations_average"));
+            reaper.setDeaths((double) usReaperGenStats.get("deaths"));
+            reaper.setDeathsAverage((double) usReaperAvgStats.get("deaths_average"));
+            reaper.setSoloKills((double) usReaperGenStats.get("solo_kills"));
+            reaper.setSoloKillsAverage((double) usReaperAvgStats.get("solo_kills_average"));
+            reaper.setObjectiveKills((double) usReaperGenStats.get("objective_kills"));
+            reaper.setObjectiveKillsAverage((double) usReaperAvgStats.get("objective_kills_average"));
+            reaper.setWeaponAccuracy((double) usReaperGenStats.get("weapon_accuracy"));
+            reaper.setGamesWon((double) usReaperGenStats.get("games_won"));
+            reaper.setTimePlayed((double) usReaperGenStats.get("time_played"));
+            reaper.setCriticalHits((double) usReaperGenStats.get("critical_hits"));
+            reaper.setCriticalHitAccuracy((double) usReaperGenStats.get("critical_hit_accuracy"));
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
