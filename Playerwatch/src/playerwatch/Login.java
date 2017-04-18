@@ -165,6 +165,14 @@ public class Login {
             JSONObject usBastionStats = (JSONObject) usBastion.get("hero_stats");
             JSONObject usBastionGenStats = (JSONObject) usBastion.get("general_stats");
             JSONObject usBastionAvgStats = (JSONObject) usBastion.get("average_stats");
+            JSONObject usDva = (JSONObject) usHeroQuickplay.get("dva");
+            JSONObject usDvaStats = (JSONObject) usDva.get("hero_stats");
+            JSONObject usDvaGenStats = (JSONObject) usDva.get("general_stats");
+            JSONObject usDvaAvgStats = (JSONObject) usDva.get("average_stats");
+            JSONObject usGenji = (JSONObject) usHeroQuickplay.get("genji");
+            JSONObject usGenjiStats = (JSONObject) usGenji.get("hero_stats");
+            JSONObject usGenjiGenStats = (JSONObject) usGenji.get("general_stats");
+            JSONObject usGenjiAvgStats = (JSONObject) usGenji.get("average_stats");
             
             //Setting Roadhog Values
             roadhog.setEnemiesHooked((double) usRoadhogStats.get("enemies_hooked"));
@@ -443,9 +451,9 @@ public class Login {
             reaper.setDeathBlossomKills((double) usReaperStats.get("death_blossom_kills"));
             reaper.setDeathBlossomKillsAverage((double) usReaperAvgStats.get("death_blossom_kills_average"));
             reaper.setDeathBlossomKillsMostGame((double) usReaperStats.get("death_blossom_kills_most_in_game"));
-            reaper.setSelfHealing((double) usReaperGenStats.get("death_blossom_kills"));
-            reaper.setSelfHealingAverage((double) usReaperAvgStats.get("death_blossom_kills_average"));
-            reaper.setSelfHealingMostGame((double) usReaperGenStats.get("death_blossom_kills_most_in_game"));
+            reaper.setSelfHealing((double) usReaperGenStats.get("self_healing"));
+            reaper.setSelfHealingAverage((double) usReaperAvgStats.get("self_healing_average"));
+            reaper.setSelfHealingMostGame((double) usReaperGenStats.get("self_healing_most_in_game"));
 
             //Implementing Reaper General Stats
 
@@ -462,6 +470,55 @@ public class Login {
             reaper.setTimePlayed((double) usReaperGenStats.get("time_played"));
             reaper.setCriticalHits((double) usReaperGenStats.get("critical_hits"));
             reaper.setCriticalHitAccuracy((double) usReaperGenStats.get("critical_hit_accuracy"));
+            
+            //DVa Online: Stats initialized
+            dva.setMechCalled((double) usDvaStats.get("mechs_called"));
+            dva.setMechCalledAverage((double) usDvaAvgStats.get("mechs_called_average"));
+            dva.setMechCalledMostGame((double) usDvaStats.get("mechs_called_most_in_game"));
+            dva.setSelfDestructKills((double) usDvaGenStats.get("self_destruct_kills"));
+            dva.setSelfDestructKillsMostGame((double) usDvaGenStats.get("self_destruct_kills_most_in_game"));
+            dva.setDamageBlocked((double) usDvaStats.get("damage_blocked"));
+            dva.setDamageBlockedAverage((double) usDvaAvgStats.get("damage_blocked_average"));
+            dva.setDamageBlockedMostGame((double) usDvaStats.get("damage_blocked_most_in_game"));
+            
+
+            //Implementing Dva General Stats
+
+            dva.setEliminations((double) usDvaGenStats.get("eliminations"));
+            dva.setEliminationsAverage((double) usDvaAvgStats.get("eliminations_average"));
+            dva.setDeaths((double) usDvaGenStats.get("deaths"));
+            dva.setDeathsAverage((double) usDvaAvgStats.get("deaths_average"));
+            dva.setSoloKills((double) usDvaGenStats.get("solo_kills"));
+            dva.setSoloKillsAverage((double) usDvaAvgStats.get("solo_kills_average"));
+            dva.setObjectiveKills((double) usDvaGenStats.get("objective_kills"));
+            dva.setObjectiveKillsAverage((double) usDvaAvgStats.get("objective_kills_average"));
+            dva.setWeaponAccuracy((double) usDvaGenStats.get("weapon_accuracy"));
+            dva.setGamesWon((double) usDvaGenStats.get("games_won"));
+            dva.setTimePlayed((double) usDvaGenStats.get("time_played"));
+            dva.setCriticalHits((double) usDvaGenStats.get("critical_hits"));
+            dva.setCriticalHitAccuracy((double) usDvaGenStats.get("critical_hit_accuracy"));
+            
+            //Genji Stats Initialization
+            genji.setDragonbladeKills((double) usGenjiStats.get("dragonblade_kills"));
+            genji.setDragonbladeKillsAverage((double) usGenjiAvgStats.get("dragonblade_kills_average"));
+            genji.setDragonbladeKillsMostGame((double) usGenjiStats.get("dragonblade_kills_most_in_game"));
+
+            //Implementing Genji General Stats
+
+            genji.setEliminations((double) usGenjiGenStats.get("eliminations"));
+            genji.setEliminationsAverage((double) usGenjiAvgStats.get("eliminations_average"));
+            genji.setDeaths((double) usGenjiGenStats.get("deaths"));
+            genji.setDeathsAverage((double) usGenjiAvgStats.get("deaths_average"));
+            genji.setSoloKills((double) usGenjiGenStats.get("solo_kills"));
+            genji.setSoloKillsAverage((double) usGenjiAvgStats.get("solo_kills_average"));
+            genji.setObjectiveKills((double) usGenjiGenStats.get("objective_kills"));
+            genji.setObjectiveKillsAverage((double) usGenjiAvgStats.get("objective_kills_average"));
+            genji.setWeaponAccuracy((double) usGenjiGenStats.get("weapon_accuracy"));
+            genji.setGamesWon((double) usGenjiGenStats.get("games_won"));
+            genji.setTimePlayed((double) usGenjiGenStats.get("time_played"));
+            genji.setCriticalHits((double) usGenjiGenStats.get("critical_hits"));
+            genji.setCriticalHitAccuracy((double) usGenjiGenStats.get("critical_hit_accuracy"));
+            
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
