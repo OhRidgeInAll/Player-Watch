@@ -153,6 +153,10 @@ public class Login {
             JSONObject usSombraStats = (JSONObject) usSombra.get("hero_stats");
             JSONObject usSombraGenStats = (JSONObject) usSombra.get("general_stats");
             JSONObject usSombraAvgStats = (JSONObject) usSombra.get("average_stats");
+            JSONObject usMercy = (JSONObject) usHeroQuickplay.get("mercy");
+            JSONObject usMercyStats = (JSONObject) usMercy.get("hero_stats");
+            JSONObject usMercyGenStats = (JSONObject) usMercy.get("general_stats");
+            JSONObject usMercyAvgStats = (JSONObject) usMercy.get("average_stats");
             
             //Setting Roadhog Values
             roadhog.setEnemiesHooked((double) usRoadhogStats.get("enemies_hooked"));
@@ -211,11 +215,11 @@ public class Login {
             winston.setObjectiveKillsAverage((double) usWinstonAvgStats.get("objective_kills_average"));
             winston.setMultikills((double) usWinstonGenStats.get("multikills"));
             winston.setMultikillBest((double) usWinstonGenStats.get("multikill_best"));
-            winston.setWeaponAccuracy((double) usWinstonGenStats.get("weapon_accuracy"));
+            winston.setWeaponAccuracy(0);
             winston.setGamesWon((double) usWinstonGenStats.get("games_won"));
             winston.setTimePlayed((double) usWinstonGenStats.get("time_played"));
-            winston.setCriticalHits((double) usWinstonGenStats.get("critical_hits"));
-            winston.setCriticalHitAccuracy((double) usWinstonGenStats.get("critical_hit_accuracy"));
+            winston.setCriticalHits(0);
+            winston.setCriticalHitAccuracy(0);
             
             //Setting Zarya Values
             zarya.setDamageBlocked((double) usZaryaStats.get("damage_blocked"));
@@ -223,15 +227,15 @@ public class Login {
             zarya.setDamageBlockedMostGame((double) usZaryaStats.get("damage_blocked_most_in_game"));
             zarya.setHighEnergyKills((double) usZaryaStats.get("high_energy_kills"));
             zarya.setHighEnergyKillsMostGame((double) usZaryaStats.get("high_energy_kills_most_in_game"));
-            zarya.setHighEnergyKillsAverage((double) usZaryaAvgStats.get("jump_pack_kills_average"));
+            zarya.setHighEnergyKillsAverage((double) usZaryaAvgStats.get("high_energy_kills_average"));
             zarya.setEnergyMax((double) usZaryaStats.get("energy_maximum"));
             zarya.setDamageBlocked((double) usZaryaStats.get("damage_blocked"));
             zarya.setDamageBlockedAverage((double) usZaryaAvgStats.get("damage_blocked_average"));
             zarya.setDamageBlockedMostGame((double) usZaryaStats.get("damage_blocked_most_in_game"));
             zarya.setProjectedBarriers((double) usZaryaStats.get("projected_barriers_applied"));
             zarya.setProjectedBarriersAverage((double) usZaryaAvgStats.get("projected_barriers_applied_average"));
-            zarya.setProjectedBarriersMostGame((double) usZaryaStats.get("projected_barriers_applied_most_in_game"));
-            zarya.setGravSurgeMostGame((double) usZaryaStats.get("graviton_surge_most_in_game"));
+            zarya.setProjectedBarriersMostGame((double) usZaryaGenStats.get("projected_barriers_applied_most_in_game"));
+            zarya.setGravSurgeMostGame((double) usZaryaStats.get("graviton_surge_kills_most_in_game"));
             zarya.setLifetimeGravSurgeKills((double) usZaryaStats.get("lifetime_graviton_surge_kills"));
             zarya.setGravSurgeAverage((double) usZaryaAvgStats.get("graviton_surge_kills_average"));
             zarya.setLifetimeEnergyAccumulation((double) usZaryaStats.get("lifetime_energy_accumulation"));
@@ -249,8 +253,8 @@ public class Login {
             zarya.setWeaponAccuracy((double) usZaryaGenStats.get("weapon_accuracy"));
             zarya.setGamesWon((double) usZaryaGenStats.get("games_won"));
             zarya.setTimePlayed((double) usZaryaGenStats.get("time_played"));
-            zarya.setCriticalHits((double) usZaryaGenStats.get("critical_hits"));
-            zarya.setCriticalHitAccuracy((double) usZaryaGenStats.get("critical_hit_accuracy"));
+            zarya.setCriticalHits(0);
+            zarya.setCriticalHitAccuracy(0);
             
             //Setting Zenyatta Values
             zenyatta.setTranscendenceHealing((double) usZenyattaGenStats.get("transcendence_healing"));
@@ -305,7 +309,6 @@ public class Login {
             
             torbjorn.setArmorPacksCreated((double) usTorbjornStats.get("armor_packs_created"));
             torbjorn.setArmorPacksCreatedAverage((double) usTorbjornAvgStats.get("armor_packs_created_average"));
-            torbjorn.setArmorPacksCreatedMostGame((double) usTorbjornStats.get("armor_packs_created_most_in_game"));
             torbjorn.setTorbjornKills((double) usTorbjornStats.get("torbjorn_kills"));
             torbjorn.setTorbjornKillsAverage((double) usTorbjornAvgStats.get("torbjorn_kills_average"));
             torbjorn.setTorbjornKillsMostGame((double) usTorbjornStats.get("torbjorn_kills_most_in_game"));
@@ -313,8 +316,8 @@ public class Login {
             torbjorn.setMoltonCoreKillsAverage((double) usTorbjornAvgStats.get("molten_core_kills_average"));
             torbjorn.setMoltonCoreKillsMostGame((double) usTorbjornStats.get("molten_core_kills_most_in_game"));
             torbjorn.setTorbjornKillsMostGame((double) usTorbjornStats.get("torbjorn_kills_most_in_game"));
-            
-            
+            torbjorn.setTurretKills((double) usTorbjornStats.get("turret_kills"));
+            torbjorn.setTurretKillsAverage((double) usTorbjornAvgStats.get("turret_kills_average"));            
 
             //Implementing Torbjorn General Stats
 
@@ -334,8 +337,38 @@ public class Login {
             torbjorn.setCriticalHits((double) usTorbjornGenStats.get("critical_hits"));
             torbjorn.setCriticalHitAccuracy((double) usTorbjornGenStats.get("critical_hit_accuracy"));
             
+            //Initializing Mercy Variables
+            mercy.setPlayersResurrected((double) usMercyStats.get("players_resurrected"));
+            mercy.setPlayersResurrectedAverage((double) usMercyAvgStats.get("players_resurrected_average"));
+            mercy.setPlayersResurrectedMostGame((double) usMercyStats.get("players_resurrected_most_in_game"));
+            mercy.setHealingDone((double) usMercyGenStats.get("healing_done"));
+            mercy.setSelfHealing((double) usMercyGenStats.get("self_healing"));
+            mercy.setSelfHealingAverage((double) usMercyGenStats.get("self_healing_average"));
+            mercy.setSelfHealingMostGame((double) usMercyGenStats.get("self_healing_most_in_game"));
+
+            //Implementing Mercy General Stats
+
+            mercy.setEliminations((double) usMercyGenStats.get("eliminations"));
+            mercy.setBlasterKills((double) usMercyGenStats.get("blaster_kills"));
+            mercy.setBlasterKillsAverage((double) usMercyAvgStats.get("blaster_kills_average"));
+            mercy.setBlasterKillsMostGame((double) usMercyGenStats.get("blaster_kills_most_in_game"));
+            mercy.setEliminationsAverage((double) usMercyAvgStats.get("eliminations_average"));
+            mercy.setDeaths((double) usMercyGenStats.get("deaths"));
+            mercy.setDeathsAverage((double) usMercyAvgStats.get("deaths_average"));
+            mercy.setSoloKills((double) usMercyGenStats.get("solo_kills"));
+            mercy.setSoloKillsAverage((double) usMercyAvgStats.get("solo_kills_average"));
+            mercy.setObjectiveKills((double) usMercyGenStats.get("objective_kills"));
+            mercy.setObjectiveKillsAverage((double) usMercyAvgStats.get("objective_kills_average"));
+            mercy.setMultikills((double) usMercyGenStats.get("multikills"));
+            mercy.setMultikillBest((double) usMercyGenStats.get("multikill_best"));
+            mercy.setWeaponAccuracy((double) usMercyGenStats.get("weapon_accuracy"));
+            mercy.setGamesWon((double) usMercyGenStats.get("games_won"));
+            mercy.setTimePlayed((double) usMercyGenStats.get("time_played"));
+            mercy.setCriticalHits((double) usMercyGenStats.get("critical_hits"));
+            mercy.setCriticalHitAccuracy((double) usMercyGenStats.get("critical_hit_accuracy"));
             
-            
+        } catch (NullPointerException ex) {
+            System.out.println("This value hasn't been indexed. Either you haven't initialized this character or the server has dropped connection");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
