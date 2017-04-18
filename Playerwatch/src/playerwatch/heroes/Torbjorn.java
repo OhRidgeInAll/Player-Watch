@@ -13,7 +13,6 @@ public class Torbjorn extends Hero {
     //variables unqiue to Torbjorn
     double armorPacksCreated;
     double armorPacksCreatedAverage;
-    double armorPacksCreatedMostGame;
     double moltenCoreKills;
     double moltenCoreKillsAverage;
     double moltenCoreKillsMostGame;
@@ -22,11 +21,9 @@ public class Torbjorn extends Hero {
     double torbjornKillsMostGame;
     double turretKills;
     double turretKillsAverage;
-    double turretKillsMostGame;
     //labels to display variables of Torbjorn
     Label lblArmorPacksCreated;
     Label lblArmorPacksCreatedAverage;
-    Label lblArmorPacksCreatedMostGame;
     Label lblMoltenCoreKills;
     Label lblMoltenCoreKillsAverage;
     Label lblMoltenCoreKillsMostGame;
@@ -35,7 +32,6 @@ public class Torbjorn extends Hero {
     Label lblTorbjornKillsMostGame;
     Label lblTurretKills;
     Label lblTurretKillsAverage;
-    Label lblTurretKillsMostGame;
     ArrayList<Label> torbjornLabels;
 
     /**
@@ -56,7 +52,6 @@ public class Torbjorn extends Hero {
         torbjornLabels = new ArrayList<>();
         torbjornLabels.add(lblArmorPacksCreated = new Label("Armor Packs Created: " + armorPacksCreated));
         torbjornLabels.add(lblArmorPacksCreatedAverage = new Label("Armor Packs Created Average: " + armorPacksCreatedAverage));
-        torbjornLabels.add(lblArmorPacksCreatedMostGame = new Label("Armor Packs Created Most Game: " + armorPacksCreatedMostGame));
         torbjornLabels.add(lblMoltenCoreKills = new Label("Molten Core Kills: " + moltenCoreKills));
         torbjornLabels.add(lblMoltenCoreKillsAverage = new Label("Molten Core Kills Average: " + moltenCoreKillsAverage));
         torbjornLabels.add(lblMoltenCoreKillsMostGame = new Label("Molten Core Kills Most Game: " + moltenCoreKillsMostGame));
@@ -65,7 +60,6 @@ public class Torbjorn extends Hero {
         torbjornLabels.add(lblTorbjornKillsMostGame = new Label("Torbjorn Kills Most Game: " + torbjornKillsMostGame));
         torbjornLabels.add(lblTurretKills = new Label("Turret Kills: " + turretKills));
         torbjornLabels.add(lblTurretKillsAverage = new Label("Turret Kills Average: " + turretKillsAverage));
-        torbjornLabels.add(lblTurretKillsMostGame = new Label("Turret Kills Most Game: " + turretKillsMostGame));
         super.uniqueLabels = torbjornLabels;
     }
 
@@ -85,15 +79,6 @@ public class Torbjorn extends Hero {
      */
     public void setArmorPacksCreatedAverage(double armorPacksCreatedAverage) {
         this.armorPacksCreatedAverage = armorPacksCreatedAverage;
-    }
-
-    /**
-     * set Torbjorn armorPacksCreatedMostGame
-     *
-     * @param armorPacksCreatedMostGame
-     */
-    public void setArmorPacksCreatedMostGame(double armorPacksCreatedMostGame) {
-        this.armorPacksCreatedMostGame = armorPacksCreatedMostGame;
     }
 
     /**
@@ -166,15 +151,6 @@ public class Torbjorn extends Hero {
      */
     public void setTurretKillsAverage(double turretKillsAverage) {
         this.turretKillsAverage = turretKillsAverage;
-    }
-
-    /**
-     * set Torbjorn turretKillsMostGame
-     *
-     * @param turretKillsMostGame
-     */
-    public void setTurretKillsMostGame(double turretKillsMostGame) {
-        this.turretKillsMostGame = turretKillsMostGame;
     }
 
     /**

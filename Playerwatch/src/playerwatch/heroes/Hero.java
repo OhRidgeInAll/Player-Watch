@@ -21,7 +21,6 @@ public class Hero {
     double eliminationsAverage;
     double deaths;
     double deathsAverage;
-    double environmentalDeaths;
     double gamesWon;
     double timePlayed;
     double weaponAccuracy;
@@ -36,7 +35,6 @@ public class Hero {
     Label lblDeathsAverage;
     Label lblEliminationsAverage;
     Label lblDeaths;
-    Label lblEnvironmentalDeaths;
     Label lblGamesWon;
     Label lblTimePlayed;
     Label lblWeaponAccuracy;
@@ -83,7 +81,6 @@ public class Hero {
         heroLabels.add(lblDeathsAverage = new Label("Deaths Average: " + deathsAverage));
         heroLabels.add(lblEliminationsAverage = new Label("Eliminations Average: " + eliminationsAverage));
         heroLabels.add(lblDeaths = new Label("Deaths: " + deaths));
-        heroLabels.add(lblEnvironmentalDeaths = new Label("Environmental Deaths: " + environmentalDeaths));
         heroLabels.add(lblGamesWon = new Label("Games Won: " + gamesWon));
         heroLabels.add(lblTimePlayed = new Label("Time Played: " + timePlayed));
         heroLabels.add(lblWeaponAccuracy = new Label("Weapon Accuracy: " + weaponAccuracy));
@@ -162,14 +159,6 @@ public class Hero {
      */
     public void setDeathsAverage(double deathsAverage) {
         this.deathsAverage = deathsAverage;
-    }
-
-    /**
-     * set Hero environmentalDeaths
-     * @param environmentalDeaths 
-     */
-    public void setEnvironmentalDeaths(double environmentalDeaths) {
-        this.environmentalDeaths = environmentalDeaths;
     }
 
     /**
