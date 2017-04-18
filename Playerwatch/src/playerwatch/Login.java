@@ -522,15 +522,16 @@ public class Login {
             ana.setEnemiesSleptMostGame((double) usAnaGenStats.get("enemies_slept_most_in_game"));
             ana.setNanoBoostApplied((double) usAnaStats.get("nano_boosts_applied"));
             ana.setNanoBoostAppliedAverage((double) usAnaAvgStats.get("nano_boosts_applied_average"));
-            ana.setNanoBoostAppliedMostGame((double) usAnaStats.get("nano_boosts_applied_most_in_game"));
+            ana.setNanoBoostAppliedMostGame((double) usAnaGenStats.get("nano_boosts_applied_most_in_game"));
             ana.setNanoBoostAssists((double) usAnaStats.get("nano_boost_assists"));
             ana.setNanoBoostAssistsAverage((double) usAnaAvgStats.get("nano_boost_assists_average"));
             ana.setNanoBoostsAssistsMostGame((double) usAnaStats.get("nano_boost_assists_most_in_game"));
             ana.setScopedAccuracy((double) usAnaStats.get("scoped_accuracy"));
-            ana.setScopedAccuracyBest((double) usAnaStats.get("scoped_accuracy_best"));
+            ana.setScopedAccuracyBest((double) usAnaStats.get("scoped_accuracy_best_in_game"));
             ana.setUnscopedAccuracy((double) usAnaStats.get("unscoped_accuracy"));
-            ana.setUnscopedAccuracyBest((double) usAnaGenStats.get("unscoped_accuracy_best"));
+            ana.setUnscopedAccuracyBest((double) usAnaGenStats.get("unscoped_accuracy_best_in_game"));
             ana.setSelfHealing((double) usAnaGenStats.get("self_healing"));
+            ana.setSelfHealingAverage((double) usAnaAvgStats.get("self_healing_average"));         
             ana.setSelfHealingMostGame((double) usAnaGenStats.get("self_healing_most_in_game"));
             
 
@@ -548,8 +549,6 @@ public class Login {
             ana.setWeaponAccuracy((double) usAnaGenStats.get("weapon_accuracy"));
             ana.setGamesWon((double) usAnaGenStats.get("games_won"));
             ana.setTimePlayed((double) usAnaGenStats.get("time_played"));
-            ana.setCriticalHits((double) usAnaGenStats.get("critical_hits"));
-            ana.setCriticalHitAccuracy((double) usAnaGenStats.get("critical_hit_accuracy"));
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
