@@ -480,6 +480,7 @@ public class Login {
             dva.setDamageBlocked((double) usDvaStats.get("damage_blocked"));
             dva.setDamageBlockedAverage((double) usDvaAvgStats.get("damage_blocked_average"));
             dva.setDamageBlockedMostGame((double) usDvaStats.get("damage_blocked_most_in_game"));
+            dva.setMechDeaths((double) usDvaStats.get("mech_deaths"));
             
 
             //Implementing Dva General Stats
@@ -502,6 +503,10 @@ public class Login {
             genji.setDragonbladeKills((double) usGenjiStats.get("dragonblade_kills"));
             genji.setDragonbladeKillsAverage((double) usGenjiAvgStats.get("dragonblade_kills_average"));
             genji.setDragonbladeKillsMostGame((double) usGenjiStats.get("dragonblade_kills_most_in_game"));
+            genji.setDragonblades((double) usGenjiStats.get("dragonblades"));
+            genji.setDamageReflected((double) usGenjiStats.get("damage_reflected"));
+            genji.setDamageReflectedAverage((double) usGenjiAvgStats.get("damage_reflected_average"));
+            genji.setDamageReflectedMostGame((double) usGenjiStats.get("damage_reflected_most_in_game"));
 
             //Implementing Genji General Stats
 
