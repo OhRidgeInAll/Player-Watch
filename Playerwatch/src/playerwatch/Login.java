@@ -377,10 +377,25 @@ public class Login {
             soldier76.setCriticalHitAccuracy((double) usSoldier76GenStats.get("critical_hit_accuracy"));
             
             //Sombra 
+            sombra.setDamageBlocked((double) usSombraStats.get("damage_blocked"));
             
+
+            //Implementing Sombra General Stats
+
+            sombra.setEliminations((double) usSombraGenStats.get("eliminations"));
+            sombra.setEliminationsAverage((double) usSombraAvgStats.get("eliminations_average"));
+            sombra.setDeaths((double) usSombraGenStats.get("deaths"));
+            sombra.setDeathsAverage((double) usSombraAvgStats.get("deaths_average"));
+            sombra.setSoloKills((double) usSombraGenStats.get("solo_kills"));
+            sombra.setSoloKillsAverage((double) usSombraAvgStats.get("solo_kills_average"));
+            sombra.setObjectiveKills((double) usSombraGenStats.get("objective_kills"));
+            sombra.setObjectiveKillsAverage((double) usSombraAvgStats.get("objective_kills_average"));
+            sombra.setWeaponAccuracy((double) usSombraGenStats.get("weapon_accuracy"));
+            sombra.setGamesWon((double) usSombraGenStats.get("games_won"));
+            sombra.setTimePlayed((double) usSombraGenStats.get("time_played"));
+            sombra.setCriticalHits((double) usSombraGenStats.get("critical_hits"));
+            sombra.setCriticalHitAccuracy((double) usSombraGenStats.get("critical_hit_accuracy"));
             
-        } catch (NullPointerException ex) {
-            System.out.println("This value hasn't been indexed. Either you haven't initialized this character or the server has dropped connection");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
