@@ -14,7 +14,6 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -189,6 +188,18 @@ public class Login {
             JSONObject usAnaStats = (JSONObject) usAna.get("hero_stats");
             JSONObject usAnaGenStats = (JSONObject) usAna.get("general_stats");
             JSONObject usAnaAvgStats = (JSONObject) usAna.get("average_stats");
+            JSONObject usReinhardt = (JSONObject) usHeroQuickplay.get("reinhardt");
+            JSONObject usReinhardtStats = (JSONObject) usReinhardt.get("hero_stats");
+            JSONObject usReinhardtGenStats = (JSONObject) usReinhardt.get("general_stats");
+            JSONObject usReinhardtAvgStats = (JSONObject) usReinhardt.get("average_stats");
+            JSONObject usHanzo = (JSONObject) usHeroQuickplay.get("hanzo");
+            JSONObject usHanzoStats = (JSONObject) usHanzo.get("hero_stats");
+            JSONObject usHanzoGenStats = (JSONObject) usHanzo.get("general_stats");
+            JSONObject usHanzoAvgStats = (JSONObject) usHanzo.get("average_stats");
+            JSONObject usJunkRat = (JSONObject) usHeroQuickplay.get("junkrat");
+            JSONObject usJunkRatStats = (JSONObject) usJunkRat.get("hero_stats");
+            JSONObject usJunkRatGenStats = (JSONObject) usJunkRat.get("general_stats");
+            JSONObject usJunkRatAvgStats = (JSONObject) usJunkRat.get("average_stats");
 
             //Setting Roadhog Values
             roadhog.setEnemiesHooked((double) usRoadhogStats.get("enemies_hooked"));
@@ -619,6 +630,91 @@ public class Login {
             symmetra.setObjectiveKillsAverage((double) usSymmetraAvgStats.get("objective_kills_average"));
             symmetra.setGamesWon((double) usSymmetraGenStats.get("games_won"));
             symmetra.setTimePlayed((double) usSymmetraGenStats.get("time_played"));
+
+            //Implementing Reinhardt General Stats
+            reinhardt.setEliminations((double) usReinhardtGenStats.get("eliminations"));
+            reinhardt.setEliminationsAverage((double) usReinhardtAvgStats.get("eliminations_average"));
+            reinhardt.setDeaths((double) usReinhardtGenStats.get("deaths"));
+            reinhardt.setDeathsAverage((double) usReinhardtAvgStats.get("deaths_average"));
+            reinhardt.setSoloKills((double) usReinhardtGenStats.get("solo_kills"));
+            reinhardt.setSoloKillsAverage((double) usReinhardtAvgStats.get("solo_kills_average"));
+            reinhardt.setObjectiveKills((double) usReinhardtGenStats.get("objective_kills"));
+            reinhardt.setObjectiveKillsAverage((double) usReinhardtAvgStats.get("objective_kills_average"));
+            reinhardt.setGamesWon((double) usReinhardtGenStats.get("games_won"));
+            reinhardt.setTimePlayed((double) usReinhardtGenStats.get("time_played"));
+
+            //Implementing Hanzo General Stats
+            hanzo.setEliminations((double) usHanzoGenStats.get("eliminations"));
+            hanzo.setEliminationsAverage((double) usHanzoAvgStats.get("eliminations_average"));
+            hanzo.setDeaths((double) usHanzoGenStats.get("deaths"));
+            hanzo.setDeathsAverage((double) usHanzoAvgStats.get("deaths_average"));
+            hanzo.setSoloKills((double) usHanzoGenStats.get("solo_kills"));
+            hanzo.setSoloKillsAverage((double) usHanzoAvgStats.get("solo_kills_average"));
+            hanzo.setObjectiveKills((double) usHanzoGenStats.get("objective_kills"));
+            hanzo.setObjectiveKillsAverage((double) usHanzoAvgStats.get("objective_kills_average"));
+            hanzo.setWeaponAccuracy((double) usHanzoGenStats.get("weapon_accuracy"));
+            hanzo.setGamesWon((double) usHanzoGenStats.get("games_won"));
+            hanzo.setTimePlayed((double) usHanzoGenStats.get("time_played"));
+            hanzo.setCriticalHits((double) usHanzoGenStats.get("critical_hits"));
+            hanzo.setCriticalHitAccuracy((double) usHanzoGenStats.get("critical_hit_accuracy"));
+            
+            //Implementing JunkRat General Stats
+            junkrat.setEliminations((double) usJunkRatGenStats.get("eliminations"));
+            junkrat.setEliminationsAverage((double) usJunkRatAvgStats.get("eliminations_average"));
+            junkrat.setDeaths((double) usJunkRatGenStats.get("deaths"));
+            junkrat.setDeathsAverage((double) usJunkRatAvgStats.get("deaths_average"));
+            junkrat.setSoloKills((double) usJunkRatGenStats.get("solo_kills"));
+            junkrat.setSoloKillsAverage((double) usJunkRatAvgStats.get("solo_kills_average"));
+            junkrat.setObjectiveKills((double) usJunkRatGenStats.get("objective_kills"));
+            junkrat.setObjectiveKillsAverage((double) usJunkRatAvgStats.get("objective_kills_average"));
+            junkrat.setWeaponAccuracy((double) usJunkRatGenStats.get("weapon_accuracy"));
+            junkrat.setGamesWon((double) usJunkRatGenStats.get("games_won"));
+            junkrat.setTimePlayed((double) usJunkRatGenStats.get("time_played"));
+
+            //Implementing McCree General Stats
+//            mcCree.setEliminations((double) usMcCreeGenStats.get("eliminations"));
+//            mcCree.setEliminationsAverage((double) usMcCreeAvgStats.get("eliminations_average"));
+//            mcCree.setDeaths((double) usMcCreeGenStats.get("deaths"));
+//            mcCree.setDeathsAverage((double) usMcCreeAvgStats.get("deaths_average"));
+//            mcCree.setSoloKills((double) usMcCreeGenStats.get("solo_kills"));
+//            mcCree.setSoloKillsAverage((double) usMcCreeAvgStats.get("solo_kills_average"));
+//            mcCree.setObjectiveKills((double) usMcCreeGenStats.get("objective_kills"));
+//            mcCree.setObjectiveKillsAverage((double) usMcCreeAvgStats.get("objective_kills_average"));
+//            mcCree.setWeaponAccuracy((double) usMcCreeGenStats.get("weapon_accuracy"));
+//            mcCree.setGamesWon((double) usMcCreeGenStats.get("games_won"));
+//            mcCree.setTimePlayed((double) usMcCreeGenStats.get("time_played"));
+//            mcCree.setCriticalHits((double) usMcCreeGenStats.get("critical_hits"));
+//            mcCree.setCriticalHitAccuracy((double) usMcCreeGenStats.get("critical_hit_accuracy"));
+
+            //Implementing Pharah General Stats
+//            pharah.setEliminations((double) usPharahGenStats.get("eliminations"));
+//            pharah.setEliminationsAverage((double) usPharahAvgStats.get("eliminations_average"));
+//            pharah.setDeaths((double) usPharahGenStats.get("deaths"));
+//            pharah.setDeathsAverage((double) usPharahAvgStats.get("deaths_average"));
+//            pharah.setSoloKills((double) usPharahGenStats.get("solo_kills"));
+//            pharah.setSoloKillsAverage((double) usPharahAvgStats.get("solo_kills_average"));
+//            pharah.setObjectiveKills((double) usPharahGenStats.get("objective_kills"));
+//            pharah.setObjectiveKillsAverage((double) usPharahAvgStats.get("objective_kills_average"));
+//            pharah.setWeaponAccuracy((double) usPharahGenStats.get("weapon_accuracy"));
+//            pharah.setGamesWon((double) usPharahGenStats.get("games_won"));
+//            pharah.setTimePlayed((double) usPharahGenStats.get("time_played"));
+//            pharah.setCriticalHits((double) usPharahGenStats.get("critical_hits"));
+//            pharah.setCriticalHitAccuracy((double) usPharahGenStats.get("critical_hit_accuracy"));
+
+            //Implementing Lucio General Stats
+//            lucio.setEliminations((double) usLucioGenStats.get("eliminations"));
+//            lucio.setEliminationsAverage((double) usLucioAvgStats.get("eliminations_average"));
+//            lucio.setDeaths((double) usLucioGenStats.get("deaths"));
+//            lucio.setDeathsAverage((double) usLucioAvgStats.get("deaths_average"));
+//            lucio.setSoloKills((double) usLucioGenStats.get("solo_kills"));
+//            lucio.setSoloKillsAverage((double) usLucioAvgStats.get("solo_kills_average"));
+//            lucio.setObjectiveKills((double) usLucioGenStats.get("objective_kills"));
+//            lucio.setObjectiveKillsAverage((double) usLucioAvgStats.get("objective_kills_average"));
+//            lucio.setWeaponAccuracy((double) usLucioGenStats.get("weapon_accuracy"));
+//            lucio.setGamesWon((double) usLucioGenStats.get("games_won"));
+//            lucio.setTimePlayed((double) usLucioGenStats.get("time_played"));
+//            lucio.setCriticalHits((double) usLucioGenStats.get("critical_hits"));
+//            lucio.setCriticalHitAccuracy((double) usLucioGenStats.get("critical_hit_accuracy"));
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);

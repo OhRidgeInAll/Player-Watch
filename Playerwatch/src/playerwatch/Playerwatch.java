@@ -9,6 +9,7 @@ import playerwatch.heroes.Genji;
 import playerwatch.heroes.Roadhog;
 import playerwatch.heroes.Hero;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -86,11 +87,17 @@ public class Playerwatch extends Application {
     //ArrayList of all the heroes
     ArrayList<Hero> allHeroesArray;
 
+    //Variables to total stats to display on generalPane
     double totalElims;
     double totalSoloKills;
     double totalDeaths;
     double totalGamesWon;
 
+    /**
+     * Start method to build JavaFX application
+     * @param primaryStage the stage every scene is a child of
+     * @throws Exception 
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
 
@@ -109,6 +116,10 @@ public class Playerwatch extends Application {
 
     }
 
+    /**
+     * The scene for the login page
+     * @return loginScene
+     */
     private Scene loginScene() {
 
         //pane for login screen
@@ -129,6 +140,10 @@ public class Playerwatch extends Application {
         return loginScene;
     }
 
+    /**
+     * The scene for the general page
+     * @return generalScene
+     */
     private Scene generalScene() {
 
         //pane for General Stats screen
@@ -148,6 +163,10 @@ public class Playerwatch extends Application {
         return generalScene;
     }
 
+    /**
+     * The scene for the hero stats page
+     * @return heroStatsScene
+     */
     private Scene heroStatsScene() {
         //pane for Most Played Hero's Scene
         BorderPane heroStatsPane = new BorderPane();
@@ -165,7 +184,11 @@ public class Playerwatch extends Application {
         return heroStatsScene;
     }
 
-    //center for login pane
+    
+    /**
+     * The set method for the login pane
+     * @param main 
+     */
     private void setLoginCenter(BorderPane main) {
 
         GridPane centerPane = new GridPane();
@@ -191,7 +214,7 @@ public class Playerwatch extends Application {
         //ActionEvent, change the scene of the primary stage to the generalPane
         btnGeneralScene.setOnAction((ActionEvent e) -> {
 
-            if ("Original-1425".equals(txtBattleTag.getText())) {
+            if ("Original-1425".equals(txtBattleTag.getText()) || "MookieMonsta-1562".equals(txtBattleTag.getText())) {
                 try {
                     battleLogin.login(txtBattleTag.getText());
                 } catch (IOException | ParseException ex) {
@@ -243,6 +266,8 @@ public class Playerwatch extends Application {
                 mcCree.generalLabels();
                 mei.labels();
                 mei.generalLabels();
+                mercy.labels();
+                mercy.generalLabels();
                 pharah.labels();
                 pharah.generalLabels();
                 reaper.labels();
@@ -281,6 +306,7 @@ public class Playerwatch extends Application {
                 allHeroesArray.add(lucio);
                 allHeroesArray.add(mcCree);
                 allHeroesArray.add(mei);
+                allHeroesArray.add(mercy);
                 allHeroesArray.add(pharah);
                 allHeroesArray.add(reaper);
                 allHeroesArray.add(reinhardt);
@@ -310,7 +336,10 @@ public class Playerwatch extends Application {
 
     }
 
-    //bottom for login pane
+    /**
+     * The set method for the bottom of the login pane
+     * @param main 
+     */
     private void setLoginBottom(BorderPane main) {
         //label for invalid Battle.net ID input from user
         loginError = new Label("Entered an invalid Battle.net ID");
@@ -320,6 +349,10 @@ public class Playerwatch extends Application {
 
     }
 
+    /**
+     * The set method for the general stats pane
+     * @param main 
+     */
     private void setGeneralCenter(BorderPane main) {
 
         //HBox to contain center elements
@@ -334,12 +367,14 @@ public class Playerwatch extends Application {
         HBox elimHbox = new HBox(10);
         HBox deathsHbox = new HBox(10);
         HBox gamesWonHbox = new HBox(10);
+        HBox mostPlayedHbox = new HBox(10);
 
         //calculate total of stats for generalPane
         totalStats();
+        
         //labels of names of stats
         Label battleNetName = new Label(txtBattleTag.getText());
-        battleNetName.setStyle("-fx-font:24 Arial; -fx-text-fill:WHITE;");
+        battleNetName.setStyle("-fx-font:24 Impact; -fx-text-fill:WHITE;");
 
         Label eliminations = new Label("Total Eliminations: ");
         eliminations.setStyle("-fx-font:20 Arial; -fx-text-fill:WHITE;");
@@ -352,6 +387,9 @@ public class Playerwatch extends Application {
 
         Label gamesWon = new Label("Games Won: ");
         gamesWon.setStyle("-fx-font:20 Arial; -fx-text-fill:WHITE;");
+        
+        Label mostPlayed = new Label("Most Played: ");
+        mostPlayed.setStyle("-fx-font:20 Arial; -fx-text-fill:WHITE;");
 
         //labels for variables of stats
         Label eliminationsV = new Label("" + totalElims);
@@ -362,11 +400,12 @@ public class Playerwatch extends Application {
 
         Label deathsV = new Label("" + totalDeaths);
         deathsV.setStyle("-fx-font:20 Arial; -fx-text-fill:WHITE;");
-        
+
         Label gamesWonV = new Label("" + totalGamesWon);
         gamesWonV.setStyle("-fx-font:20 Arial; -fx-text-fill:WHITE;");
-
-
+        
+        Label mostPlayedV = new Label(mostPlayedHero());
+        mostPlayedV.setStyle("-fx-font:20 Arial; -fx-text-fill:WHITE;");
 
         //add labels to corresponding Hbox
         playerNameHbox.getChildren().addAll(battleNetName);
@@ -374,10 +413,11 @@ public class Playerwatch extends Application {
         elimHbox.getChildren().addAll(eliminations, eliminationsV);
         deathsHbox.getChildren().addAll(deaths, deathsV);
         gamesWonHbox.getChildren().addAll(gamesWon, gamesWonV);
+        mostPlayedHbox.getChildren().addAll(mostPlayed, mostPlayedV);
 
         //add Hboxes to main Vbox
-        vBox.getChildren().addAll(playerNameHbox, soloKillsHbox, 
-                elimHbox, deathsHbox, gamesWonHbox);
+        vBox.getChildren().addAll(playerNameHbox, soloKillsHbox,
+                elimHbox, deathsHbox, gamesWonHbox, mostPlayedHbox);
 
         //set margins for vBox withing StackPane
         StackPane.setMargin(vBox, new Insets(50));
@@ -390,6 +430,10 @@ public class Playerwatch extends Application {
 
     }
 
+    /**
+     * The set method for the bottom of the general stats pane
+     * @param main 
+     */
     private void setGeneralBottom(BorderPane main) {
         //HBox for bottom of generalPane
         HBox hBox = new HBox(10);
@@ -409,6 +453,10 @@ public class Playerwatch extends Application {
         main.setBottom(hBox);
     }
 
+    /**
+     * The set method for the center of the hero stats pane
+     * @param main 
+     */
     private void setHeroStatsCenter(BorderPane main) {
 
         //Hbox for center of Hero Stats pane
@@ -506,5 +554,18 @@ public class Playerwatch extends Application {
             totalGamesWon += hero.getGamesWon();
         });
 
+    }
+    
+    /**
+     * Sort allHeroesArray by the timePlayed
+     * @return name of most played hero
+     */
+    public String mostPlayedHero(){
+        
+     Collections.sort(allHeroesArray, (Hero c1, Hero c2) -> 
+             {
+         return Double.compare(c2.getTimePlayed(), c1.getTimePlayed());
+     });
+     return allHeroesArray.get(0).getName();
     }
 }
