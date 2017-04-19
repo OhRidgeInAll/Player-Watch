@@ -70,33 +70,6 @@ public class Symmetra extends Hero {
     }
 
     /**
-     * set Symmetra damageBlocked
-     *
-     * @param damageBlocked
-     */
-    public void setDamageBlocked(double damageBlocked) {
-        this.damageBlocked = damageBlocked;
-    }
-
-    /**
-     * set Symmetra damageBlockedAverage
-     *
-     * @param damageBlockedAverage
-     */
-    public void setDamageBlockedAverage(double damageBlockedAverage) {
-        this.damageBlockedAverage = damageBlockedAverage;
-    }
-
-    /**
-     * set Symmetra damageBlockedMostGame
-     *
-     * @param damageBlockedMostGame
-     */
-    public void setDamageBlockedMostGame(double damageBlockedMostGame) {
-        this.damageBlockedMostGame = damageBlockedMostGame;
-    }
-
-    /**
      * set Symmetra playersTeleported
      *
      * @param playersTeleported

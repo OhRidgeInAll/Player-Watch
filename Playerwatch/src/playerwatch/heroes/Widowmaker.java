@@ -14,8 +14,6 @@ public class Widowmaker extends Hero {
     double venomMineKills;
     double venomMineKillsAverage;
     double venomMineKillsMostGame;
-    double reconAssistsAverage;
-    double reconAssistsMostGame;
     double scopedAccuracy;
     double scopedAccuracyBestGame;
     double scopedCriticalHits;
@@ -25,8 +23,6 @@ public class Widowmaker extends Hero {
     Label lblVenomMineKills;
     Label lblVenomMineKillsAverage;
     Label lblVenomMineKillsMostGame;
-    Label lblReconAssistsAverage;
-    Label lblReconAssistsMostGame;
     Label lblScopedAccuracy;
     Label lblScopedAccuracyBestGame;
     Label lblScopedCriticalHits;
@@ -53,8 +49,6 @@ public class Widowmaker extends Hero {
         widowmakerLabels.add(lblVenomMineKills = new Label("Venom Mine Kills: " + venomMineKills));
         widowmakerLabels.add(lblVenomMineKillsAverage = new Label("Venom Mine Kills Average: " + venomMineKillsAverage));
         widowmakerLabels.add(lblVenomMineKillsMostGame = new Label("Venom Mine Kills Most Game: " + venomMineKillsMostGame));
-        widowmakerLabels.add(lblReconAssistsAverage = new Label("Recon Assists Average: " + reconAssistsAverage));
-        widowmakerLabels.add(lblReconAssistsMostGame = new Label("Recon Assists Most Game: " + reconAssistsMostGame));
         widowmakerLabels.add(lblScopedAccuracy = new Label("Scoped Accuracy: " + scopedAccuracy));
         widowmakerLabels.add(lblScopedAccuracyBestGame = new Label("Scoped Accuracy Best Game: " + scopedAccuracyBestGame));
         widowmakerLabels.add(lblScopedCriticalHits = new Label("Scoped Critical Hits: " + scopedCriticalHits));
@@ -88,15 +82,6 @@ public class Widowmaker extends Hero {
      */
     public void setVenomMineKillsMostGame(double venomMineKillsMostGame) {
         this.venomMineKillsMostGame = venomMineKillsMostGame;
-    }
-
-    /**
-     * set Widowmaker reconAssistsAverage
-     *
-     * @param reconAssistsAverage
-     */
-    public void setReconAssistsAverage(double reconAssistsAverage) {
-        this.reconAssistsAverage = reconAssistsAverage;
     }
 
     /**

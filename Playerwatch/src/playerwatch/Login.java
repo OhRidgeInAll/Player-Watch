@@ -93,6 +93,8 @@ public class Login {
             //invalid return or input values
         } catch (IOException ex) {
             Logger.getLogger(Playerwatch.class.getName()).log(Level.SEVERE, null, ex);
+            //This block is executed regardless of any exceptions that occur trying to write the file or pull from the web.
+            //Because of this the program will proceed from any existing backup.
         } finally {
             try {
                 JSONParser parser = new JSONParser();
@@ -100,9 +102,9 @@ public class Login {
                 JSONObject root = (JSONObject) parser.parse(reader);
                 return root;
             } catch (FileNotFoundException ex) {
-
+                System.out.println("Unfortunately you must successfully run the program once while connected to the internet to check this profile");
             } catch (ParseException ex) {
-
+                System.out.println("This file is formatted incorrectly.");
             }
         }
         return null;
@@ -115,6 +117,7 @@ public class Login {
             File genFile = new File(battletag + ".txt");
             JSONParser parser = new JSONParser();
             reader = new FileReader(battletag + "-heroes.txt");
+            //Indexing the JSONTree first so we can pull from any major node at will
             JSONObject root = (JSONObject) parser.parse(reader);
             JSONObject us = (JSONObject) root.get("us");
             JSONObject usheroes = (JSONObject) us.get("heroes");
@@ -212,6 +215,7 @@ public class Login {
             JSONObject usMcCreeStats = (JSONObject) usMcCree.get("hero_stats");
             JSONObject usMcCreeGenStats = (JSONObject) usMcCree.get("general_stats");
             JSONObject usMcCreeAvgStats = (JSONObject) usMcCree.get("average_stats");
+            //End of JSON Tree
 
             //Setting Roadhog Values
             roadhog.setEnemiesHooked((double) usRoadhogStats.get("enemies_hooked"));
@@ -332,6 +336,10 @@ public class Login {
             tracer.setPulseBombsAttached((double) usTracerStats.get("pulse_bombs_attached"));
             tracer.setPulseBombsAttachedAverage((double) usTracerAvgStats.get("pulse_bombs_attached_average"));
             tracer.setPulseBombsMostGame((double) usTracerStats.get("pulse_bombs_attached_most_in_game"));
+            tracer.setSelfHealing((double) usTracerGenStats.get("self_healing"));
+            tracer.setSelfHealingAverage((double) usTracerAvgStats.get("self_healing_average"));
+            tracer.setSelfHealingMostGame((double) usTracerGenStats.get("self_healing_most_in_game"));
+            
 
             //Implementing Tracer General Stats
             tracer.setEliminations((double) usTracerGenStats.get("eliminations"));
@@ -588,6 +596,9 @@ public class Login {
             widowmaker.setVenomMineKills((double) usWidowmakerStats.get("venom_mine_kills"));
             widowmaker.setVenomMineKillsAverage((double) usWidowmakerAvgStats.get("venom_mine_kills_average"));
             widowmaker.setVenomMineKillsMostGame((double) usWidowmakerStats.get("venom_mine_kills_most_in_game"));
+            widowmaker.setScopedCriticalHits((double) usWidowmakerStats.get("scoped_critical_hits"));
+            widowmaker.setScopedCriticalHitsAverage((double) usWidowmakerAvgStats.get("scoped_critical_hits_average"));
+            widowmaker.setScopedCriticalHitsMostGame((double) usWidowmakerStats.get("scoped_critical_hits_most_in_game"));
             
             //Implementing Widowmaker General Stats
 
@@ -609,6 +620,15 @@ public class Login {
             mei.setBlizzardKills((double) usMeiStats.get("blizzard_kills"));
             mei.setBlizzardKillsAverage((double) usMeiAvgStats.get("blizzard_kills_average"));
             mei.setBlizzardKillsMostGame((double) usMeiStats.get("blizzard_kills_most_in_game"));
+            mei.setEnemiesFrozen((double) usMeiStats.get("enemies_frozen"));
+            mei.setEnemiesFrozenAverage((double) usMeiAvgStats.get("enemies_frozen_average"));
+            mei.setEnemiesFrozenMostGame((double) usMeiStats.get("enemies_frozen_most_in_game"));
+            mei.setDamageBlocked((double) usMeiStats.get("damage_blocked"));
+            mei.setDamageBlockedAverage((double) usMeiAvgStats.get("damage_blocked_average"));
+            mei.setDamageBlockedMostGame((double) usMeiStats.get("damage_blocked_most_in_game"));
+            mei.setSelfHealing((double) usMeiGenStats.get("self_healing"));
+            mei.setSelfHealingAverage((double) usMeiAvgStats.get("self_healing_average"));
+            mei.setSelfHealingMostGame((double) usMeiGenStats.get("self_healing_most_in_game"));
             
             //Implementing Mei General Stats
 
@@ -630,7 +650,12 @@ public class Login {
             symmetra.setPlayersTeleported((double) usSymmetraStats.get("players_teleported"));
             symmetra.setPlayersTeleportedAverage((double) usSymmetraAvgStats.get("players_teleported_average"));
             symmetra.setPlayersTeleportedMostGame((double) usSymmetraStats.get("players_teleported_most_in_game"));
-            
+            symmetra.setSentryKills((double) usSymmetraStats.get("sentry_turret_kills"));
+            symmetra.setSentryKillsAverage((double) usSymmetraAvgStats.get("sentry_turret_kills_average"));
+            symmetra.setSentryKillsMostGame((double) usSymmetraStats.get("sentry_turret_kills_most_in_game"));
+            symmetra.setShieldsProvided((double) usSymmetraStats.get("shields_provided"));
+            symmetra.setShieldProvidedAverage((double) usSymmetraAvgStats.get("shields_provided_average"));
+            symmetra.setShieldsProvidedMostGame((double) usSymmetraStats.get("shields_provided_most_in_game"));            
             //Implementing Symmetra General Stats
 
             symmetra.setEliminations((double) usSymmetraGenStats.get("eliminations"));
@@ -643,6 +668,19 @@ public class Login {
             symmetra.setGamesWon((double) usSymmetraGenStats.get("games_won"));
             symmetra.setTimePlayed((double) usSymmetraGenStats.get("time_played"));
 
+            //Reinhardt Unique Stats
+            reinhardt.setChargeKills((double) usReinhardtStats.get("charge_kills"));
+            reinhardt.setChargeKillsAverage((double) usReinhardtAvgStats.get("charge_kills_average"));
+            reinhardt.setChargeKillsMostGame((double) usReinhardtStats.get("charge_kills_most_in_game"));
+            reinhardt.setDamageBlocked((double) usReinhardtStats.get("damage_blocked"));
+            reinhardt.setDamageBlockedAverage((double) usReinhardtAvgStats.get("damage_blocked_average"));
+            reinhardt.setDamageBlockedMostGame((double) usReinhardtStats.get("damage_blocked_most_in_game"));
+            reinhardt.setEarthShatterKills((double) usReinhardtStats.get("earthshatter_kills"));
+            reinhardt.setEarthShatterKillsAverage((double) usReinhardtAvgStats.get("earthshatter_kills_average"));
+            reinhardt.setEarthShatterKillsMostGame((double) usReinhardtStats.get("earthshatter_kills_most_in_game"));
+            reinhardt.setFireStrikeKills((double) usReinhardtStats.get("fire_strike_kills"));
+            reinhardt.setFireStrikeKillsAverage((double) usReinhardtAvgStats.get("fire_strike_kills_average"));
+            reinhardt.setFireStrikeKillsMostGame((double) usReinhardtStats.get("fire_strike_kills_most_in_game"));
             //Implementing Reinhardt General Stats
             reinhardt.setEliminations((double) usReinhardtGenStats.get("eliminations"));
             reinhardt.setEliminationsAverage((double) usReinhardtAvgStats.get("eliminations_average"));
@@ -655,6 +693,13 @@ public class Login {
             reinhardt.setGamesWon((double) usReinhardtGenStats.get("games_won"));
             reinhardt.setTimePlayed((double) usReinhardtGenStats.get("time_played"));
 
+            //Implementing Unique Hanzo Stats
+            hanzo.setDragonstrikeKills((double) usHanzoStats.get("dragonstrike_kills"));
+            hanzo.setDragonstrikeKillsAverage((double) usHanzoAvgStats.get("dragonstrike_kills_average"));
+            hanzo.setDragonstrikeKillsMostGame((double) usHanzoStats.get("dragonstrike_kills_most_in_game"));
+            hanzo.setScatterArrowKills((double) usHanzoStats.get("scatter_arrow_kills"));
+            hanzo.setScatterArrowKillsAverage((double) usHanzoAvgStats.get("scatter_arrow_kills_average"));
+            hanzo.setScatterArrowKillsMostGame((double) usHanzoStats.get("scatter_arrow_kills_most_in_game"));
             //Implementing Hanzo General Stats
             hanzo.setEliminations((double) usHanzoGenStats.get("eliminations"));
             hanzo.setEliminationsAverage((double) usHanzoAvgStats.get("eliminations_average"));
@@ -670,6 +715,12 @@ public class Login {
             hanzo.setCriticalHits((double) usHanzoGenStats.get("critical_hits"));
             hanzo.setCriticalHitAccuracy((double) usHanzoGenStats.get("critical_hit_accuracy"));
             
+            //Implementing Unique JunkRat Stats
+            junkrat.setEnemiesTrapped((double) usJunkRatStats.get("enemies_trapped"));
+            junkrat.setEnemiesTrappedMostGame((double) usJunkRatStats.get("enemies_trapped_most_in_game"));
+            junkrat.setRiptireKills((double) usJunkRatStats.get("rip_tire_kills"));
+            junkrat.setRiptireKillsAverage((double) usJunkRatAvgStats.get("rip_tire_kills_average"));
+            junkrat.setRiptireKillsMostGame((double) usJunkRatStats.get("rip_tire_kills_most_in_game"));
             //Implementing JunkRat General Stats
             junkrat.setEliminations((double) usJunkRatGenStats.get("eliminations"));
             junkrat.setEliminationsAverage((double) usJunkRatAvgStats.get("eliminations_average"));
@@ -683,6 +734,14 @@ public class Login {
             junkrat.setGamesWon((double) usJunkRatGenStats.get("games_won"));
             junkrat.setTimePlayed((double) usJunkRatGenStats.get("time_played"));
 
+            //McCree Unique Stats
+            mccree.setDeadeyeKills((double) usMcCreeStats.get("deadeye_kills"));
+            mccree.setDeadeyeKillsAverage((double) usMcCreeAvgStats.get("deadeye_kills_average"));
+            mccree.setDeadeyeKillsMostGame((double) usMcCreeStats.get("deadeye_kills_most_in_game"));
+            mccree.setFanHammerKills((double) usMcCreeStats.get("fan_the_hammer_kills"));
+            mccree.setFanHammerKillsAverage((double) usMcCreeAvgStats.get("fan_the_hammer_kills_average"));
+            mccree.setFanHammerKillsMostGame((double) usMcCreeGenStats.get("fan_the_hammer_kills_most_in_game"));
+            
             //Implementing McCree General Stats
             mccree.setEliminations((double) usMcCreeGenStats.get("eliminations"));
             mccree.setEliminationsAverage((double) usMcCreeAvgStats.get("eliminations_average"));
@@ -698,6 +757,14 @@ public class Login {
             mccree.setCriticalHits((double) usMcCreeGenStats.get("critical_hits"));
             mccree.setCriticalHitAccuracy((double) usMcCreeGenStats.get("critical_hit_accuracy"));
 
+            //Implementing Pharah Specific Stats
+            pharah.setBarrageKills((double)usPharahStats.get("barrage_kills"));
+            pharah.setBarrageKillsAverage((double)usPharahAvgStats.get("barrage_kills_average"));
+            pharah.setBarrageKillsMostGame((double)usPharahStats.get("barrage_kills_most_in_game"));
+            pharah.setRocketDirectHits((double) usPharahStats.get("rocket_direct_hits"));
+            pharah.setRocketDirectHitsAverage((double) usPharahAvgStats.get("rocket_direct_hits_average"));
+            pharah.setRocketDirectHitsMostGame((double) usPharahStats.get("rocket_direct_hits_most_in_game"));
+            
             //Implementing Pharah General Stats
             pharah.setEliminations((double) usPharahGenStats.get("eliminations"));
             pharah.setEliminationsAverage((double) usPharahAvgStats.get("eliminations_average"));
@@ -711,6 +778,13 @@ public class Login {
             pharah.setGamesWon((double) usPharahGenStats.get("games_won"));
             pharah.setTimePlayed((double) usPharahGenStats.get("time_played"));
 
+            //Lucio Hero Stats
+            lucio.setSelfHealing((double) usLucioGenStats.get("self_healing"));
+            lucio.setSelfHealingAverage((double) usLucioAvgStats.get("self_healing_average"));
+            lucio.setSelfHealingMostGame((double) usLucioGenStats.get("self_healing_most_in_game"));
+            lucio.setSoundBarriersProvided((double) usLucioStats.get("sound_barriers_provided"));
+            lucio.setSoundBarriersProvidedAverage((double) usLucioAvgStats.get("sound_barriers_provided_average"));
+            lucio.setSoundBarriersProvidedMostGame((double) usLucioStats.get("sound_barriers_provided_most_in_game"));
             //Implementing Lucio General Stats
             lucio.setEliminations((double) usLucioGenStats.get("eliminations"));
             lucio.setEliminationsAverage((double) usLucioAvgStats.get("eliminations_average"));
@@ -740,6 +814,5 @@ public class Login {
             }
         }
     }
-    //public String
 
 }
