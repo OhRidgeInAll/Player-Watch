@@ -62,7 +62,8 @@ public class Login {
         InputStream response;
 
         File file = new File(battletag + "-heroes.txt");
-        File genFile = new File(battletag + ".txt");
+        //Phased out for now
+        //File genFile = new File(battletag + ".txt");
 
         try {
             URLConnection urlConnectionInstance = new URL("https://owapi.net/api/v3/u/" + battletag + "/heroes").openConnection();
@@ -72,13 +73,15 @@ public class Login {
             //openStream is a method from InputStream that pulls the response from the website
             response = urlConnectionInstance.getInputStream();
 
+            //renew the file
             file.delete();
 
             try (Scanner scanner = new Scanner(response)) {
                 while (scanner.hasNextLine()) {
-                    //Perhaps using .split() as opposed to .useDelimiter would be viable as we could use regex to eliminate specific commas
+                    //This is a useable form of the 
                     String responseBody = scanner.next();
-                    System.out.println(responseBody);
+                    //For Debugging
+                    //System.out.println(responseBody);
                     try (PrintWriter writer = new PrintWriter(new FileWriter(file, true))) {
                         writer.append(responseBody);
                     } catch (FileNotFoundException ex) {
@@ -800,6 +803,7 @@ public class Login {
             lucio.setCriticalHits((double) usLucioGenStats.get("critical_hits"));
             lucio.setCriticalHitAccuracy((double) usLucioGenStats.get("critical_hit_accuracy"));
 
+            
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
